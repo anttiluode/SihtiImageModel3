@@ -102,7 +102,7 @@ def demo(out="runs/first", seed=17, train_n=320, steps=16, train_folder=None, ev
     plt.close(fig)
 
     frames = shown[3]["coupled_ping"]["frames"]
-    indexes = [0, 1, 2, 4, 8, 12, len(frames)-1]
+    indexes = np.unique(np.linspace(0, len(frames)-1, num=min(7, len(frames)), dtype=int))
     export_image(folder/"timeline.png", np.concatenate([frames[i] for i in indexes], axis=1))
     from PIL import ImageDraw
     gif_frames = []
