@@ -141,6 +141,42 @@ def run(output="runs/latent_r5", train_folder=None, eval_folder=None,
     fig.tight_layout()
     fig.savefig(out/"comparison.png", dpi=140)
     plt.close(fig)
+
+    # Visualize decoder reachability without pretending the oracle is inference:
+    # J_hidden's column space is exactly what a local PCA latent update can
+    # produce in the missing pixels (before clipping).
+    z0 = decoder.latent_from_visible(obs, mask)
+    raw_base = decoder.decode(z0)
+    j = decoder.hidden_jacobian(mask)
+    wanted = target[~mask] - raw_base[~mask]   # TRUE / ORACLE
+    predicted = images["flux_pixel"][~mask] - raw_base[~mask]  # ordinary
+    def split(vector):
+        reachable = j @ np.linalg.lstsq(j, vector, rcond=None)[0]
+        return vector, reachable, vector-reachable
+    true_triplet = split(wanted)
+    predicted_triplet = split(predicted)
+    scale = max(np.max(np.abs(wanted)), np.max(np.abs(predicted)), 1e-6)
+    fig, axes = plt.subplots(2, 3, figsize=(10, 7))
+    titles = [
+        "Required change (ORACLE truth)",
+        "Representable true change (ORACLE)",
+        "True change outside latent span",
+        "Predicted flux correction (visible-only)",
+        "Representable predicted correction",
+        "Predicted correction outside latent span",
+    ]
+    for ax, vec, label in zip(axes.flat,
+                              (*true_triplet, *predicted_triplet), titles):
+        field = np.zeros((32, 32))
+        field[~mask] = vec
+        ax.imshow(field, cmap="coolwarm", vmin=-scale, vmax=scale,
+                  interpolation="nearest")
+        ax.set_title(label, fontsize=9)
+        ax.axis("off")
+    fig.suptitle("R5: which image corrections lie outside the PCA decoder?")
+    fig.tight_layout()
+    fig.savefig(out/"gradient_projection.png", dpi=140)
+    plt.close(fig)
     print(json.dumps({
         "test_images": len(test),
         "scores": results,
