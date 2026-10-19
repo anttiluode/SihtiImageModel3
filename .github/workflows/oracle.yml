@@ -1,0 +1,35 @@
+name: R3 oracle coarse readout diagnostic
+
+on:
+  push:
+    branches: [main, sol/r3-oracle-coarse-readout]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  oracle-readout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU deps
+        run: python -m pip install -r requirements.txt pytest
+      - name: All unit tests including oracle isolation
+        run: python -m pytest -q tests
+      - name: Preregistered 32 held-out contour diagnostic
+        run: python oracle_demo.py --output runs/oracle --train-limit 320 --eval-limit 32 --seed 287 --show-index 0 --steps 12
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: R3-oracle-readout-receipts
+          path: |
+            runs/oracle/comparison.png
+            runs/oracle/loop.gif
+            runs/oracle/metrics.json
