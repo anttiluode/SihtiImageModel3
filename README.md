@@ -1,5 +1,17 @@
 # SihtiImageModel3 — can fine detail talk back to the core?
 
+> **Gate R4 — signed gradient/flux coarse messages:** [flux.py](flux.py) replaces R2/R3's k-means patch code selection with a continuous image reconstruction driven by learned conditional **X/Y block gradients plus brightness**. On 32 untouched synthetic contours, adding signed flux improved missing-pixel MSE from **0.08480 → 0.08020**, while a shuffled-gradient control scored **0.15482**. But edge-gradient error *worsened* from **0.05337 → 0.05632**; **the preregistered combined gate FAILS**. A privileged true-gradient oracle scores 0.04407 MSE; true scalar+gradient oracle scores 0.01906. No biological neuron or true image generator is claimed. See [R4 preregistration](docs/GATE_R4_PREREG.md), [R4 results](docs/GATE_R4_RESULT.md), and the [reproducible CI visuals](https://github.com/anttiluode/SihtiImageModel3/actions/runs/39275112619).
+
+```cmd
+python3.13 flux_demo.py --output runs/flux_r4
+python3.13 flux_demo.py --train-folder train --eval-folder unseen --train-limit 500 --eval-limit 64 --show-index 8 --output runs/flux_photos
+```
+
+The GIF in this experiment illustrates a transition from interpolation to the solved image; it is **not** actual time-stepped cortical relaxation.
+
+---
+
+
 > **Gate R3 (oracle-coarse diagnostic):** [oracle_gate.py](oracle_gate.py) tests R2's *unchanged* patch reader after giving it the **true masked coarse structure**, for evaluation only. On 32 new synthetic contours, at a predeclared 16× top-down coupling strength, the oracle changed hidden patch choices on **24/32 images** and reduced missing-pixel MSE by **17.2% against an equally strengthened learned-message control** (0.08408 vs 0.10151). But ordinary inference still loses, and giving it exact target-selected fine patch codes can score 0.04575. The lower-level vocabulary is not entirely helpless; the learned prediction/readout combination is inadequate. No ping, new image generator or rewrite of R2 was added. Read [R3 pre-registration](docs/GATE_R3_PREREG.md) and [results](docs/GATE_R3_RESULT.md).
 
 ```cmd

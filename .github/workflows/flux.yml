@@ -1,0 +1,34 @@
+name: R4 signed vector-flux image reconstruction
+on:
+  push:
+    branches: [main, sol/r4-gradient-flux-bridge]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  gradient-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt pytest
+      - name: Test old gates and new continuous flux mechanism
+        run: python -m pytest -q tests
+      - name: Prespecified R4 32 heldout synthetic images
+        run: python flux_demo.py --output runs/flux_r4 --train-limit 320 --eval-limit 32 --seed 383
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: R4-gradient-flux-scalar-oracle-visuals
+          path: |
+            runs/flux_r4/comparison.png
+            runs/flux_r4/flux_vectors.png
+            runs/flux_r4/loop.gif
+            runs/flux_r4/metrics.json
