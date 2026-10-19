@@ -72,8 +72,8 @@ def test_oracle_and_normal_same_codes_before_inference_all_strengths():
         oracle = diagnostic.infer(obs, mask, strength=strength,
                                   oracle_target=truth, steps=3)
         np.testing.assert_array_equal(normal["initial_codes"], oracle["initial_codes"])
-        np.testing.assert_allclose(normal["coarse"][~affected_cells(mask)],
-                                   oracle["coarse"][~affected_cells(mask)])
+        np.testing.assert_allclose(normal["coarse"].ravel()[~affected_cells(mask)],
+                                   oracle["coarse"].ravel()[~affected_cells(mask)])
         np.testing.assert_allclose(normal["image"][mask], obs[mask])
         np.testing.assert_allclose(oracle["image"][mask], obs[mask])
         assert len(normal["changes"]) == len(oracle["changes"]) == 3
