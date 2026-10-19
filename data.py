@@ -53,3 +53,34 @@ def damage(img, seed=0, kind="gap"):
         raise ValueError("unknown damage type")
     obs = np.where(mask, img, .5)
     return obs, mask
+
+
+def load_images(folder, max_images=None):
+    """User-supplied PNG/JPG files, resized to 32x32 luminance. No labels.
+
+    Training and evaluation folders must be disjoint; demo validates content.
+    """
+    from pathlib import Path
+    root = Path(folder).expanduser().resolve()
+    if not root.is_dir():
+        raise ValueError(f"Not a folder: {root}")
+    paths = sorted(
+        x for x in root.rglob("*")
+        if x.suffix.lower() in (".png", ".jpg", ".jpeg", ".webp", ".bmp")
+    )
+    if max_images is not None:
+        paths = paths[:max_images]
+    if not paths:
+        raise ValueError(f"No images found under {root}")
+    images = []
+    for path in paths:
+        with Image.open(path) as original:
+            img = original.convert("L")
+            width, height = img.size
+            side = min(width, height)
+            left = (width-side)//2
+            upper = (height-side)//2
+            img = img.crop((left, upper, left+side, upper+side))
+            img = img.resize((32, 32), Image.Resampling.LANCZOS)
+            images.append(np.asarray(img, dtype=np.float32)/255.)
+    return np.asarray(images), paths
