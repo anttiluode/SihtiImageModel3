@@ -1,0 +1,34 @@
+name: R5 latent vs image gradient diagnosis
+on:
+  push:
+    branches: [sol/r5-latent-gradient-bridge]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  latent-subspace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt pytest
+      - name: All mathematical and regression controls
+        run: python -m pytest -q tests
+      - name: Fresh held-out 32-image R5 benchmark
+        run: python latent_bridge_demo.py --output runs/latent_r5 --train-limit 320 --eval-limit 32 --seed 569
+      - name: Save per-image and visual results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: R5-latent-vs-pixel-gradient
+          path: |
+            runs/latent_r5/metrics.json
+            runs/latent_r5/comparison.png
