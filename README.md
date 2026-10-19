@@ -1,5 +1,17 @@
 # SihtiImageModel3 — can fine detail talk back to the core?
 
+> **Gate R2 (mask-conditioned coarse feedback):** [conditional.py](conditional.py) now predicts the missing 8×8 coarse structure using **visible pixels and a learned covariance, before choosing any local missing patch**. Fine-level codes can then revise that coarse prediction under one explicit energy. In the fresh 32-image test, observation-conditioning improved the error of coarse cells touching the mask by **66%**, but **did not improve image completion**: conditional frozen 0.13398, live 0.13457, vs original Sihti3 0.09140 missing-pixel MSE. The feedback changed hidden patch decisions in only **1/32** images; all image-improvement gates failed. See the [R2 preregistration](docs/GATE_R2_PREREG.md), [result](docs/GATE_R2_RESULT.md), and [passing GitHub CPU run](https://github.com/anttiluode/SihtiImageModel3/actions/runs/39259538598). This is a genuine directional message test, **not** a dendritic ping.
+
+```cmd
+python3.13 conditional_demo.py --output runs/conditional
+python3.13 conditional_demo.py --train-folder train --eval-folder unseen --eval-limit 64 --show-index 8 --output runs/photos_r2
+```
+
+It produces `comparison.png`, `loop.gif`, `energy.png` and `metrics.json`. `--show-index` selects which unseen image to **show**; `--eval-limit` chooses how many to evaluate (0 = all). Earlier R1 remains unchanged for audit.
+
+---
+
+
 
 > **New Gate R1 (learned relational energy):** Instead of heuristic PCA/patch blending, [relational.py](relational.py) fits directional neighbor-code compatibility, overlap factors and an explicit coarse prior; both local and global updates minimize **one joint energy**. It has a side-by-side GIF demo, seven exactness/leakage tests, a precommitted [protocol](docs/GATE_R1_PREREG.md), and a [post-run negative result](docs/GATE_R1_RESULT.md). The clean CI run showed **no improvement** over original Sihti3 or simple four-neighbor retrieval: relational model 0.13145 missing MSE, original 0.08176, four-example retrieval 0.08018; coarse feedback and pulse ablations did not help. This is a more faithful **mathematical test**, not a solved image model.
 
