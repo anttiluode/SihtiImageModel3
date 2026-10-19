@@ -1,0 +1,4955 @@
+{
+  "gate": "R3 \u2014 privileged coarse oracle, evaluation-only",
+  "dataset": "user photos, center-cropped 32x32 grayscale",
+  "training_images": 384,
+  "evaluation_images": 64,
+  "steps": 12,
+  "strengths": [
+    1,
+    4,
+    16
+  ],
+  "primary": "masked-pixel MSE; lower is better",
+  "averages": {
+    "linear": 0.02506127524234643,
+    "normal_1x": 0.02972708084810237,
+    "oracle_1x": 0.02951698752331184,
+    "normal_4x": 0.029074035729514884,
+    "oracle_4x": 0.028357092620295638,
+    "normal_16x": 0.028523932784562618,
+    "oracle_16x": 0.026343317974725597,
+    "oracle_codebook": 0.016021697574684947,
+    "original_sihti3": 0.023666271835361408
+  },
+  "edge_averages": {
+    "linear": 0.017980344418221557,
+    "normal_1x": 0.01980893683637657,
+    "oracle_1x": 0.019767821476627645,
+    "normal_4x": 0.01970669181968743,
+    "oracle_4x": 0.019513118364547895,
+    "normal_16x": 0.019653592532406523,
+    "oracle_16x": 0.01917664810475736,
+    "oracle_codebook": 0.016143166828792025,
+    "original_sihti3": 0.017329288670364765
+  },
+  "conditional_prediction_mse_by_coarse_coverage": {
+    "conditional_coarse": {
+      "fully_hidden": {
+        "cases": 58,
+        "total_cells": 258,
+        "mean_per_case_mse": 0.010999825346401853
+      },
+      "partially_observed": {
+        "cases": 62,
+        "total_cells": 496,
+        "mean_per_case_mse": 0.0022757064310404158
+      },
+      "all_affected": {
+        "cases": 64,
+        "total_cells": 754,
+        "mean_per_case_mse": 0.00510059845057916
+      }
+    },
+    "prior_coarse": {
+      "fully_hidden": {
+        "cases": 58,
+        "total_cells": 258,
+        "mean_per_case_mse": 0.03017341952769878
+      },
+      "partially_observed": {
+        "cases": 62,
+        "total_cells": 496,
+        "mean_per_case_mse": 0.03140120350926008
+      },
+      "all_affected": {
+        "cases": 64,
+        "total_cells": 754,
+        "mean_per_case_mse": 0.03141909762082079
+      }
+    }
+  },
+  "oracle_changed_patch_decisions_images": {
+    "1x": 2,
+    "4x": 19,
+    "16x": 43
+  },
+  "oracle_relative_mse_gain_vs_same_strength_normal": {
+    "1x": 0.007067405167162311,
+    "4x": 0.024659222265845715,
+    "16x": 0.07644860287348554
+  },
+  "diagnostics": {
+    "oracle_alters_25pct_images_and_10pct_mse_at_matched_strength": {
+      "1x": false,
+      "4x": false,
+      "16x": false
+    },
+    "oracle_nearly_inert_at_all_strengths_under_10pct_changed_images": false
+  },
+  "cases": [
+    {
+      "index": 0,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.002101942909687986,
+          "masked_gradient_mse": 0.0024959573524973573
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.002429045750292588,
+          "masked_gradient_mse": 0.0026302428122466637
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0023383778591317653,
+          "masked_gradient_mse": 0.0025110348582383737
+        },
+        "normal_1x": {
+          "missing_mse": 0.002914716843560697,
+          "masked_gradient_mse": 0.0026759569883304077
+        },
+        "oracle_1x": {
+          "missing_mse": 0.002914716843560697,
+          "masked_gradient_mse": 0.0026759569883304077
+        },
+        "normal_4x": {
+          "missing_mse": 0.002914716843560697,
+          "masked_gradient_mse": 0.0026759569883304077
+        },
+        "oracle_4x": {
+          "missing_mse": 0.002914716843560697,
+          "masked_gradient_mse": 0.0026759569883304077
+        },
+        "normal_16x": {
+          "missing_mse": 0.002914716843560697,
+          "masked_gradient_mse": 0.0026759569883304077
+        },
+        "oracle_16x": {
+          "missing_mse": 0.002914716843560697,
+          "masked_gradient_mse": 0.0026759569883304077
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.0011098651680621833
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00030794607207960674
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.000708905620070895
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.0443728366156731
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.03481852499547939
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.039595680805576246
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 4
+    },
+    {
+      "index": 1,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.003967122341011573,
+          "masked_gradient_mse": 0.004006986216307174
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.004039795223205029,
+          "masked_gradient_mse": 0.004144516534431283
+        },
+        "original_sihti3": {
+          "missing_mse": 0.008135676798898277,
+          "masked_gradient_mse": 0.004116638465004305
+        },
+        "normal_1x": {
+          "missing_mse": 0.006573583944826657,
+          "masked_gradient_mse": 0.0059464953644232125
+        },
+        "oracle_1x": {
+          "missing_mse": 0.006573583944826657,
+          "masked_gradient_mse": 0.0059464953644232125
+        },
+        "normal_4x": {
+          "missing_mse": 0.010544874150211384,
+          "masked_gradient_mse": 0.0072682063021542774
+        },
+        "oracle_4x": {
+          "missing_mse": 0.010544874150211384,
+          "masked_gradient_mse": 0.0072682063021542774
+        },
+        "normal_16x": {
+          "missing_mse": 0.010544874150211384,
+          "masked_gradient_mse": 0.0072682063021542774
+        },
+        "oracle_16x": {
+          "missing_mse": 0.010544874150211384,
+          "masked_gradient_mse": 0.0072682063021542774
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.0027549097102687165
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.00031374072712394386
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.0011274637215055348
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.017588804718085868
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.024574565316144548
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.02224597845012499
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 9
+    },
+    {
+      "index": 2,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.020937530328584773,
+          "masked_gradient_mse": 0.01563274791632874
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.015222597255291712,
+          "masked_gradient_mse": 0.015001676153499366
+        },
+        "original_sihti3": {
+          "missing_mse": 0.016388898435304104,
+          "masked_gradient_mse": 0.014739355234776777
+        },
+        "normal_1x": {
+          "missing_mse": 0.01872992413194849,
+          "masked_gradient_mse": 0.01614302984674063
+        },
+        "oracle_1x": {
+          "missing_mse": 0.01872992413194849,
+          "masked_gradient_mse": 0.01614302984674063
+        },
+        "normal_4x": {
+          "missing_mse": 0.01872992413194849,
+          "masked_gradient_mse": 0.01614302984674063
+        },
+        "oracle_4x": {
+          "missing_mse": 0.01872992413194849,
+          "masked_gradient_mse": 0.01614302984674063
+        },
+        "normal_16x": {
+          "missing_mse": 0.02151093536895035,
+          "masked_gradient_mse": 0.017099797836121627
+        },
+        "oracle_16x": {
+          "missing_mse": 0.02163646173426064,
+          "masked_gradient_mse": 0.017163495707091792
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.009206618811993254
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00010096621107360043
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.004653792511533427
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.005292068656668907
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.015224799795160629
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.010258434225914768
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 14
+    },
+    {
+      "index": 3,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.011566779475991705,
+          "masked_gradient_mse": 0.011385309164541097
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.008649644317956852,
+          "masked_gradient_mse": 0.011206265552744905
+        },
+        "original_sihti3": {
+          "missing_mse": 0.012712045842191934,
+          "masked_gradient_mse": 0.011115389703733129
+        },
+        "normal_1x": {
+          "missing_mse": 0.022221802560515758,
+          "masked_gradient_mse": 0.014192928073206145
+        },
+        "oracle_1x": {
+          "missing_mse": 0.022221802560515758,
+          "masked_gradient_mse": 0.014192928073206145
+        },
+        "normal_4x": {
+          "missing_mse": 0.022221802560515758,
+          "masked_gradient_mse": 0.014192928073206145
+        },
+        "oracle_4x": {
+          "missing_mse": 0.022221802560515758,
+          "masked_gradient_mse": 0.014192928073206145
+        },
+        "normal_16x": {
+          "missing_mse": 0.022221802560515758,
+          "masked_gradient_mse": 0.014192928073206145
+        },
+        "oracle_16x": {
+          "missing_mse": 0.022221802560515758,
+          "masked_gradient_mse": 0.014192928073206145
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 6.474792236992138e-05
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.000934638583831018
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0008379840658908961
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 4.0459386261432195e-06
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0025310040346300535
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0022502309128518416
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 7
+    },
+    {
+      "index": 4,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0010852638253084764,
+          "masked_gradient_mse": 0.0006695427884208533
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.0011563896591715206,
+          "masked_gradient_mse": 0.001217490366659181
+        },
+        "original_sihti3": {
+          "missing_mse": 0.00101843320370013,
+          "masked_gradient_mse": 0.0005782813650718545
+        },
+        "normal_1x": {
+          "missing_mse": 0.005357334873531934,
+          "masked_gradient_mse": 0.0017222660799884964
+        },
+        "oracle_1x": {
+          "missing_mse": 0.005357334873531934,
+          "masked_gradient_mse": 0.0017222660799884964
+        },
+        "normal_4x": {
+          "missing_mse": 0.005357334873531934,
+          "masked_gradient_mse": 0.0017222660799884964
+        },
+        "oracle_4x": {
+          "missing_mse": 0.005357334873531934,
+          "masked_gradient_mse": 0.0017222660799884964
+        },
+        "normal_16x": {
+          "missing_mse": 0.00402462455362334,
+          "masked_gradient_mse": 0.001460505424036965
+        },
+        "oracle_16x": {
+          "missing_mse": 0.003818527816051919,
+          "masked_gradient_mse": 0.0015249518309427958
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.0002020756353035473
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 2.7413796452343953e-05
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.00011474471587794564
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.003331136712247063
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.004822483859171126
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0040768102857090946
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 7
+    },
+    {
+      "index": 5,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0628685911760651,
+          "masked_gradient_mse": 0.039285707804560796
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.0708784962134073,
+          "masked_gradient_mse": 0.0446184972349681
+        },
+        "original_sihti3": {
+          "missing_mse": 0.038565374513698826,
+          "masked_gradient_mse": 0.027319708409529568
+        },
+        "normal_1x": {
+          "missing_mse": 0.08822160612257836,
+          "masked_gradient_mse": 0.04721688454121997
+        },
+        "oracle_1x": {
+          "missing_mse": 0.08822160612257836,
+          "masked_gradient_mse": 0.04721688454121997
+        },
+        "normal_4x": {
+          "missing_mse": 0.08837724041943064,
+          "masked_gradient_mse": 0.045948909981245276
+        },
+        "oracle_4x": {
+          "missing_mse": 0.08837724041943064,
+          "masked_gradient_mse": 0.045948909981245276
+        },
+        "normal_16x": {
+          "missing_mse": 0.07946195716464166,
+          "masked_gradient_mse": 0.049443572823866425
+        },
+        "oracle_16x": {
+          "missing_mse": 0.0910951963958121,
+          "masked_gradient_mse": 0.04689512040242555
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.0035382350379701043
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.004314540816591887
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.004228284618967245
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.011382010254746281
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.07083400885143107
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.06422823122957722
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 3
+      },
+      "oracle_codebook_unique_codes": 15
+    },
+    {
+      "index": 6,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.003937625943610742,
+          "masked_gradient_mse": 0.004700350923669579
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.003982510027952517,
+          "masked_gradient_mse": 0.004849369528478598
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0042985302043601435,
+          "masked_gradient_mse": 0.0049488319719480514
+        },
+        "normal_1x": {
+          "missing_mse": 0.005236434176071213,
+          "masked_gradient_mse": 0.0050840417027867135
+        },
+        "oracle_1x": {
+          "missing_mse": 0.005236434176071213,
+          "masked_gradient_mse": 0.0050840417027867135
+        },
+        "normal_4x": {
+          "missing_mse": 0.0047856535933776135,
+          "masked_gradient_mse": 0.005030450784162315
+        },
+        "oracle_4x": {
+          "missing_mse": 0.005236434176071213,
+          "masked_gradient_mse": 0.0050840417027867135
+        },
+        "normal_16x": {
+          "missing_mse": 0.0047856535933776135,
+          "masked_gradient_mse": 0.005030450784162315
+        },
+        "oracle_16x": {
+          "missing_mse": 0.005236434176071213,
+          "masked_gradient_mse": 0.0050840417027867135
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.0012762215230068131
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0001721301277417124
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0007241758253742628
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.009788338686012426
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.009181397322703769
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.009484868004358098
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 1,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 4
+    },
+    {
+      "index": 7,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0017356958840210063,
+          "masked_gradient_mse": 0.0019453692314017358
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.002295333343040893,
+          "masked_gradient_mse": 0.0024776448527897635
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0028178541407181817,
+          "masked_gradient_mse": 0.0022084449092495844
+        },
+        "normal_1x": {
+          "missing_mse": 0.0026812724774051546,
+          "masked_gradient_mse": 0.0026525245844109266
+        },
+        "oracle_1x": {
+          "missing_mse": 0.0026812724774051546,
+          "masked_gradient_mse": 0.0026525245844109266
+        },
+        "normal_4x": {
+          "missing_mse": 0.0026812724774051546,
+          "masked_gradient_mse": 0.0026525245844109266
+        },
+        "oracle_4x": {
+          "missing_mse": 0.0026812724774051546,
+          "masked_gradient_mse": 0.0026525245844109266
+        },
+        "normal_16x": {
+          "missing_mse": 0.0026812724774051546,
+          "masked_gradient_mse": 0.0026525245844109266
+        },
+        "oracle_16x": {
+          "missing_mse": 0.0026812724774051546,
+          "masked_gradient_mse": 0.0026525245844109266
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.0020049532878418795
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.00018140738787683755
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.0007892560211985182
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.06042145590704512
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.06821035042893635
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.0656140522549726
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 11
+    },
+    {
+      "index": 8,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.02059823857079638,
+          "masked_gradient_mse": 0.010109585799294394
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.007680855908293205,
+          "masked_gradient_mse": 0.006711011081427532
+        },
+        "original_sihti3": {
+          "missing_mse": 0.013058337681429772,
+          "masked_gradient_mse": 0.0066471629754013065
+        },
+        "normal_1x": {
+          "missing_mse": 0.01647467047309952,
+          "masked_gradient_mse": 0.00848931152528472
+        },
+        "oracle_1x": {
+          "missing_mse": 0.01647467047309952,
+          "masked_gradient_mse": 0.00848931152528472
+        },
+        "normal_4x": {
+          "missing_mse": 0.016638321811344038,
+          "masked_gradient_mse": 0.00853867113681065
+        },
+        "oracle_4x": {
+          "missing_mse": 0.016638321811344038,
+          "masked_gradient_mse": 0.00853867113681065
+        },
+        "normal_16x": {
+          "missing_mse": 0.0257590547334684,
+          "masked_gradient_mse": 0.010260150731610811
+        },
+        "oracle_16x": {
+          "missing_mse": 0.024338728954821094,
+          "masked_gradient_mse": 0.009728870649082216
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.011380212661120733
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0003234043719156719
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.005851808516518202
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.03983657213447236
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.03466144166081547
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.03724900689764392
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 19
+    },
+    {
+      "index": 9,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.01249506760590477,
+          "masked_gradient_mse": 0.007677336871588372
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.00824863319668009,
+          "masked_gradient_mse": 0.007434696220493753
+        },
+        "original_sihti3": {
+          "missing_mse": 0.010471449098002364,
+          "masked_gradient_mse": 0.007031713723275647
+        },
+        "normal_1x": {
+          "missing_mse": 0.007838090841287152,
+          "masked_gradient_mse": 0.007230574114807247
+        },
+        "oracle_1x": {
+          "missing_mse": 0.007838090841287152,
+          "masked_gradient_mse": 0.007230574114807247
+        },
+        "normal_4x": {
+          "missing_mse": 0.007838090841287152,
+          "masked_gradient_mse": 0.007230574114807247
+        },
+        "oracle_4x": {
+          "missing_mse": 0.007838090841287152,
+          "masked_gradient_mse": 0.007230574114807247
+        },
+        "normal_16x": {
+          "missing_mse": 0.013752789212847305,
+          "masked_gradient_mse": 0.009515875105622856
+        },
+        "oracle_16x": {
+          "missing_mse": 0.013752789212847305,
+          "masked_gradient_mse": 0.009515875105622856
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 4,
+          "mse": 0.008242356704357226
+        },
+        "partially_observed": {
+          "count": 0,
+          "mse": null
+        },
+        "all_affected": {
+          "count": 4,
+          "mse": 0.008242356704357226
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 4,
+          "mse": 0.04220977708064768
+        },
+        "partially_observed": {
+          "count": 0,
+          "mse": null
+        },
+        "all_affected": {
+          "count": 4,
+          "mse": 0.04220977708064768
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 20
+    },
+    {
+      "index": 10,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.018609085621174037,
+          "masked_gradient_mse": 0.010478807435466737
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.012056567337507948,
+          "masked_gradient_mse": 0.010872494786963532
+        },
+        "original_sihti3": {
+          "missing_mse": 0.01648768421607079,
+          "masked_gradient_mse": 0.010579892972376947
+        },
+        "normal_1x": {
+          "missing_mse": 0.026473935718469364,
+          "masked_gradient_mse": 0.013182911826412784
+        },
+        "oracle_1x": {
+          "missing_mse": 0.026473935718469364,
+          "masked_gradient_mse": 0.013182911826412784
+        },
+        "normal_4x": {
+          "missing_mse": 0.026299537543098505,
+          "masked_gradient_mse": 0.013118577561384353
+        },
+        "oracle_4x": {
+          "missing_mse": 0.026299537543098505,
+          "masked_gradient_mse": 0.013118577561384353
+        },
+        "normal_16x": {
+          "missing_mse": 0.02627154895426987,
+          "masked_gradient_mse": 0.013795028964032046
+        },
+        "oracle_16x": {
+          "missing_mse": 0.02627154895426987,
+          "masked_gradient_mse": 0.013795028964032046
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.004430908433459545
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.004430908433459545
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.07662376612031095
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.07662376612031095
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 20
+    },
+    {
+      "index": 11,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.026823889133029983,
+          "masked_gradient_mse": 0.023749450756838295
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.019102690581458796,
+          "masked_gradient_mse": 0.0227011344370021
+        },
+        "original_sihti3": {
+          "missing_mse": 0.024355613332302108,
+          "masked_gradient_mse": 0.02464513401660928
+        },
+        "normal_1x": {
+          "missing_mse": 0.02019765948718944,
+          "masked_gradient_mse": 0.0238729307653927
+        },
+        "oracle_1x": {
+          "missing_mse": 0.02019765948718944,
+          "masked_gradient_mse": 0.0238729307653927
+        },
+        "normal_4x": {
+          "missing_mse": 0.020097239875019032,
+          "masked_gradient_mse": 0.023975759486326874
+        },
+        "oracle_4x": {
+          "missing_mse": 0.02019765948718944,
+          "masked_gradient_mse": 0.0238729307653927
+        },
+        "normal_16x": {
+          "missing_mse": 0.02003830401659296,
+          "masked_gradient_mse": 0.023884845661990575
+        },
+        "oracle_16x": {
+          "missing_mse": 0.02003830401659296,
+          "masked_gradient_mse": 0.023884845661990575
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.0014815797885015577
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0010194507713379235
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0010707984399116607
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.002921312839957433
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.02443852407157649
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.022047722823618818
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 1,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 25
+    },
+    {
+      "index": 12,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.027096196068390033,
+          "masked_gradient_mse": 0.020353389587685827
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.021141024282746126,
+          "masked_gradient_mse": 0.021113302216444793
+        },
+        "original_sihti3": {
+          "missing_mse": 0.025004502791367112,
+          "masked_gradient_mse": 0.01933028711303872
+        },
+        "normal_1x": {
+          "missing_mse": 0.02705863341149852,
+          "masked_gradient_mse": 0.02107244625414433
+        },
+        "oracle_1x": {
+          "missing_mse": 0.02705863341149852,
+          "masked_gradient_mse": 0.02107244625414433
+        },
+        "normal_4x": {
+          "missing_mse": 0.02705863341149852,
+          "masked_gradient_mse": 0.02107244625414433
+        },
+        "oracle_4x": {
+          "missing_mse": 0.02705863341149852,
+          "masked_gradient_mse": 0.02107244625414433
+        },
+        "normal_16x": {
+          "missing_mse": 0.03851069883641821,
+          "masked_gradient_mse": 0.024431564573954432
+        },
+        "oracle_16x": {
+          "missing_mse": 0.02244496553106229,
+          "masked_gradient_mse": 0.02055575479701448
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.009184005188960506
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0035042393983125736
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.006344122293636539
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.03363545051404247
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.024260140866636883
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.028947795690339673
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 8
+      },
+      "oracle_codebook_unique_codes": 21
+    },
+    {
+      "index": 13,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.01067973545740484,
+          "masked_gradient_mse": 0.00543467170971323
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.006581005916608922,
+          "masked_gradient_mse": 0.005333522658914109
+        },
+        "original_sihti3": {
+          "missing_mse": 0.006901176168565023,
+          "masked_gradient_mse": 0.004848097229027701
+        },
+        "normal_1x": {
+          "missing_mse": 0.011502314499629903,
+          "masked_gradient_mse": 0.00615482721031588
+        },
+        "oracle_1x": {
+          "missing_mse": 0.011502314499629903,
+          "masked_gradient_mse": 0.00615482721031588
+        },
+        "normal_4x": {
+          "missing_mse": 0.011502314499629903,
+          "masked_gradient_mse": 0.00615482721031588
+        },
+        "oracle_4x": {
+          "missing_mse": 0.008144835334548236,
+          "masked_gradient_mse": 0.005810192940112276
+        },
+        "normal_16x": {
+          "missing_mse": 0.008144835334548236,
+          "masked_gradient_mse": 0.005810192940112276
+        },
+        "oracle_16x": {
+          "missing_mse": 0.007641909789209082,
+          "masked_gradient_mse": 0.005604585906581066
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.020187459023359833
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0009594276262746883
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.003095875559284149
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.024544960250517944
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.006417568582137485
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.008431723211957535
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 4,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 22
+    },
+    {
+      "index": 14,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.00898920906126852,
+          "masked_gradient_mse": 0.006875474985827459
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.0057182636885200425,
+          "masked_gradient_mse": 0.00604313410553049
+        },
+        "original_sihti3": {
+          "missing_mse": 0.006903847975035812,
+          "masked_gradient_mse": 0.006264852177659122
+        },
+        "normal_1x": {
+          "missing_mse": 0.008433362511981136,
+          "masked_gradient_mse": 0.007093408980244411
+        },
+        "oracle_1x": {
+          "missing_mse": 0.008433362511981136,
+          "masked_gradient_mse": 0.007093408980244411
+        },
+        "normal_4x": {
+          "missing_mse": 0.008388089492182418,
+          "masked_gradient_mse": 0.007064924750083358
+        },
+        "oracle_4x": {
+          "missing_mse": 0.008433362511981136,
+          "masked_gradient_mse": 0.007093408980244411
+        },
+        "normal_16x": {
+          "missing_mse": 0.008388089492182418,
+          "masked_gradient_mse": 0.007064924750083358
+        },
+        "oracle_16x": {
+          "missing_mse": 0.008388089492182418,
+          "masked_gradient_mse": 0.007064924750083358
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.004265700972334513
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00027611363693958937
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0022709073046370517
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.015777180340961358
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.009703251421351367
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.012740215881156362
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 1,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 13
+    },
+    {
+      "index": 15,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.017849320554490136,
+          "masked_gradient_mse": 0.010388207231153652
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.009843751996536448,
+          "masked_gradient_mse": 0.008637674840868559
+        },
+        "original_sihti3": {
+          "missing_mse": 0.01487958280863822,
+          "masked_gradient_mse": 0.00955236860948184
+        },
+        "normal_1x": {
+          "missing_mse": 0.01907631043299127,
+          "masked_gradient_mse": 0.012801411216070015
+        },
+        "oracle_1x": {
+          "missing_mse": 0.01907631043299127,
+          "masked_gradient_mse": 0.012801411216070015
+        },
+        "normal_4x": {
+          "missing_mse": 0.03150701163158305,
+          "masked_gradient_mse": 0.0149184350535476
+        },
+        "oracle_4x": {
+          "missing_mse": 0.03150701163158305,
+          "masked_gradient_mse": 0.0149184350535476
+        },
+        "normal_16x": {
+          "missing_mse": 0.014836778950891064,
+          "masked_gradient_mse": 0.011656441043863106
+        },
+        "oracle_16x": {
+          "missing_mse": 0.013124901389634288,
+          "masked_gradient_mse": 0.010720902374148708
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.014049853872635477
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.003955043264082863
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.007319980133600402
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.030156514598242964
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.03982377800404567
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.0366013568687781
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 2
+      },
+      "oracle_codebook_unique_codes": 19
+    },
+    {
+      "index": 16,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.007618644475695965,
+          "masked_gradient_mse": 0.005062141657484607
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.00461890213639247,
+          "masked_gradient_mse": 0.004599687028257366
+        },
+        "original_sihti3": {
+          "missing_mse": 0.008158024982627488,
+          "masked_gradient_mse": 0.005332083982234031
+        },
+        "normal_1x": {
+          "missing_mse": 0.010441718766691484,
+          "masked_gradient_mse": 0.005923909117705555
+        },
+        "oracle_1x": {
+          "missing_mse": 0.010441718766691484,
+          "masked_gradient_mse": 0.005923909117705555
+        },
+        "normal_4x": {
+          "missing_mse": 0.010441718766691484,
+          "masked_gradient_mse": 0.005923909117705555
+        },
+        "oracle_4x": {
+          "missing_mse": 0.010441718766691484,
+          "masked_gradient_mse": 0.005923909117705555
+        },
+        "normal_16x": {
+          "missing_mse": 0.009646970943325617,
+          "masked_gradient_mse": 0.005882131730238759
+        },
+        "oracle_16x": {
+          "missing_mse": 0.009646970943325617,
+          "masked_gradient_mse": 0.005882131730238759
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.004855292498237321
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00021501024833179603
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0025351513732845585
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.020666925036189176
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.020144919633994257
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.020405922335091718
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 14
+    },
+    {
+      "index": 17,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.03539813609903798,
+          "masked_gradient_mse": 0.01721758196479675
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.015995377658881996,
+          "masked_gradient_mse": 0.017192817778194022
+        },
+        "original_sihti3": {
+          "missing_mse": 0.027038269880844783,
+          "masked_gradient_mse": 0.01679912393500127
+        },
+        "normal_1x": {
+          "missing_mse": 0.028339284655968734,
+          "masked_gradient_mse": 0.02001377843505566
+        },
+        "oracle_1x": {
+          "missing_mse": 0.028339284655968734,
+          "masked_gradient_mse": 0.02001377843505566
+        },
+        "normal_4x": {
+          "missing_mse": 0.028339284655968734,
+          "masked_gradient_mse": 0.02001377843505566
+        },
+        "oracle_4x": {
+          "missing_mse": 0.028339284655968734,
+          "masked_gradient_mse": 0.02001377843505566
+        },
+        "normal_16x": {
+          "missing_mse": 0.028339284655968734,
+          "masked_gradient_mse": 0.02001377843505566
+        },
+        "oracle_16x": {
+          "missing_mse": 0.028339284655968734,
+          "masked_gradient_mse": 0.02001377843505566
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.018044324386055487
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.0015690326103717453
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.007060796535599659
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.02958872142702275
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.0152724696189655
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.020044553554984582
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 23
+    },
+    {
+      "index": 18,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.02855906692449476,
+          "masked_gradient_mse": 0.019320410838233753
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.011102647566945605,
+          "masked_gradient_mse": 0.014768602344850256
+        },
+        "original_sihti3": {
+          "missing_mse": 0.018985049862421798,
+          "masked_gradient_mse": 0.01578110028556422
+        },
+        "normal_1x": {
+          "missing_mse": 0.024030646889262774,
+          "masked_gradient_mse": 0.01955261809316375
+        },
+        "oracle_1x": {
+          "missing_mse": 0.024030646889262774,
+          "masked_gradient_mse": 0.01955261809316375
+        },
+        "normal_4x": {
+          "missing_mse": 0.027771636148396665,
+          "masked_gradient_mse": 0.02057462046935494
+        },
+        "oracle_4x": {
+          "missing_mse": 0.027771636148396665,
+          "masked_gradient_mse": 0.02057462046935494
+        },
+        "normal_16x": {
+          "missing_mse": 0.027175456700109735,
+          "masked_gradient_mse": 0.02029635605129771
+        },
+        "oracle_16x": {
+          "missing_mse": 0.029493275285370418,
+          "masked_gradient_mse": 0.021168070394431197
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.01961503504407904
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00024938669044005814
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.009932210867259548
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.017736928101604314
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.06157319340457554
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.03965506075308993
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 7
+      },
+      "oracle_codebook_unique_codes": 24
+    },
+    {
+      "index": 19,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.01988703958142357,
+          "masked_gradient_mse": 0.019809978410772547
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.011003400533590335,
+          "masked_gradient_mse": 0.013693088198121988
+        },
+        "original_sihti3": {
+          "missing_mse": 0.018600723915160402,
+          "masked_gradient_mse": 0.01946231503422397
+        },
+        "normal_1x": {
+          "missing_mse": 0.017277335158035707,
+          "masked_gradient_mse": 0.017871787160868284
+        },
+        "oracle_1x": {
+          "missing_mse": 0.017277335158035707,
+          "masked_gradient_mse": 0.017871787160868284
+        },
+        "normal_4x": {
+          "missing_mse": 0.017277335158035707,
+          "masked_gradient_mse": 0.017871787160868284
+        },
+        "oracle_4x": {
+          "missing_mse": 0.017277335158035707,
+          "masked_gradient_mse": 0.017871787160868284
+        },
+        "normal_16x": {
+          "missing_mse": 0.017277335158035707,
+          "masked_gradient_mse": 0.017871787160868284
+        },
+        "oracle_16x": {
+          "missing_mse": 0.017277335158035707,
+          "masked_gradient_mse": 0.017871787160868284
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 4,
+          "mse": 0.0007312240694111167
+        },
+        "partially_observed": {
+          "count": 0,
+          "mse": null
+        },
+        "all_affected": {
+          "count": 4,
+          "mse": 0.0007312240694111167
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 4,
+          "mse": 0.00938447344933547
+        },
+        "partially_observed": {
+          "count": 0,
+          "mse": null
+        },
+        "all_affected": {
+          "count": 4,
+          "mse": 0.00938447344933547
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 11
+    },
+    {
+      "index": 20,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.022667538591049825,
+          "masked_gradient_mse": 0.01688275167191823
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.01873945658573406,
+          "masked_gradient_mse": 0.01677200184695145
+        },
+        "original_sihti3": {
+          "missing_mse": 0.02519309418444258,
+          "masked_gradient_mse": 0.017019957757215654
+        },
+        "normal_1x": {
+          "missing_mse": 0.028855384654153004,
+          "masked_gradient_mse": 0.0187073848247567
+        },
+        "oracle_1x": {
+          "missing_mse": 0.028855384654153004,
+          "masked_gradient_mse": 0.0187073848247567
+        },
+        "normal_4x": {
+          "missing_mse": 0.02663927679325049,
+          "masked_gradient_mse": 0.018303100207625413
+        },
+        "oracle_4x": {
+          "missing_mse": 0.02663927679325049,
+          "masked_gradient_mse": 0.018303100207625413
+        },
+        "normal_16x": {
+          "missing_mse": 0.026022051523909295,
+          "masked_gradient_mse": 0.017961833768914998
+        },
+        "oracle_16x": {
+          "missing_mse": 0.023952861485047654,
+          "masked_gradient_mse": 0.017559495935069894
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.014012655003171188
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0009655413300535284
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.007489098166612359
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.10274291973542131
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.08309240285883851
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0929176612971299
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 3
+      },
+      "oracle_codebook_unique_codes": 12
+    },
+    {
+      "index": 21,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.015736380986314698,
+          "masked_gradient_mse": 0.009360529297229192
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.0103862399707279,
+          "masked_gradient_mse": 0.010173307861942905
+        },
+        "original_sihti3": {
+          "missing_mse": 0.020692861519567604,
+          "masked_gradient_mse": 0.009725383614539316
+        },
+        "normal_1x": {
+          "missing_mse": 0.03525897016512125,
+          "masked_gradient_mse": 0.01354229822167922
+        },
+        "oracle_1x": {
+          "missing_mse": 0.02778631182979851,
+          "masked_gradient_mse": 0.012266197999835245
+        },
+        "normal_4x": {
+          "missing_mse": 0.0298678529840824,
+          "masked_gradient_mse": 0.012646559403232541
+        },
+        "oracle_4x": {
+          "missing_mse": 0.01840356843730756,
+          "masked_gradient_mse": 0.011222412633654671
+        },
+        "normal_16x": {
+          "missing_mse": 0.0298678529840824,
+          "masked_gradient_mse": 0.012646559403232541
+        },
+        "oracle_16x": {
+          "missing_mse": 0.016991544423048507,
+          "masked_gradient_mse": 0.011249695978695132
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.028986557292164174
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.003953610449348803
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.012297926063620594
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.12013254343569113
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.05551995450424281
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.07705748414805892
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 3,
+        "4x": 4,
+        "16x": 5
+      },
+      "oracle_codebook_unique_codes": 12
+    },
+    {
+      "index": 22,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.02466463390779538,
+          "masked_gradient_mse": 0.0177861913824214
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.018217077945936716,
+          "masked_gradient_mse": 0.01734015737431766
+        },
+        "original_sihti3": {
+          "missing_mse": 0.021774801774764964,
+          "masked_gradient_mse": 0.01697765175532538
+        },
+        "normal_1x": {
+          "missing_mse": 0.03553464941574151,
+          "masked_gradient_mse": 0.022608874115134563
+        },
+        "oracle_1x": {
+          "missing_mse": 0.03553464941574151,
+          "masked_gradient_mse": 0.022608874115134563
+        },
+        "normal_4x": {
+          "missing_mse": 0.03701313802596851,
+          "masked_gradient_mse": 0.02237468840100751
+        },
+        "oracle_4x": {
+          "missing_mse": 0.035871786560926516,
+          "masked_gradient_mse": 0.021643517226858682
+        },
+        "normal_16x": {
+          "missing_mse": 0.03814724433542416,
+          "masked_gradient_mse": 0.022565646981277727
+        },
+        "oracle_16x": {
+          "missing_mse": 0.037779801812773524,
+          "masked_gradient_mse": 0.02255867251046132
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.021528574073527942
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0007414873535241349
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.011135030713526037
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.02311320821006051
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.035522007677624395
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.029317607943842455
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 2,
+        "16x": 3
+      },
+      "oracle_codebook_unique_codes": 24
+    },
+    {
+      "index": 23,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.012075701642818881,
+          "masked_gradient_mse": 0.010243956864246735
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.008544010035628616,
+          "masked_gradient_mse": 0.008864676712528505
+        },
+        "original_sihti3": {
+          "missing_mse": 0.012393067627268411,
+          "masked_gradient_mse": 0.01020881377109257
+        },
+        "normal_1x": {
+          "missing_mse": 0.012669705652991848,
+          "masked_gradient_mse": 0.011469100650306556
+        },
+        "oracle_1x": {
+          "missing_mse": 0.012669705652991848,
+          "masked_gradient_mse": 0.011469100650306556
+        },
+        "normal_4x": {
+          "missing_mse": 0.0156872086029995,
+          "masked_gradient_mse": 0.01120459992039836
+        },
+        "oracle_4x": {
+          "missing_mse": 0.012669705652991848,
+          "masked_gradient_mse": 0.011469100650306556
+        },
+        "normal_16x": {
+          "missing_mse": 0.015098793512670301,
+          "masked_gradient_mse": 0.010810029214662223
+        },
+        "oracle_16x": {
+          "missing_mse": 0.01128192574558291,
+          "masked_gradient_mse": 0.010900723950957307
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.0006065315821141691
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0014231016913513644
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0013323716792138984
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.001783011931904055
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.002417307209828189
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0023468299567255078
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 3,
+        "16x": 3
+      },
+      "oracle_codebook_unique_codes": 16
+    },
+    {
+      "index": 24,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.01739082425499681,
+          "masked_gradient_mse": 0.010846535317878131
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.010702356865826903,
+          "masked_gradient_mse": 0.009184859326422802
+        },
+        "original_sihti3": {
+          "missing_mse": 0.01026254104506831,
+          "masked_gradient_mse": 0.008231229376905217
+        },
+        "normal_1x": {
+          "missing_mse": 0.017902580149817555,
+          "masked_gradient_mse": 0.010763226181259402
+        },
+        "oracle_1x": {
+          "missing_mse": 0.017902580149817555,
+          "masked_gradient_mse": 0.010763226181259402
+        },
+        "normal_4x": {
+          "missing_mse": 0.01563644003846194,
+          "masked_gradient_mse": 0.010095918371108256
+        },
+        "oracle_4x": {
+          "missing_mse": 0.01563644003846194,
+          "masked_gradient_mse": 0.010095918371108256
+        },
+        "normal_16x": {
+          "missing_mse": 0.01563644003846194,
+          "masked_gradient_mse": 0.010095918371108256
+        },
+        "oracle_16x": {
+          "missing_mse": 0.01563644003846194,
+          "masked_gradient_mse": 0.010095918371108256
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.010152478822604144
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0004008545379412399
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.005276666680272691
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.05271731382886186
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.07320958506163718
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.06296344944524952
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 11
+    },
+    {
+      "index": 25,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.05174850650882169,
+          "masked_gradient_mse": 0.028785029435299037
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.02522307467767547,
+          "masked_gradient_mse": 0.023367929306639626
+        },
+        "original_sihti3": {
+          "missing_mse": 0.049505510036525646,
+          "masked_gradient_mse": 0.030119857561940886
+        },
+        "normal_1x": {
+          "missing_mse": 0.05208534842656875,
+          "masked_gradient_mse": 0.03031907427360135
+        },
+        "oracle_1x": {
+          "missing_mse": 0.05208534842656875,
+          "masked_gradient_mse": 0.03031907427360135
+        },
+        "normal_4x": {
+          "missing_mse": 0.04607062838047824,
+          "masked_gradient_mse": 0.029948693620806297
+        },
+        "oracle_4x": {
+          "missing_mse": 0.04607062838047824,
+          "masked_gradient_mse": 0.029948693620806297
+        },
+        "normal_16x": {
+          "missing_mse": 0.04587507821882773,
+          "masked_gradient_mse": 0.02961487628674162
+        },
+        "oracle_16x": {
+          "missing_mse": 0.050937837825161286,
+          "masked_gradient_mse": 0.030125578306120185
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.01274889010489097
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.006120548507642252
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.006857030907336554
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.0035510554211927482
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.04408742133030989
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.039583380673741314
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 5
+      },
+      "oracle_codebook_unique_codes": 18
+    },
+    {
+      "index": 26,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.024252870961348236,
+          "masked_gradient_mse": 0.023081360832006875
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.01962687678546308,
+          "masked_gradient_mse": 0.021718896604631197
+        },
+        "original_sihti3": {
+          "missing_mse": 0.027328782540949625,
+          "masked_gradient_mse": 0.023156246598939154
+        },
+        "normal_1x": {
+          "missing_mse": 0.0263670511019621,
+          "masked_gradient_mse": 0.023721140397776397
+        },
+        "oracle_1x": {
+          "missing_mse": 0.0263670511019621,
+          "masked_gradient_mse": 0.023721140397776397
+        },
+        "normal_4x": {
+          "missing_mse": 0.027766700208900937,
+          "masked_gradient_mse": 0.024358100258625382
+        },
+        "oracle_4x": {
+          "missing_mse": 0.027766700208900937,
+          "masked_gradient_mse": 0.024358100258625382
+        },
+        "normal_16x": {
+          "missing_mse": 0.026305572775601138,
+          "masked_gradient_mse": 0.02459157590692117
+        },
+        "oracle_16x": {
+          "missing_mse": 0.025479147798832934,
+          "masked_gradient_mse": 0.024311303870290665
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.005447015051056618
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0008457326236188698
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0031463738373377435
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.036451181336814506
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.03538938029435143
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.035920280815582975
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 2
+      },
+      "oracle_codebook_unique_codes": 10
+    },
+    {
+      "index": 27,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.02697914542243438,
+          "masked_gradient_mse": 0.01264286664489571
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.012695563536962773,
+          "masked_gradient_mse": 0.010412596479986151
+        },
+        "original_sihti3": {
+          "missing_mse": 0.019599557816169753,
+          "masked_gradient_mse": 0.012019639944068697
+        },
+        "normal_1x": {
+          "missing_mse": 0.03349103755369734,
+          "masked_gradient_mse": 0.013099468509182845
+        },
+        "oracle_1x": {
+          "missing_mse": 0.03349103755369734,
+          "masked_gradient_mse": 0.013099468509182845
+        },
+        "normal_4x": {
+          "missing_mse": 0.03349103755369734,
+          "masked_gradient_mse": 0.013099468509182845
+        },
+        "oracle_4x": {
+          "missing_mse": 0.03349103755369734,
+          "masked_gradient_mse": 0.013099468509182845
+        },
+        "normal_16x": {
+          "missing_mse": 0.03382024789709262,
+          "masked_gradient_mse": 0.01356771386678808
+        },
+        "oracle_16x": {
+          "missing_mse": 0.03349103755369734,
+          "masked_gradient_mse": 0.013099468509182845
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.01153287437023111
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0027017725621987622
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0036830060964245783
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.00023481510841502976
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.019331356094821617
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.017209518207443108
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 20
+    },
+    {
+      "index": 28,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.03143964751820453,
+          "masked_gradient_mse": 0.023687980366495297
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.020086857639462826,
+          "masked_gradient_mse": 0.021497360516159993
+        },
+        "original_sihti3": {
+          "missing_mse": 0.033447469449804215,
+          "masked_gradient_mse": 0.024131869326355252
+        },
+        "normal_1x": {
+          "missing_mse": 0.03454094339015964,
+          "masked_gradient_mse": 0.024657720379604623
+        },
+        "oracle_1x": {
+          "missing_mse": 0.03454094339015964,
+          "masked_gradient_mse": 0.024657720379604623
+        },
+        "normal_4x": {
+          "missing_mse": 0.03668067831691897,
+          "masked_gradient_mse": 0.025421278464098116
+        },
+        "oracle_4x": {
+          "missing_mse": 0.03668067831691897,
+          "masked_gradient_mse": 0.025421278464098116
+        },
+        "normal_16x": {
+          "missing_mse": 0.034653512870190126,
+          "masked_gradient_mse": 0.024771512554598037
+        },
+        "oracle_16x": {
+          "missing_mse": 0.03454094339015964,
+          "masked_gradient_mse": 0.024657720379604623
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.003667731122969784
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.003667731122969784
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.01918683654158699
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.01918683654158699
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 17
+    },
+    {
+      "index": 29,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.047783418208416556,
+          "masked_gradient_mse": 0.05820894600879534
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.04212474723874862,
+          "masked_gradient_mse": 0.054395611828709896
+        },
+        "original_sihti3": {
+          "missing_mse": 0.04606723247125995,
+          "masked_gradient_mse": 0.057945790302595356
+        },
+        "normal_1x": {
+          "missing_mse": 0.05818586735783949,
+          "masked_gradient_mse": 0.06108971780625458
+        },
+        "oracle_1x": {
+          "missing_mse": 0.05818586735783949,
+          "masked_gradient_mse": 0.06108971780625458
+        },
+        "normal_4x": {
+          "missing_mse": 0.05785027925495506,
+          "masked_gradient_mse": 0.06224908701411891
+        },
+        "oracle_4x": {
+          "missing_mse": 0.052709751989772916,
+          "masked_gradient_mse": 0.06028885378540844
+        },
+        "normal_16x": {
+          "missing_mse": 0.049351754542574816,
+          "masked_gradient_mse": 0.05989685958097576
+        },
+        "oracle_16x": {
+          "missing_mse": 0.049351754542574816,
+          "masked_gradient_mse": 0.05989685958097576
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.0029135353887590545
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0011532734310065777
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.001348858092979075
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.007331022190771756
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.022165884639768037
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.020517566589879563
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 5,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 18
+    },
+    {
+      "index": 30,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.019044341932633223,
+          "masked_gradient_mse": 0.013985678784839611
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.011770799361226828,
+          "masked_gradient_mse": 0.012888937591439366
+        },
+        "original_sihti3": {
+          "missing_mse": 0.016912509675876465,
+          "masked_gradient_mse": 0.013241821168486025
+        },
+        "normal_1x": {
+          "missing_mse": 0.01975634850593385,
+          "masked_gradient_mse": 0.014991073806135995
+        },
+        "oracle_1x": {
+          "missing_mse": 0.01975634850593385,
+          "masked_gradient_mse": 0.014991073806135995
+        },
+        "normal_4x": {
+          "missing_mse": 0.019081824514326343,
+          "masked_gradient_mse": 0.014816149432548047
+        },
+        "oracle_4x": {
+          "missing_mse": 0.019081824514326343,
+          "masked_gradient_mse": 0.014816149432548047
+        },
+        "normal_16x": {
+          "missing_mse": 0.01917178843884777,
+          "masked_gradient_mse": 0.014806604310449249
+        },
+        "oracle_16x": {
+          "missing_mse": 0.01710758077251136,
+          "masked_gradient_mse": 0.014732028058876452
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.004167262750808386
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.004167262750808386
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.03536581233631313
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.03536581233631313
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 5
+      },
+      "oracle_codebook_unique_codes": 18
+    },
+    {
+      "index": 31,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.037970013807319056,
+          "masked_gradient_mse": 0.040803220952448295
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.03128308899455842,
+          "masked_gradient_mse": 0.03893452503102479
+        },
+        "original_sihti3": {
+          "missing_mse": 0.03735400916211679,
+          "masked_gradient_mse": 0.0419603115626007
+        },
+        "normal_1x": {
+          "missing_mse": 0.03953785559901542,
+          "masked_gradient_mse": 0.0430922471612524
+        },
+        "oracle_1x": {
+          "missing_mse": 0.03953785559901542,
+          "masked_gradient_mse": 0.0430922471612524
+        },
+        "normal_4x": {
+          "missing_mse": 0.039691282535285116,
+          "masked_gradient_mse": 0.043332392526242484
+        },
+        "oracle_4x": {
+          "missing_mse": 0.039691282535285116,
+          "masked_gradient_mse": 0.043332392526242484
+        },
+        "normal_16x": {
+          "missing_mse": 0.03821549621646133,
+          "masked_gradient_mse": 0.042222640257792925
+        },
+        "oracle_16x": {
+          "missing_mse": 0.042134447363005104,
+          "masked_gradient_mse": 0.04300194963705755
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.0012042575946953971
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0036539852383602306
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.003381793277953027
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.003468314010358107
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.023199789145250567
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.021007403019151407
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 3
+      },
+      "oracle_codebook_unique_codes": 22
+    },
+    {
+      "index": 32,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.015588954349666473,
+          "masked_gradient_mse": 0.006851217745706113
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.008816401669094512,
+          "masked_gradient_mse": 0.006511386405716062
+        },
+        "original_sihti3": {
+          "missing_mse": 0.018922849218802506,
+          "masked_gradient_mse": 0.00734268875309821
+        },
+        "normal_1x": {
+          "missing_mse": 0.021538768167298876,
+          "masked_gradient_mse": 0.01134529891783911
+        },
+        "oracle_1x": {
+          "missing_mse": 0.021538768167298876,
+          "masked_gradient_mse": 0.01134529891783911
+        },
+        "normal_4x": {
+          "missing_mse": 0.02069698648330383,
+          "masked_gradient_mse": 0.011041151770275582
+        },
+        "oracle_4x": {
+          "missing_mse": 0.01940803728106688,
+          "masked_gradient_mse": 0.010329516099399973
+        },
+        "normal_16x": {
+          "missing_mse": 0.02373818210952273,
+          "masked_gradient_mse": 0.01138379791360195
+        },
+        "oracle_16x": {
+          "missing_mse": 0.013815141619658484,
+          "masked_gradient_mse": 0.008524661092359106
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.010793401557054803
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0008278715539255068
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.005810636555490156
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.08492218541653519
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.10340394861628197
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.09416306701640859
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 2,
+        "16x": 7
+      },
+      "oracle_codebook_unique_codes": 20
+    },
+    {
+      "index": 33,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.05436771660798298,
+          "masked_gradient_mse": 0.04877807335344854
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.031744231309094505,
+          "masked_gradient_mse": 0.041601116141191136
+        },
+        "original_sihti3": {
+          "missing_mse": 0.04415471094857419,
+          "masked_gradient_mse": 0.04318565232442769
+        },
+        "normal_1x": {
+          "missing_mse": 0.07014915255586118,
+          "masked_gradient_mse": 0.05578521207150092
+        },
+        "oracle_1x": {
+          "missing_mse": 0.07014915255586118,
+          "masked_gradient_mse": 0.05578521207150092
+        },
+        "normal_4x": {
+          "missing_mse": 0.07014915255586118,
+          "masked_gradient_mse": 0.05578521207150092
+        },
+        "oracle_4x": {
+          "missing_mse": 0.07014915255586118,
+          "masked_gradient_mse": 0.05578521207150092
+        },
+        "normal_16x": {
+          "missing_mse": 0.054193315795681596,
+          "masked_gradient_mse": 0.05148609903072727
+        },
+        "oracle_16x": {
+          "missing_mse": 0.054193315795681596,
+          "masked_gradient_mse": 0.05148609903072727
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.008653976266399915
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.002317694854032464
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.0044297886581549486
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.008721182808269348
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.040303342163924685
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.029775955712039573
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 17
+    },
+    {
+      "index": 34,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.030974742162895568,
+          "masked_gradient_mse": 0.024769784410148984
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.022205867280004305,
+          "masked_gradient_mse": 0.023378174737495237
+        },
+        "original_sihti3": {
+          "missing_mse": 0.028356328885926624,
+          "masked_gradient_mse": 0.023603429535740877
+        },
+        "normal_1x": {
+          "missing_mse": 0.04298212038233999,
+          "masked_gradient_mse": 0.03036226589027783
+        },
+        "oracle_1x": {
+          "missing_mse": 0.04298212038233999,
+          "masked_gradient_mse": 0.03036226589027783
+        },
+        "normal_4x": {
+          "missing_mse": 0.04298212038233999,
+          "masked_gradient_mse": 0.03036226589027783
+        },
+        "oracle_4x": {
+          "missing_mse": 0.04298212038233999,
+          "masked_gradient_mse": 0.03036226589027783
+        },
+        "normal_16x": {
+          "missing_mse": 0.04131411140185892,
+          "masked_gradient_mse": 0.028935366870138965
+        },
+        "oracle_16x": {
+          "missing_mse": 0.034812042968305465,
+          "masked_gradient_mse": 0.027655873723991514
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.01764340324445174
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0023805133303685722
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.010011958287410156
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.057453625413972774
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.041601946977453175
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.04952778619571298
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 5
+      },
+      "oracle_codebook_unique_codes": 19
+    },
+    {
+      "index": 35,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.02380549904677301,
+          "masked_gradient_mse": 0.018270235399808297
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.0163538053564407,
+          "masked_gradient_mse": 0.01808999529124126
+        },
+        "original_sihti3": {
+          "missing_mse": 0.021042865698533725,
+          "masked_gradient_mse": 0.01787433337180238
+        },
+        "normal_1x": {
+          "missing_mse": 0.026220202608926414,
+          "masked_gradient_mse": 0.01925520822548419
+        },
+        "oracle_1x": {
+          "missing_mse": 0.026220202608926414,
+          "masked_gradient_mse": 0.01925520822548419
+        },
+        "normal_4x": {
+          "missing_mse": 0.026220202608926414,
+          "masked_gradient_mse": 0.01925520822548419
+        },
+        "oracle_4x": {
+          "missing_mse": 0.026220202608926414,
+          "masked_gradient_mse": 0.01925520822548419
+        },
+        "normal_16x": {
+          "missing_mse": 0.024656742779786973,
+          "masked_gradient_mse": 0.019474986817631223
+        },
+        "oracle_16x": {
+          "missing_mse": 0.024656742779786973,
+          "masked_gradient_mse": 0.019474986817631223
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.0258470693654647
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.0003047501516492433
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.008818856556254397
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.07003064823724955
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.0505265540326104
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.05702791876749012
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 13
+    },
+    {
+      "index": 36,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.031491987236356954,
+          "masked_gradient_mse": 0.025176256105118776
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.021078134410632426,
+          "masked_gradient_mse": 0.021098554191748237
+        },
+        "original_sihti3": {
+          "missing_mse": 0.027466642441708843,
+          "masked_gradient_mse": 0.02234628536674607
+        },
+        "normal_1x": {
+          "missing_mse": 0.03934362969856936,
+          "masked_gradient_mse": 0.02842475141796865
+        },
+        "oracle_1x": {
+          "missing_mse": 0.03934362969856936,
+          "masked_gradient_mse": 0.02842475141796865
+        },
+        "normal_4x": {
+          "missing_mse": 0.03377500842708261,
+          "masked_gradient_mse": 0.026661609290047954
+        },
+        "oracle_4x": {
+          "missing_mse": 0.03361469434380087,
+          "masked_gradient_mse": 0.026603380009894043
+        },
+        "normal_16x": {
+          "missing_mse": 0.035846806876354956,
+          "masked_gradient_mse": 0.02724661759542057
+        },
+        "oracle_16x": {
+          "missing_mse": 0.03303898470169462,
+          "masked_gradient_mse": 0.026175328371553595
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.006179360757292999
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0007026501457184743
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0034410054515057365
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.039317015909745796
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.028166258404596058
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.03374163715717093
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 1,
+        "16x": 5
+      },
+      "oracle_codebook_unique_codes": 20
+    },
+    {
+      "index": 37,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0373121006099793,
+          "masked_gradient_mse": 0.023202858916105698
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.021923292126060603,
+          "masked_gradient_mse": 0.019852590084747615
+        },
+        "original_sihti3": {
+          "missing_mse": 0.037906236590847193,
+          "masked_gradient_mse": 0.02382135561954331
+        },
+        "normal_1x": {
+          "missing_mse": 0.04184649521979487,
+          "masked_gradient_mse": 0.023897576524987245
+        },
+        "oracle_1x": {
+          "missing_mse": 0.04184649521979487,
+          "masked_gradient_mse": 0.023897576524987245
+        },
+        "normal_4x": {
+          "missing_mse": 0.041747376515789913,
+          "masked_gradient_mse": 0.023642440598870405
+        },
+        "oracle_4x": {
+          "missing_mse": 0.0319720311136001,
+          "masked_gradient_mse": 0.022023517647963002
+        },
+        "normal_16x": {
+          "missing_mse": 0.033786349892764134,
+          "masked_gradient_mse": 0.02338372955932751
+        },
+        "oracle_16x": {
+          "missing_mse": 0.0319720311136001,
+          "masked_gradient_mse": 0.022023517647963002
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.003403976684237681
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.012014991174344715
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.011058211786555045
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.08496906084171209
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.07430025070655011
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.07548567405490143
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 2,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 16
+    },
+    {
+      "index": 38,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.028311042310093147,
+          "masked_gradient_mse": 0.020877489013748675
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.01698370695232056,
+          "masked_gradient_mse": 0.01746217101703062
+        },
+        "original_sihti3": {
+          "missing_mse": 0.03431227501531769,
+          "masked_gradient_mse": 0.022224972030564304
+        },
+        "normal_1x": {
+          "missing_mse": 0.023297759372060512,
+          "masked_gradient_mse": 0.02047474727001133
+        },
+        "oracle_1x": {
+          "missing_mse": 0.023297759372060512,
+          "masked_gradient_mse": 0.02047474727001133
+        },
+        "normal_4x": {
+          "missing_mse": 0.023297759372060512,
+          "masked_gradient_mse": 0.02047474727001133
+        },
+        "oracle_4x": {
+          "missing_mse": 0.023998325163587696,
+          "masked_gradient_mse": 0.02046723211409729
+        },
+        "normal_16x": {
+          "missing_mse": 0.02578581499896803,
+          "masked_gradient_mse": 0.020385492857840387
+        },
+        "oracle_16x": {
+          "missing_mse": 0.02294450781938412,
+          "masked_gradient_mse": 0.019970152811391056
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.01791072666804091
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0008717165342404941
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.009391221601140701
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.08111433128245304
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.07612557808188286
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.07861995468216795
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 2
+      },
+      "oracle_codebook_unique_codes": 14
+    },
+    {
+      "index": 39,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.02300796833761141,
+          "masked_gradient_mse": 0.023730372850714332
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.02028304959146368,
+          "masked_gradient_mse": 0.025210151871494682
+        },
+        "original_sihti3": {
+          "missing_mse": 0.018469265533945876,
+          "masked_gradient_mse": 0.022717479144245458
+        },
+        "normal_1x": {
+          "missing_mse": 0.026273597780613528,
+          "masked_gradient_mse": 0.027828068938605524
+        },
+        "oracle_1x": {
+          "missing_mse": 0.026273597780613528,
+          "masked_gradient_mse": 0.027828068938605524
+        },
+        "normal_4x": {
+          "missing_mse": 0.026295247260044098,
+          "masked_gradient_mse": 0.02776573856704714
+        },
+        "oracle_4x": {
+          "missing_mse": 0.026295247260044098,
+          "masked_gradient_mse": 0.02776573856704714
+        },
+        "normal_16x": {
+          "missing_mse": 0.026295247260044098,
+          "masked_gradient_mse": 0.02776573856704714
+        },
+        "oracle_16x": {
+          "missing_mse": 0.026295247260044098,
+          "masked_gradient_mse": 0.02776573856704714
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.008129901696722414
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.0010014905190156502
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.003377627578251238
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.05576049642738467
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.011353858498841853
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.026156071141689458
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 19
+    },
+    {
+      "index": 40,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.01798962283656211,
+          "masked_gradient_mse": 0.02075507158662531
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.015539730799830287,
+          "masked_gradient_mse": 0.020137989016453247
+        },
+        "original_sihti3": {
+          "missing_mse": 0.01586140928427578,
+          "masked_gradient_mse": 0.019206277788292273
+        },
+        "normal_1x": {
+          "missing_mse": 0.0235314924567791,
+          "masked_gradient_mse": 0.021494748709526237
+        },
+        "oracle_1x": {
+          "missing_mse": 0.0235314924567791,
+          "masked_gradient_mse": 0.021494748709526237
+        },
+        "normal_4x": {
+          "missing_mse": 0.021640211704096014,
+          "masked_gradient_mse": 0.02157488981168976
+        },
+        "oracle_4x": {
+          "missing_mse": 0.021640211704096014,
+          "masked_gradient_mse": 0.02157488981168976
+        },
+        "normal_16x": {
+          "missing_mse": 0.022948747827872158,
+          "masked_gradient_mse": 0.021401727310937684
+        },
+        "oracle_16x": {
+          "missing_mse": 0.02142588561882756,
+          "masked_gradient_mse": 0.021492710508073994
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.0022883830011980726
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00038154757301233077
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0013349652871052018
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.0034778593187303614
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0026408614702805658
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.003059360394505463
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 3
+      },
+      "oracle_codebook_unique_codes": 11
+    },
+    {
+      "index": 41,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.03238766899802751,
+          "masked_gradient_mse": 0.016929686078212068
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.015464030154700046,
+          "masked_gradient_mse": 0.011991512202369957
+        },
+        "original_sihti3": {
+          "missing_mse": 0.044329101893965106,
+          "masked_gradient_mse": 0.01927034715880515
+        },
+        "normal_1x": {
+          "missing_mse": 0.04645836246463472,
+          "masked_gradient_mse": 0.021569958009566927
+        },
+        "oracle_1x": {
+          "missing_mse": 0.04645836246463472,
+          "masked_gradient_mse": 0.021569958009566927
+        },
+        "normal_4x": {
+          "missing_mse": 0.04645836246463472,
+          "masked_gradient_mse": 0.021569958009566927
+        },
+        "oracle_4x": {
+          "missing_mse": 0.04645836246463472,
+          "masked_gradient_mse": 0.021569958009566927
+        },
+        "normal_16x": {
+          "missing_mse": 0.0388002011438776,
+          "masked_gradient_mse": 0.019230287131875915
+        },
+        "oracle_16x": {
+          "missing_mse": 0.039174941377111236,
+          "masked_gradient_mse": 0.01873403746125064
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.017240608457008845
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.003512428770338943
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0050377820688578216
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.0025860067253264153
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.027052245178491627
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.02433377423925105
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 4
+      },
+      "oracle_codebook_unique_codes": 14
+    },
+    {
+      "index": 42,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.03927598323125253,
+          "masked_gradient_mse": 0.031773330125115774
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.028420610545666403,
+          "masked_gradient_mse": 0.029025596810259312
+        },
+        "original_sihti3": {
+          "missing_mse": 0.040392433401127865,
+          "masked_gradient_mse": 0.03229305555913339
+        },
+        "normal_1x": {
+          "missing_mse": 0.04243143727928732,
+          "masked_gradient_mse": 0.03299194537274363
+        },
+        "oracle_1x": {
+          "missing_mse": 0.04243143727928732,
+          "masked_gradient_mse": 0.03299194537274363
+        },
+        "normal_4x": {
+          "missing_mse": 0.038627826393015985,
+          "masked_gradient_mse": 0.031677613948001886
+        },
+        "oracle_4x": {
+          "missing_mse": 0.038627826393015985,
+          "masked_gradient_mse": 0.031677613948001886
+        },
+        "normal_16x": {
+          "missing_mse": 0.03884807213450892,
+          "masked_gradient_mse": 0.03165525846579373
+        },
+        "oracle_16x": {
+          "missing_mse": 0.038627826393015985,
+          "masked_gradient_mse": 0.031677613948001886
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.0061464241306595875
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0009532519748503675
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.003549838052754978
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.01600148502403841
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.023206178765701226
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.01960383189486982
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 19
+    },
+    {
+      "index": 43,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.09474415394853758,
+          "masked_gradient_mse": 0.05123156220260884
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.045748885087831107,
+          "masked_gradient_mse": 0.041656580796962314
+        },
+        "original_sihti3": {
+          "missing_mse": 0.09696378171088009,
+          "masked_gradient_mse": 0.05053354200206679
+        },
+        "normal_1x": {
+          "missing_mse": 0.13065675082521372,
+          "masked_gradient_mse": 0.05736088060740385
+        },
+        "oracle_1x": {
+          "missing_mse": 0.13065675082521372,
+          "masked_gradient_mse": 0.05736088060740385
+        },
+        "normal_4x": {
+          "missing_mse": 0.13065675082521372,
+          "masked_gradient_mse": 0.05736088060740385
+        },
+        "oracle_4x": {
+          "missing_mse": 0.13065675082521372,
+          "masked_gradient_mse": 0.05736088060740385
+        },
+        "normal_16x": {
+          "missing_mse": 0.13188871423399887,
+          "masked_gradient_mse": 0.05709964550287842
+        },
+        "oracle_16x": {
+          "missing_mse": 0.08779736247556344,
+          "masked_gradient_mse": 0.05276640048668942
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.03632908099752436
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.015702170812615806
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.01799404972205009
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.02619010298140613
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.012676863078927415
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.014178334179202827
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 5
+      },
+      "oracle_codebook_unique_codes": 20
+    },
+    {
+      "index": 44,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.008639782660356914,
+          "masked_gradient_mse": 0.010807052570271404
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.007325061741245723,
+          "masked_gradient_mse": 0.010263066225444538
+        },
+        "original_sihti3": {
+          "missing_mse": 0.008858195952844797,
+          "masked_gradient_mse": 0.010889443868731781
+        },
+        "normal_1x": {
+          "missing_mse": 0.009503881873354962,
+          "masked_gradient_mse": 0.011209299738032044
+        },
+        "oracle_1x": {
+          "missing_mse": 0.009503881873354962,
+          "masked_gradient_mse": 0.011209299738032044
+        },
+        "normal_4x": {
+          "missing_mse": 0.009503881873354962,
+          "masked_gradient_mse": 0.011209299738032044
+        },
+        "oracle_4x": {
+          "missing_mse": 0.009503881873354962,
+          "masked_gradient_mse": 0.011209299738032044
+        },
+        "normal_16x": {
+          "missing_mse": 0.009503881873354962,
+          "masked_gradient_mse": 0.011209299738032044
+        },
+        "oracle_16x": {
+          "missing_mse": 0.009503881873354962,
+          "masked_gradient_mse": 0.011209299738032044
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.001018253726881223
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.001018253726881223
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.0040041643886539234
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0040041643886539234
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 6
+    },
+    {
+      "index": 45,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.039234429895054705,
+          "masked_gradient_mse": 0.02811086419547013
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.018225029900981852,
+          "masked_gradient_mse": 0.018503516169163292
+        },
+        "original_sihti3": {
+          "missing_mse": 0.04137819614591242,
+          "masked_gradient_mse": 0.027239015024391848
+        },
+        "normal_1x": {
+          "missing_mse": 0.03572415947928645,
+          "masked_gradient_mse": 0.026299244226282555
+        },
+        "oracle_1x": {
+          "missing_mse": 0.03572415947928645,
+          "masked_gradient_mse": 0.026299244226282555
+        },
+        "normal_4x": {
+          "missing_mse": 0.034792942064414564,
+          "masked_gradient_mse": 0.02580501626209603
+        },
+        "oracle_4x": {
+          "missing_mse": 0.034792942064414564,
+          "masked_gradient_mse": 0.02580501626209603
+        },
+        "normal_16x": {
+          "missing_mse": 0.038893626699077435,
+          "masked_gradient_mse": 0.029402421332198156
+        },
+        "oracle_16x": {
+          "missing_mse": 0.03716347365281593,
+          "masked_gradient_mse": 0.028690041284998247
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 1.1177011194212734e-05
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0025481504472136362
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0022662645098781445
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.025714133973585032
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.049199085612305835
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.04658964654133686
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 3
+      },
+      "oracle_codebook_unique_codes": 15
+    },
+    {
+      "index": 46,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.04124111502013676,
+          "masked_gradient_mse": 0.035326817940102194
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.031551752190482694,
+          "masked_gradient_mse": 0.034312590821937466
+        },
+        "original_sihti3": {
+          "missing_mse": 0.04448303418616053,
+          "masked_gradient_mse": 0.03631302653319894
+        },
+        "normal_1x": {
+          "missing_mse": 0.0537643853315241,
+          "masked_gradient_mse": 0.040135252505054314
+        },
+        "oracle_1x": {
+          "missing_mse": 0.0537643853315241,
+          "masked_gradient_mse": 0.040135252505054314
+        },
+        "normal_4x": {
+          "missing_mse": 0.04918894439235931,
+          "masked_gradient_mse": 0.038938224935881234
+        },
+        "oracle_4x": {
+          "missing_mse": 0.052996443522708804,
+          "masked_gradient_mse": 0.03918448484507236
+        },
+        "normal_16x": {
+          "missing_mse": 0.05275695571546,
+          "masked_gradient_mse": 0.03874885678180595
+        },
+        "oracle_16x": {
+          "missing_mse": 0.04581069518762226,
+          "masked_gradient_mse": 0.038132131030809244
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.028289006787018685
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0011420996419574778
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.01471555321448808
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.06773853847795533
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.04863991091820729
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.05818922469808131
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 2,
+        "16x": 7
+      },
+      "oracle_codebook_unique_codes": 15
+    },
+    {
+      "index": 47,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.06465878194556539,
+          "masked_gradient_mse": 0.026716265230387407
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.02113227515358078,
+          "masked_gradient_mse": 0.017761663344425187
+        },
+        "original_sihti3": {
+          "missing_mse": 0.07056811539244102,
+          "masked_gradient_mse": 0.027636809213033988
+        },
+        "normal_1x": {
+          "missing_mse": 0.06885191748152697,
+          "masked_gradient_mse": 0.02739714539097267
+        },
+        "oracle_1x": {
+          "missing_mse": 0.06885191748152697,
+          "masked_gradient_mse": 0.02739714539097267
+        },
+        "normal_4x": {
+          "missing_mse": 0.06912600582987403,
+          "masked_gradient_mse": 0.026621294191441415
+        },
+        "oracle_4x": {
+          "missing_mse": 0.05755127351346755,
+          "masked_gradient_mse": 0.02580344761619811
+        },
+        "normal_16x": {
+          "missing_mse": 0.06912600582987403,
+          "masked_gradient_mse": 0.026621294191441415
+        },
+        "oracle_16x": {
+          "missing_mse": 0.05755127351346755,
+          "masked_gradient_mse": 0.02580344761619811
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.008835822565528713
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.017343671209720343
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.014507721661656467
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.009174713961188097
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.011614915339665032
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.01080151488017272
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 3,
+        "16x": 3
+      },
+      "oracle_codebook_unique_codes": 17
+    },
+    {
+      "index": 48,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.010420118597761152,
+          "masked_gradient_mse": 0.012101203680014534
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.00991548927071222,
+          "masked_gradient_mse": 0.01198851791577676
+        },
+        "original_sihti3": {
+          "missing_mse": 0.012255780827202759,
+          "masked_gradient_mse": 0.012773791223898854
+        },
+        "normal_1x": {
+          "missing_mse": 0.017134237315570143,
+          "masked_gradient_mse": 0.01421970067071154
+        },
+        "oracle_1x": {
+          "missing_mse": 0.017134237315570143,
+          "masked_gradient_mse": 0.01421970067071154
+        },
+        "normal_4x": {
+          "missing_mse": 0.017232561142536552,
+          "masked_gradient_mse": 0.014292119231656686
+        },
+        "oracle_4x": {
+          "missing_mse": 0.017232561142536552,
+          "masked_gradient_mse": 0.014292119231656686
+        },
+        "normal_16x": {
+          "missing_mse": 0.016513094301503838,
+          "masked_gradient_mse": 0.014013227774393922
+        },
+        "oracle_16x": {
+          "missing_mse": 0.01639328472599169,
+          "masked_gradient_mse": 0.01400988282555379
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.00392873240801726
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0004695409160339736
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.002199136662025617
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.0063738114012713894
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.026592584585204106
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.016483197993237747
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 2
+      },
+      "oracle_codebook_unique_codes": 18
+    },
+    {
+      "index": 49,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0034990274575711303,
+          "masked_gradient_mse": 0.0007294463565797905
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.0014263466404382521,
+          "masked_gradient_mse": 0.0012224929441545533
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0017780854140649366,
+          "masked_gradient_mse": 0.0005456238328225443
+        },
+        "normal_1x": {
+          "missing_mse": 0.013709346097590717,
+          "masked_gradient_mse": 0.0030370217549847856
+        },
+        "oracle_1x": {
+          "missing_mse": 0.013709346097590717,
+          "masked_gradient_mse": 0.0030370217549847856
+        },
+        "normal_4x": {
+          "missing_mse": 0.013434148928186795,
+          "masked_gradient_mse": 0.002944845315244573
+        },
+        "oracle_4x": {
+          "missing_mse": 0.013434148928186795,
+          "masked_gradient_mse": 0.002944845315244573
+        },
+        "normal_16x": {
+          "missing_mse": 0.004517857337365098,
+          "masked_gradient_mse": 0.0019031494771868083
+        },
+        "oracle_16x": {
+          "missing_mse": 0.0044471299695365216,
+          "masked_gradient_mse": 0.0018187218996332775
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.005406586105707572
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00032430437299415214
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0008890023432956431
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.00017951231960364536
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.007797941885851837
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.00695144971182426
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 16
+    },
+    {
+      "index": 50,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.027551662837849183,
+          "masked_gradient_mse": 0.016682538388972507
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.015984869964994243,
+          "masked_gradient_mse": 0.013397969633696862
+        },
+        "original_sihti3": {
+          "missing_mse": 0.023756955141055636,
+          "masked_gradient_mse": 0.016090828537025644
+        },
+        "normal_1x": {
+          "missing_mse": 0.030568627265241753,
+          "masked_gradient_mse": 0.01829359652642042
+        },
+        "oracle_1x": {
+          "missing_mse": 0.030568627265241753,
+          "masked_gradient_mse": 0.01829359652642042
+        },
+        "normal_4x": {
+          "missing_mse": 0.02831904456683194,
+          "masked_gradient_mse": 0.017824388462777275
+        },
+        "oracle_4x": {
+          "missing_mse": 0.02529548875886085,
+          "masked_gradient_mse": 0.015569770170859839
+        },
+        "normal_16x": {
+          "missing_mse": 0.0263222403321827,
+          "masked_gradient_mse": 0.016084449827422333
+        },
+        "oracle_16x": {
+          "missing_mse": 0.025538798198058786,
+          "masked_gradient_mse": 0.01565601035643546
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.004985053177298581
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.004985053177298581
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.029806420646947933
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.029806420646947933
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 2,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 23
+    },
+    {
+      "index": 51,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.04879641132050988,
+          "masked_gradient_mse": 0.024622228417468042
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.026225650883310712,
+          "masked_gradient_mse": 0.020449056411351203
+        },
+        "original_sihti3": {
+          "missing_mse": 0.041588321357549446,
+          "masked_gradient_mse": 0.02306845602414693
+        },
+        "normal_1x": {
+          "missing_mse": 0.0679631977796774,
+          "masked_gradient_mse": 0.02537162702668871
+        },
+        "oracle_1x": {
+          "missing_mse": 0.0679631977796774,
+          "masked_gradient_mse": 0.02537162702668871
+        },
+        "normal_4x": {
+          "missing_mse": 0.045021518963950895,
+          "masked_gradient_mse": 0.02373282437486798
+        },
+        "oracle_4x": {
+          "missing_mse": 0.042083988496465025,
+          "masked_gradient_mse": 0.02374430536431947
+        },
+        "normal_16x": {
+          "missing_mse": 0.06634232629046878,
+          "masked_gradient_mse": 0.028149154284489435
+        },
+        "oracle_16x": {
+          "missing_mse": 0.05269343684375459,
+          "masked_gradient_mse": 0.02601002502159149
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.08773345359700764
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0009508583745476175
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.010593368954820954
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.1108303984346728
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.022360522172874597
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.032190508424185506
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 1,
+        "16x": 3
+      },
+      "oracle_codebook_unique_codes": 23
+    },
+    {
+      "index": 52,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.020789273839415038,
+          "masked_gradient_mse": 0.016312834775323033
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.013829489122368222,
+          "masked_gradient_mse": 0.014643163158509644
+        },
+        "original_sihti3": {
+          "missing_mse": 0.01824001610855095,
+          "masked_gradient_mse": 0.015761589864835557
+        },
+        "normal_1x": {
+          "missing_mse": 0.023811200584957445,
+          "masked_gradient_mse": 0.01787423462586149
+        },
+        "oracle_1x": {
+          "missing_mse": 0.023811200584957445,
+          "masked_gradient_mse": 0.01787423462586149
+        },
+        "normal_4x": {
+          "missing_mse": 0.023812526019295798,
+          "masked_gradient_mse": 0.017742843270088873
+        },
+        "oracle_4x": {
+          "missing_mse": 0.023811200584957445,
+          "masked_gradient_mse": 0.01787423462586149
+        },
+        "normal_16x": {
+          "missing_mse": 0.02281817282961336,
+          "masked_gradient_mse": 0.017296941489785462
+        },
+        "oracle_16x": {
+          "missing_mse": 0.022628058539308705,
+          "masked_gradient_mse": 0.017301654394415854
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.008003705457643414
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00025524988273337254
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.004129477670188393
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.009847198721149536
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.009598891189651147
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.00972304495540034
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 1,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 21
+    },
+    {
+      "index": 53,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.05287820299351131,
+          "masked_gradient_mse": 0.039175674057451176
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.04030437681774032,
+          "masked_gradient_mse": 0.04064532938883633
+        },
+        "original_sihti3": {
+          "missing_mse": 0.04980434281716293,
+          "masked_gradient_mse": 0.03732188431934344
+        },
+        "normal_1x": {
+          "missing_mse": 0.06536617845181247,
+          "masked_gradient_mse": 0.04473567870324699
+        },
+        "oracle_1x": {
+          "missing_mse": 0.06536617845181247,
+          "masked_gradient_mse": 0.04473567870324699
+        },
+        "normal_4x": {
+          "missing_mse": 0.06536617845181247,
+          "masked_gradient_mse": 0.04473567870324699
+        },
+        "oracle_4x": {
+          "missing_mse": 0.06536617845181247,
+          "masked_gradient_mse": 0.04473567870324699
+        },
+        "normal_16x": {
+          "missing_mse": 0.07223369765251518,
+          "masked_gradient_mse": 0.04659260746269488
+        },
+        "oracle_16x": {
+          "missing_mse": 0.06389525443421415,
+          "masked_gradient_mse": 0.04350066497285433
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.03720630603784906
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.0023071572063079414
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.013940206816821647
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.03316914604042719
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.006400064775108509
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.01532309186354807
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 4
+      },
+      "oracle_codebook_unique_codes": 23
+    },
+    {
+      "index": 54,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.015705819889348133,
+          "masked_gradient_mse": 0.008932793830971491
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.0059354280819362655,
+          "masked_gradient_mse": 0.005419556695080633
+        },
+        "original_sihti3": {
+          "missing_mse": 0.009806635584527584,
+          "masked_gradient_mse": 0.006505911847022674
+        },
+        "normal_1x": {
+          "missing_mse": 0.01541285987902793,
+          "masked_gradient_mse": 0.008580524613600846
+        },
+        "oracle_1x": {
+          "missing_mse": 0.01541285987902793,
+          "masked_gradient_mse": 0.008580524613600846
+        },
+        "normal_4x": {
+          "missing_mse": 0.016637341867688983,
+          "masked_gradient_mse": 0.009297440552248338
+        },
+        "oracle_4x": {
+          "missing_mse": 0.0114909720343945,
+          "masked_gradient_mse": 0.006498839300067247
+        },
+        "normal_16x": {
+          "missing_mse": 0.01685292849869518,
+          "masked_gradient_mse": 0.009315846740078446
+        },
+        "oracle_16x": {
+          "missing_mse": 0.01217768204572096,
+          "masked_gradient_mse": 0.006879152970754433
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.024872227687898388
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0004882730690945783
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.012680250378496481
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.06976302664122551
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.06040622041496389
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0650846235280947
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 5,
+        "16x": 4
+      },
+      "oracle_codebook_unique_codes": 22
+    },
+    {
+      "index": 55,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.049447687256739356,
+          "masked_gradient_mse": 0.025409778162936183
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.020189248369146186,
+          "masked_gradient_mse": 0.01808581284291601
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0560668475485346,
+          "masked_gradient_mse": 0.025332393743485185
+        },
+        "normal_1x": {
+          "missing_mse": 0.0627771974775761,
+          "masked_gradient_mse": 0.03092994548095598
+        },
+        "oracle_1x": {
+          "missing_mse": 0.056803883026304895,
+          "masked_gradient_mse": 0.02957466267886845
+        },
+        "normal_4x": {
+          "missing_mse": 0.056803883026304895,
+          "masked_gradient_mse": 0.02957466267886845
+        },
+        "oracle_4x": {
+          "missing_mse": 0.06301184248903097,
+          "masked_gradient_mse": 0.028867189564070077
+        },
+        "normal_16x": {
+          "missing_mse": 0.05219650084745393,
+          "masked_gradient_mse": 0.02682733837652471
+        },
+        "oracle_16x": {
+          "missing_mse": 0.05016831107899299,
+          "masked_gradient_mse": 0.028331993064997858
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.005486597665118107
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.008330469732071848
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.008014483946854768
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.006610289871542701
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.009075595005163015
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.008801672212538535
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 2,
+        "4x": 4,
+        "16x": 3
+      },
+      "oracle_codebook_unique_codes": 18
+    },
+    {
+      "index": 56,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.023457824921636082,
+          "masked_gradient_mse": 0.014343897530678069
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.014746399823899792,
+          "masked_gradient_mse": 0.01204733217367416
+        },
+        "original_sihti3": {
+          "missing_mse": 0.02306302718639211,
+          "masked_gradient_mse": 0.013954703996176081
+        },
+        "normal_1x": {
+          "missing_mse": 0.03798776009059783,
+          "masked_gradient_mse": 0.016717270244871615
+        },
+        "oracle_1x": {
+          "missing_mse": 0.03798776009059783,
+          "masked_gradient_mse": 0.016717270244871615
+        },
+        "normal_4x": {
+          "missing_mse": 0.032269731078963776,
+          "masked_gradient_mse": 0.01625152221847139
+        },
+        "oracle_4x": {
+          "missing_mse": 0.033102142428959716,
+          "masked_gradient_mse": 0.016664969411998437
+        },
+        "normal_16x": {
+          "missing_mse": 0.026606789830320533,
+          "masked_gradient_mse": 0.015684107082323553
+        },
+        "oracle_16x": {
+          "missing_mse": 0.027232095389535145,
+          "masked_gradient_mse": 0.01629806109924828
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.010485353715391119
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0005232223136629386
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.005504288014527028
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.04074431313336206
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.029036705370797417
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.03489050925207973
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 5,
+        "16x": 6
+      },
+      "oracle_codebook_unique_codes": 22
+    },
+    {
+      "index": 57,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.017053586578009573,
+          "masked_gradient_mse": 0.015031039058539968
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.012838168099649688,
+          "masked_gradient_mse": 0.013514243647349954
+        },
+        "original_sihti3": {
+          "missing_mse": 0.013609224762436322,
+          "masked_gradient_mse": 0.013276966692838229
+        },
+        "normal_1x": {
+          "missing_mse": 0.02206962471868675,
+          "masked_gradient_mse": 0.01861143766051652
+        },
+        "oracle_1x": {
+          "missing_mse": 0.02206962471868675,
+          "masked_gradient_mse": 0.01861143766051652
+        },
+        "normal_4x": {
+          "missing_mse": 0.02202334651741013,
+          "masked_gradient_mse": 0.0184003969699658
+        },
+        "oracle_4x": {
+          "missing_mse": 0.02202334651741013,
+          "masked_gradient_mse": 0.0184003969699658
+        },
+        "normal_16x": {
+          "missing_mse": 0.020066338975665357,
+          "masked_gradient_mse": 0.01846033949113453
+        },
+        "oracle_16x": {
+          "missing_mse": 0.018651067140266507,
+          "masked_gradient_mse": 0.016002673227027295
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.005279258631817042
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00019608028094307136
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0007608778754846237
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.0025374086915716312
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.032088640451047805
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.028805170255550454
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 4
+      },
+      "oracle_codebook_unique_codes": 17
+    },
+    {
+      "index": 58,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.015886722971596753,
+          "masked_gradient_mse": 0.010305284753073402
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.010456891544190106,
+          "masked_gradient_mse": 0.008569074894305424
+        },
+        "original_sihti3": {
+          "missing_mse": 0.01037726170948563,
+          "masked_gradient_mse": 0.0078122415193980724
+        },
+        "normal_1x": {
+          "missing_mse": 0.01280603930735523,
+          "masked_gradient_mse": 0.009783574079648492
+        },
+        "oracle_1x": {
+          "missing_mse": 0.01280603930735523,
+          "masked_gradient_mse": 0.009783574079648492
+        },
+        "normal_4x": {
+          "missing_mse": 0.01280603930735523,
+          "masked_gradient_mse": 0.009783574079648492
+        },
+        "oracle_4x": {
+          "missing_mse": 0.01280603930735523,
+          "masked_gradient_mse": 0.009783574079648492
+        },
+        "normal_16x": {
+          "missing_mse": 0.012598388656873693,
+          "masked_gradient_mse": 0.009385925163935901
+        },
+        "oracle_16x": {
+          "missing_mse": 0.012598388656873693,
+          "masked_gradient_mse": 0.009385925163935901
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.0033673559257208895
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00034748795177302015
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0018574219387469547
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.04194434402195962
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.04301241734763067
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.04247838068479515
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 22
+    },
+    {
+      "index": 59,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.009032124725217826,
+          "masked_gradient_mse": 0.00444817911580056
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.0066666961238599,
+          "masked_gradient_mse": 0.005347390845212951
+        },
+        "original_sihti3": {
+          "missing_mse": 0.007606761414448264,
+          "masked_gradient_mse": 0.00407124916299475
+        },
+        "normal_1x": {
+          "missing_mse": 0.006264350994747755,
+          "masked_gradient_mse": 0.00528318306338367
+        },
+        "oracle_1x": {
+          "missing_mse": 0.006264350994747755,
+          "masked_gradient_mse": 0.00528318306338367
+        },
+        "normal_4x": {
+          "missing_mse": 0.006264350994747755,
+          "masked_gradient_mse": 0.00528318306338367
+        },
+        "oracle_4x": {
+          "missing_mse": 0.006264350994747755,
+          "masked_gradient_mse": 0.00528318306338367
+        },
+        "normal_16x": {
+          "missing_mse": 0.006423063288270019,
+          "masked_gradient_mse": 0.005352091559017492
+        },
+        "oracle_16x": {
+          "missing_mse": 0.006423063288270019,
+          "masked_gradient_mse": 0.005352091559017492
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.0014779467842794543
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.0007717886996029865
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.0010071747278284757
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.002465475589940208
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.0070948338326503315
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.005551714418413623
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 11
+    },
+    {
+      "index": 60,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.01414054725904906,
+          "masked_gradient_mse": 0.010220577328209548
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.0073193997996542064,
+          "masked_gradient_mse": 0.008865936906726601
+        },
+        "original_sihti3": {
+          "missing_mse": 0.015333327013149753,
+          "masked_gradient_mse": 0.010368702639015404
+        },
+        "normal_1x": {
+          "missing_mse": 0.017459405486804157,
+          "masked_gradient_mse": 0.01158816696103271
+        },
+        "oracle_1x": {
+          "missing_mse": 0.017459405486804157,
+          "masked_gradient_mse": 0.01158816696103271
+        },
+        "normal_4x": {
+          "missing_mse": 0.01797780067516492,
+          "masked_gradient_mse": 0.011717602739857785
+        },
+        "oracle_4x": {
+          "missing_mse": 0.01797780067516492,
+          "masked_gradient_mse": 0.011717602739857785
+        },
+        "normal_16x": {
+          "missing_mse": 0.012994665812576245,
+          "masked_gradient_mse": 0.010266452569328195
+        },
+        "oracle_16x": {
+          "missing_mse": 0.012994665812576245,
+          "masked_gradient_mse": 0.010266452569328195
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.0031772678784926156
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.0031772678784926156
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 0,
+          "mse": null
+        },
+        "partially_observed": {
+          "count": 16,
+          "mse": 0.025996895507025653
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.025996895507025653
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 15
+    },
+    {
+      "index": 61,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0053205803483825755,
+          "masked_gradient_mse": 0.005915428153877066
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.004688244827932631,
+          "masked_gradient_mse": 0.005787975675030733
+        },
+        "original_sihti3": {
+          "missing_mse": 0.006193999673334637,
+          "masked_gradient_mse": 0.006259839417740901
+        },
+        "normal_1x": {
+          "missing_mse": 0.005607198421513348,
+          "masked_gradient_mse": 0.006135043294252817
+        },
+        "oracle_1x": {
+          "missing_mse": 0.005607198421513348,
+          "masked_gradient_mse": 0.006135043294252817
+        },
+        "normal_4x": {
+          "missing_mse": 0.005607198421513348,
+          "masked_gradient_mse": 0.006135043294252817
+        },
+        "oracle_4x": {
+          "missing_mse": 0.005607198421513348,
+          "masked_gradient_mse": 0.006135043294252817
+        },
+        "normal_16x": {
+          "missing_mse": 0.005607198421513348,
+          "masked_gradient_mse": 0.006135043294252817
+        },
+        "oracle_16x": {
+          "missing_mse": 0.005607198421513348,
+          "masked_gradient_mse": 0.006135043294252817
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.0013897998596200602
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.00045247063705506724
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.0007649137112433981
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 2,
+          "mse": 0.01415559401298494
+        },
+        "partially_observed": {
+          "count": 4,
+          "mse": 0.01601222953291314
+        },
+        "all_affected": {
+          "count": 6,
+          "mse": 0.015393351026270407
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 0
+      },
+      "oracle_codebook_unique_codes": 15
+    },
+    {
+      "index": 62,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.017768250900990868,
+          "masked_gradient_mse": 0.01748059230389537
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.01122593029394236,
+          "masked_gradient_mse": 0.014456852809670512
+        },
+        "original_sihti3": {
+          "missing_mse": 0.01724505652899608,
+          "masked_gradient_mse": 0.017407773509701373
+        },
+        "normal_1x": {
+          "missing_mse": 0.0219326298197222,
+          "masked_gradient_mse": 0.019382728100572833
+        },
+        "oracle_1x": {
+          "missing_mse": 0.0219326298197222,
+          "masked_gradient_mse": 0.019382728100572833
+        },
+        "normal_4x": {
+          "missing_mse": 0.0219326298197222,
+          "masked_gradient_mse": 0.019382728100572833
+        },
+        "oracle_4x": {
+          "missing_mse": 0.0219326298197222,
+          "masked_gradient_mse": 0.019382728100572833
+        },
+        "normal_16x": {
+          "missing_mse": 0.02167734596316276,
+          "masked_gradient_mse": 0.01924206112784023
+        },
+        "oracle_16x": {
+          "missing_mse": 0.020325021738771498,
+          "masked_gradient_mse": 0.018880636842231475
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.0035900738601790925
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0005030550685427593
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.002046564464360926
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 8,
+          "mse": 0.00797152035148228
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.00972762849032791
+        },
+        "all_affected": {
+          "count": 16,
+          "mse": 0.008849574420905094
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 1
+      },
+      "oracle_codebook_unique_codes": 17
+    },
+    {
+      "index": 63,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.014585019636185522,
+          "masked_gradient_mse": 0.012809552923739753
+        },
+        "oracle_codebook": {
+          "missing_mse": 0.00969306861419849,
+          "masked_gradient_mse": 0.011067586759076455
+        },
+        "original_sihti3": {
+          "missing_mse": 0.016799421060690593,
+          "masked_gradient_mse": 0.013474415567566964
+        },
+        "normal_1x": {
+          "missing_mse": 0.01582282766105335,
+          "masked_gradient_mse": 0.01444125269757774
+        },
+        "oracle_1x": {
+          "missing_mse": 0.01582282766105335,
+          "masked_gradient_mse": 0.01444125269757774
+        },
+        "normal_4x": {
+          "missing_mse": 0.01582282766105335,
+          "masked_gradient_mse": 0.01444125269757774
+        },
+        "oracle_4x": {
+          "missing_mse": 0.01582282766105335,
+          "masked_gradient_mse": 0.01444125269757774
+        },
+        "normal_16x": {
+          "missing_mse": 0.01492549554573435,
+          "masked_gradient_mse": 0.013831776218428814
+        },
+        "oracle_16x": {
+          "missing_mse": 0.01582282766105335,
+          "masked_gradient_mse": 0.01444125269757774
+        }
+      },
+      "conditional_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.0007321125761767943
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.0013385643704046588
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.0012711808377126738
+        }
+      },
+      "prior_coarse": {
+        "fully_hidden": {
+          "count": 1,
+          "mse": 0.0001300081041936997
+        },
+        "partially_observed": {
+          "count": 8,
+          "mse": 0.015447138448953958
+        },
+        "all_affected": {
+          "count": 9,
+          "mse": 0.01374523507731393
+        }
+      },
+      "oracle_changed_affected_cell_codes": {
+        "1x": 0,
+        "4x": 0,
+        "16x": 4
+      },
+      "oracle_codebook_unique_codes": 17
+    }
+  ]
+}
