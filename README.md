@@ -1,5 +1,17 @@
 # SihtiImageModel3 — can fine detail talk back to the core?
 
+> **Gate R3 (oracle-coarse diagnostic):** [oracle_gate.py](oracle_gate.py) tests R2's *unchanged* patch reader after giving it the **true masked coarse structure**, for evaluation only. On 32 new synthetic contours, at a predeclared 16× top-down coupling strength, the oracle changed hidden patch choices on **24/32 images** and reduced missing-pixel MSE by **17.2% against an equally strengthened learned-message control** (0.08408 vs 0.10151). But ordinary inference still loses, and giving it exact target-selected fine patch codes can score 0.04575. The lower-level vocabulary is not entirely helpless; the learned prediction/readout combination is inadequate. No ping, new image generator or rewrite of R2 was added. Read [R3 pre-registration](docs/GATE_R3_PREREG.md) and [results](docs/GATE_R3_RESULT.md).
+
+```cmd
+python3.13 oracle_demo.py --output runs/oracle
+python3.13 oracle_demo.py --train-folder train --eval-folder unseen --train-limit 500 --eval-limit 64 --show-index 8 --output runs/r3_photos
+```
+
+Visuals in comparison.png and loop.gif explicitly label all oracle panels as privileged demonstrations. Changing --show-index selects the picture but not the evaluation set.
+
+---
+
+
 > **Gate R2 (mask-conditioned coarse feedback):** [conditional.py](conditional.py) now predicts the missing 8×8 coarse structure using **visible pixels and a learned covariance, before choosing any local missing patch**. Fine-level codes can then revise that coarse prediction under one explicit energy. In the fresh 32-image test, observation-conditioning improved the error of coarse cells touching the mask by **66%**, but **did not improve image completion**: conditional frozen 0.13398, live 0.13457, vs original Sihti3 0.09140 missing-pixel MSE. The feedback changed hidden patch decisions in only **1/32** images; all image-improvement gates failed. See the [R2 preregistration](docs/GATE_R2_PREREG.md), [result](docs/GATE_R2_RESULT.md), and [passing GitHub CPU run](https://github.com/anttiluode/SihtiImageModel3/actions/runs/39259538598). This is a genuine directional message test, **not** a dendritic ping.
 
 ```cmd
