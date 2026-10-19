@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 from sihti3 import LearnedMedium, gaussian_fill
-from data import train_set, held_out, damage
+from data import train_set, held_out, damage, load_images
 
 
 def score(x, y, mask):
@@ -23,11 +23,24 @@ def export_image(path, array):
                Image.Resampling.NEAREST).save(path)
 
 
-def demo(out="runs/first", seed=17, train_n=320, steps=16):
+def demo(out="runs/first", seed=17, train_n=320, steps=16, train_folder=None, eval_folder=None):
     folder = Path(out)
     folder.mkdir(parents=True, exist_ok=True)
-    model = LearnedMedium.fit(train_set(train_n), seed=2026)
-    targets = held_out(12, seed)
+    if (train_folder is None) != (eval_folder is None):
+        raise ValueError("Specify both --train-folder and --eval-folder")
+    if train_folder:
+        from hashlib import sha256
+        train, train_paths = load_images(train_folder, max_images=train_n)
+        targets, target_paths = load_images(eval_folder, max_images=12)
+        train_fingerprints = {sha256(x.tobytes()).digest() for x in train}
+        if any(sha256(x.tobytes()).digest() in train_fingerprints for x in targets):
+            raise ValueError("Identical 32x32 images found in training and evaluation folders")
+        source = "user image folders (32x32 luminance, center crop)"
+    else:
+        train = train_set(train_n)
+        targets = held_out(12, seed)
+        source = "synthetic contour-world with disjoint seeds"
+    model = LearnedMedium.fit(train, seed=2026)
     cases = []
     shown = None
     for idx, target in enumerate(targets):
@@ -53,8 +66,8 @@ def demo(out="runs/first", seed=17, train_n=320, steps=16):
             shown = (target, observation, mask, arms)
     names = list(cases[0]["arms"])
     summary = {
-        "training_images": train_n, "held_out_images": len(targets),
-        "steps": steps, "dataset": "synthetic contour world; disjoint training/test seeds",
+        "training_images": len(train), "held_out_images": len(targets),
+        "steps": steps, "dataset": source,
         "measure": "MSE on never-seen missing pixels (lower is better)",
         "mean_missing_mse": {
             name: float(np.mean([r["arms"][name]["missing_mse"] for r in cases]))
@@ -113,5 +126,7 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, default=17)
     parser.add_argument("--train", type=int, default=320)
     parser.add_argument("--steps", type=int, default=16)
+    parser.add_argument("--train-folder", help="Directory of training PNG/JPG images (no overlap with evaluation)")
+    parser.add_argument("--eval-folder", help="Directory of held-out PNG/JPG images")
     args = parser.parse_args()
-    demo(args.output, args.seed, args.train, args.steps)
+    demo(args.output, args.seed, args.train, args.steps, args.train_folder, args.eval_folder)
