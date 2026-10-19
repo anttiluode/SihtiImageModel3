@@ -68,8 +68,10 @@ def test_continuous_solver_clamps_and_nonzero_gradient_message_effect():
         np.testing.assert_allclose(out[mask],obs[mask],atol=1e-12)
         assert np.isfinite(out).all()
     modified=p.copy()
-    modified[64+27]+=.30
-    modified[128+35]-=.20
+    cells=np.flatnonzero((~mask).reshape(8,4,8,4).any((1,3)).ravel())
+    cell=int(cells[len(cells)//2])
+    modified[64+cell]+=.30
+    modified[128+cell]-=.20
     changed=model.solve(obs,mask,modified,"both")
     assert np.max(np.abs(changed[~mask]-both[~mask]))>1e-7
 
