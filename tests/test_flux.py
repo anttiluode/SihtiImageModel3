@@ -18,7 +18,7 @@ def test_forward_flux_operator_exact():
 
 
 def test_same_mean_different_directions():
-    vertical=np.zeros((32,32));vertical[:,16:]=1.
+    vertical=np.zeros((32,32));vertical[:,14:]=1.
     horizontal=vertical.T.copy()
     a=image_features(vertical);b=image_features(horizontal)
     np.testing.assert_allclose(a[:64].mean(),b[:64].mean())
