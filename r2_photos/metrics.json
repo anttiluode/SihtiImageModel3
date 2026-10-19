@@ -1,0 +1,4647 @@
+{
+  "protocol": "R2; no ping; compare frozen vs live under same learned conditioned coarse prior",
+  "dataset": "unseen 32x32 grayscale user photos",
+  "training_images": 384,
+  "evaluation_images": 64,
+  "steps": 12,
+  "mean_missing_mse": {
+    "linear": 0.024143671938287994,
+    "nearest4": 0.03734518114652019,
+    "original_sihti3": 0.023031378748774728,
+    "mean": 0.02817694525390234,
+    "shuffled": 0.02807052027580926,
+    "frozen": 0.02839733461328496,
+    "live": 0.028397633192995493,
+    "no_coarse": 0.028521129305685695
+  },
+  "mean_masked_gradient_mse": {
+    "linear": 0.0170139347806428,
+    "nearest4": 0.0191920373144967,
+    "original_sihti3": 0.01619639855003353,
+    "mean": 0.018884651143421805,
+    "shuffled": 0.01884399020733502,
+    "frozen": 0.018891985252400843,
+    "live": 0.01889685991631288,
+    "no_coarse": 0.018981725096226375
+  },
+  "mean_conditional_coarse_hidden_mse": 0.005598886581583897,
+  "mean_unconditional_coarse_hidden_mse": 0.03464066256856313,
+  "downward_changed_output_count": 30,
+  "live_vs_frozen_changed_hidden_patches_images": 1,
+  "mean_live_coarse_revision_l2": 0.12898477451786053,
+  "gates": {
+    "conditioned_frozen_vs_unconditional_5pct": false,
+    "live_vs_frozen_patch_choice_10pct": false,
+    "live_vs_frozen_mse_5pct": false
+  },
+  "cases": [
+    {
+      "index": 0,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.002495841605628249,
+          "masked_gradient_mse": 0.002483818985216835
+        },
+        "nearest4": {
+          "missing_mse": 0.0042163170874118805,
+          "masked_gradient_mse": 0.0032695995178073645
+        },
+        "original_sihti3": {
+          "missing_mse": 0.002488676266324287,
+          "masked_gradient_mse": 0.0025491920079937017
+        },
+        "mean": {
+          "missing_mse": 0.0037053638236783843,
+          "masked_gradient_mse": 0.002861371813509631
+        },
+        "shuffled": {
+          "missing_mse": 0.003097816877135141,
+          "masked_gradient_mse": 0.002650740795394411
+        },
+        "frozen": {
+          "missing_mse": 0.003097816877135141,
+          "masked_gradient_mse": 0.002650740795394411
+        },
+        "live": {
+          "missing_mse": 0.003097816877135141,
+          "masked_gradient_mse": 0.002650740795394411
+        },
+        "no_coarse": {
+          "missing_mse": 0.003097816877135141,
+          "masked_gradient_mse": 0.002650740795394411
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.000255672331958032,
+      "mean_coarse_hidden_mse": 0.03959568962454796,
+      "conditioned_vs_mean_coarse_l2": 1.6560902300716256,
+      "fine_revised_coarse_l2": 0.05967298574132936,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        6,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        6,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 1,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0027937335252305835,
+          "masked_gradient_mse": 0.0030456365796361975
+        },
+        "nearest4": {
+          "missing_mse": 0.009662389755249023,
+          "masked_gradient_mse": 0.004206388723105192
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0018848448358002754,
+          "masked_gradient_mse": 0.0023549144401444604
+        },
+        "mean": {
+          "missing_mse": 0.007589237664825108,
+          "masked_gradient_mse": 0.005894446143478591
+        },
+        "shuffled": {
+          "missing_mse": 0.0072091268747023485,
+          "masked_gradient_mse": 0.004087344348730793
+        },
+        "frozen": {
+          "missing_mse": 0.0072091268747023485,
+          "masked_gradient_mse": 0.004087344348730793
+        },
+        "live": {
+          "missing_mse": 0.0072091268747023485,
+          "masked_gradient_mse": 0.004087344348730793
+        },
+        "no_coarse": {
+          "missing_mse": 0.005281678078595524,
+          "masked_gradient_mse": 0.003922930452270903
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.00021624324071477358,
+      "mean_coarse_hidden_mse": 0.03031039983034134,
+      "conditioned_vs_mean_coarse_l2": 1.5662135988242287,
+      "fine_revised_coarse_l2": 0.07066492354529401,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        16,
+        11,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        16,
+        11,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 2,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.020937530328584773,
+          "masked_gradient_mse": 0.01563274791632874
+        },
+        "nearest4": {
+          "missing_mse": 0.028206730261445045,
+          "masked_gradient_mse": 0.01695837639272213
+        },
+        "original_sihti3": {
+          "missing_mse": 0.016388898435304104,
+          "masked_gradient_mse": 0.014739355234776777
+        },
+        "mean": {
+          "missing_mse": 0.01872992413194849,
+          "masked_gradient_mse": 0.01614302984674063
+        },
+        "shuffled": {
+          "missing_mse": 0.01872992413194849,
+          "masked_gradient_mse": 0.01614302984674063
+        },
+        "frozen": {
+          "missing_mse": 0.01872992413194849,
+          "masked_gradient_mse": 0.01614302984674063
+        },
+        "live": {
+          "missing_mse": 0.01872992413194849,
+          "masked_gradient_mse": 0.01614302984674063
+        },
+        "no_coarse": {
+          "missing_mse": 0.01872992413194849,
+          "masked_gradient_mse": 0.01614302984674063
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.004653792115201071,
+      "mean_coarse_hidden_mse": 0.01025843434035778,
+      "conditioned_vs_mean_coarse_l2": 1.4289260587690824,
+      "fine_revised_coarse_l2": 0.176201824675408,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        17,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        17,
+        9,
+        3,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 3,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.009687891134618314,
+          "masked_gradient_mse": 0.010966322823901961
+        },
+        "nearest4": {
+          "missing_mse": 0.015600627288222313,
+          "masked_gradient_mse": 0.011382362805306911
+        },
+        "original_sihti3": {
+          "missing_mse": 0.009888701303657325,
+          "masked_gradient_mse": 0.010695314909254162
+        },
+        "mean": {
+          "missing_mse": 0.01844682490162041,
+          "masked_gradient_mse": 0.013128840418289078
+        },
+        "shuffled": {
+          "missing_mse": 0.01844682490162041,
+          "masked_gradient_mse": 0.013128840418289078
+        },
+        "frozen": {
+          "missing_mse": 0.01844682490162041,
+          "masked_gradient_mse": 0.013128840418289078
+        },
+        "live": {
+          "missing_mse": 0.01844682490162041,
+          "masked_gradient_mse": 0.013128840418289078
+        },
+        "no_coarse": {
+          "missing_mse": 0.01844682490162041,
+          "masked_gradient_mse": 0.013128840418289078
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0009462140214136001,
+      "mean_coarse_hidden_mse": 0.004316870588809252,
+      "conditioned_vs_mean_coarse_l2": 0.3349563726264632,
+      "fine_revised_coarse_l2": 0.09426917544930655,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        21,
+        2,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        21,
+        2,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 4,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0035152282691800394,
+          "masked_gradient_mse": 0.0029513598101604
+        },
+        "nearest4": {
+          "missing_mse": 0.007202544715255499,
+          "masked_gradient_mse": 0.004015774931758642
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0040232538422841566,
+          "masked_gradient_mse": 0.0028576066035247887
+        },
+        "mean": {
+          "missing_mse": 0.005822766397488922,
+          "masked_gradient_mse": 0.0037788383529547887
+        },
+        "shuffled": {
+          "missing_mse": 0.005822766397488922,
+          "masked_gradient_mse": 0.0037788383529547887
+        },
+        "frozen": {
+          "missing_mse": 0.005822766397488922,
+          "masked_gradient_mse": 0.0037788383529547887
+        },
+        "live": {
+          "missing_mse": 0.005822766397488922,
+          "masked_gradient_mse": 0.0037788383529547887
+        },
+        "no_coarse": {
+          "missing_mse": 0.005822766397488922,
+          "masked_gradient_mse": 0.0037788383529547887
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0003610051970086978,
+      "mean_coarse_hidden_mse": 0.003192587522789836,
+      "conditioned_vs_mean_coarse_l2": 0.5956464826762072,
+      "fine_revised_coarse_l2": 0.1620092044590623,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        16,
+        5,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        16,
+        5,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 5,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.08977526359452109,
+          "masked_gradient_mse": 0.036500933002028085
+        },
+        "nearest4": {
+          "missing_mse": 0.08475437760353088,
+          "masked_gradient_mse": 0.049588270485401154
+        },
+        "original_sihti3": {
+          "missing_mse": 0.06569365698620287,
+          "masked_gradient_mse": 0.027413508942781755
+        },
+        "mean": {
+          "missing_mse": 0.14340589324474512,
+          "masked_gradient_mse": 0.05160663336667051
+        },
+        "shuffled": {
+          "missing_mse": 0.14374191199955538,
+          "masked_gradient_mse": 0.051636100234415304
+        },
+        "frozen": {
+          "missing_mse": 0.14374191199955538,
+          "masked_gradient_mse": 0.051636100234415304
+        },
+        "live": {
+          "missing_mse": 0.14374191199955538,
+          "masked_gradient_mse": 0.051636100234415304
+        },
+        "no_coarse": {
+          "missing_mse": 0.14374191199955538,
+          "masked_gradient_mse": 0.051636100234415304
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.02070981184978204,
+      "mean_coarse_hidden_mse": 0.06852969527244568,
+      "conditioned_vs_mean_coarse_l2": 2.7417892777751387,
+      "fine_revised_coarse_l2": 0.22040886160014103,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        15,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        15,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 6,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.003937625943610742,
+          "masked_gradient_mse": 0.004700350923669579
+        },
+        "nearest4": {
+          "missing_mse": 0.009351590648293495,
+          "masked_gradient_mse": 0.005770998075604439
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0042985302043601435,
+          "masked_gradient_mse": 0.0049488319719480514
+        },
+        "mean": {
+          "missing_mse": 0.0048504257735267585,
+          "masked_gradient_mse": 0.0052110348159240955
+        },
+        "shuffled": {
+          "missing_mse": 0.005236434176071213,
+          "masked_gradient_mse": 0.0050840417027867135
+        },
+        "frozen": {
+          "missing_mse": 0.005236434176071213,
+          "masked_gradient_mse": 0.0050840417027867135
+        },
+        "live": {
+          "missing_mse": 0.005236434176071213,
+          "masked_gradient_mse": 0.0050840417027867135
+        },
+        "no_coarse": {
+          "missing_mse": 0.005278549044916381,
+          "masked_gradient_mse": 0.0052727164334261676
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0007241759662617836,
+      "mean_coarse_hidden_mse": 0.009484868496656418,
+      "conditioned_vs_mean_coarse_l2": 0.8441944140258956,
+      "fine_revised_coarse_l2": 0.09729967423558875,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        14,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        14,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 7,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0035201727456684734,
+          "masked_gradient_mse": 0.002040064351036699
+        },
+        "nearest4": {
+          "missing_mse": 0.030261004343628883,
+          "masked_gradient_mse": 0.006071984302252531
+        },
+        "original_sihti3": {
+          "missing_mse": 0.006101985454962799,
+          "masked_gradient_mse": 0.002973127889347557
+        },
+        "mean": {
+          "missing_mse": 0.002689162987329894,
+          "masked_gradient_mse": 0.0019832585444542594
+        },
+        "shuffled": {
+          "missing_mse": 0.0028241680208302682,
+          "masked_gradient_mse": 0.0020367617465557476
+        },
+        "frozen": {
+          "missing_mse": 0.0028241680208302682,
+          "masked_gradient_mse": 0.0020367617465557476
+        },
+        "live": {
+          "missing_mse": 0.0028241680208302682,
+          "masked_gradient_mse": 0.0020367617465557476
+        },
+        "no_coarse": {
+          "missing_mse": 0.0028241680208302682,
+          "masked_gradient_mse": 0.0020367617465557476
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.002329736915452963,
+      "mean_coarse_hidden_mse": 0.041822630912065506,
+      "conditioned_vs_mean_coarse_l2": 1.6423973365299465,
+      "fine_revised_coarse_l2": 0.07478426279984389,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        24,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        24,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 8,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.01997311131288751,
+          "masked_gradient_mse": 0.012222826052424432
+        },
+        "nearest4": {
+          "missing_mse": 0.038809530436992645,
+          "masked_gradient_mse": 0.0128606166690588
+        },
+        "original_sihti3": {
+          "missing_mse": 0.015439507342623868,
+          "masked_gradient_mse": 0.009074555061898925
+        },
+        "mean": {
+          "missing_mse": 0.01690601670540086,
+          "masked_gradient_mse": 0.01193945950151863
+        },
+        "shuffled": {
+          "missing_mse": 0.01632772989940611,
+          "masked_gradient_mse": 0.012712336699463237
+        },
+        "frozen": {
+          "missing_mse": 0.01734164819034077,
+          "masked_gradient_mse": 0.01231180752516089
+        },
+        "live": {
+          "missing_mse": 0.01734164819034077,
+          "masked_gradient_mse": 0.01231180752516089
+        },
+        "no_coarse": {
+          "missing_mse": 0.01734164819034077,
+          "masked_gradient_mse": 0.01231180752516089
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0019339257305889324,
+      "mean_coarse_hidden_mse": 0.03381801396608353,
+      "conditioned_vs_mean_coarse_l2": 1.3759501843505642,
+      "fine_revised_coarse_l2": 0.12480856275712149,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        20,
+        6,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        20,
+        6,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 9,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.013674861003528268,
+          "masked_gradient_mse": 0.005748847631138714
+        },
+        "nearest4": {
+          "missing_mse": 0.04257623478770256,
+          "masked_gradient_mse": 0.006421074271202087
+        },
+        "original_sihti3": {
+          "missing_mse": 0.020022820419399723,
+          "masked_gradient_mse": 0.0067709290734914
+        },
+        "mean": {
+          "missing_mse": 0.011676023354921461,
+          "masked_gradient_mse": 0.007949998644992129
+        },
+        "shuffled": {
+          "missing_mse": 0.011594257126527561,
+          "masked_gradient_mse": 0.007866170340965595
+        },
+        "frozen": {
+          "missing_mse": 0.011594257126527561,
+          "masked_gradient_mse": 0.007866170340965595
+        },
+        "live": {
+          "missing_mse": 0.011594257126527561,
+          "masked_gradient_mse": 0.007866170340965595
+        },
+        "no_coarse": {
+          "missing_mse": 0.011594257126527561,
+          "masked_gradient_mse": 0.007866170340965595
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.003609842889624827,
+      "mean_coarse_hidden_mse": 0.045412324368953705,
+      "conditioned_vs_mean_coarse_l2": 1.3768221963163463,
+      "fine_revised_coarse_l2": 0.06520752254327956,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        20,
+        7,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        20,
+        7,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 10,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.02658900489018674,
+          "masked_gradient_mse": 0.013130944484098094
+        },
+        "nearest4": {
+          "missing_mse": 0.06483197212219238,
+          "masked_gradient_mse": 0.013802600093185902
+        },
+        "original_sihti3": {
+          "missing_mse": 0.015168212281122242,
+          "masked_gradient_mse": 0.010842241886243806
+        },
+        "mean": {
+          "missing_mse": 0.0352284335290232,
+          "masked_gradient_mse": 0.01708043220832527
+        },
+        "shuffled": {
+          "missing_mse": 0.0352284335290232,
+          "masked_gradient_mse": 0.01708043220832527
+        },
+        "frozen": {
+          "missing_mse": 0.03480501989540904,
+          "masked_gradient_mse": 0.01700222656354872
+        },
+        "live": {
+          "missing_mse": 0.03480501989540904,
+          "masked_gradient_mse": 0.01700222656354872
+        },
+        "no_coarse": {
+          "missing_mse": 0.03480501989540904,
+          "masked_gradient_mse": 0.01700222656354872
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.01272562953125558,
+      "mean_coarse_hidden_mse": 0.08659859001636505,
+      "conditioned_vs_mean_coarse_l2": 2.621760223663941,
+      "fine_revised_coarse_l2": 0.14500229394091602,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        18,
+        7,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        18,
+        7,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 11,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.032688367451338594,
+          "masked_gradient_mse": 0.017878139949867415
+        },
+        "nearest4": {
+          "missing_mse": 0.06245863065123558,
+          "masked_gradient_mse": 0.02112678438425064
+        },
+        "original_sihti3": {
+          "missing_mse": 0.03208634900337587,
+          "masked_gradient_mse": 0.018278014208483923
+        },
+        "mean": {
+          "missing_mse": 0.028822592184509853,
+          "masked_gradient_mse": 0.01755479553334781
+        },
+        "shuffled": {
+          "missing_mse": 0.024406835496062998,
+          "masked_gradient_mse": 0.019518586242272963
+        },
+        "frozen": {
+          "missing_mse": 0.024406835496062998,
+          "masked_gradient_mse": 0.019518586242272963
+        },
+        "live": {
+          "missing_mse": 0.024406835496062998,
+          "masked_gradient_mse": 0.019518586242272963
+        },
+        "no_coarse": {
+          "missing_mse": 0.024406835496062998,
+          "masked_gradient_mse": 0.019518586242272963
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.006035309637222412,
+      "mean_coarse_hidden_mse": 0.018012527376413345,
+      "conditioned_vs_mean_coarse_l2": 1.5734487987121064,
+      "fine_revised_coarse_l2": 0.14189645879646104,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        23,
+        9,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        23,
+        9,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 12,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.027096196068390033,
+          "masked_gradient_mse": 0.020353389587685827
+        },
+        "nearest4": {
+          "missing_mse": 0.028340812772512436,
+          "masked_gradient_mse": 0.018392246216535568
+        },
+        "original_sihti3": {
+          "missing_mse": 0.025004502791367112,
+          "masked_gradient_mse": 0.01933028711303872
+        },
+        "mean": {
+          "missing_mse": 0.02705863341149852,
+          "masked_gradient_mse": 0.02107244625414433
+        },
+        "shuffled": {
+          "missing_mse": 0.02705863341149852,
+          "masked_gradient_mse": 0.02107244625414433
+        },
+        "frozen": {
+          "missing_mse": 0.02705863341149852,
+          "masked_gradient_mse": 0.02107244625414433
+        },
+        "live": {
+          "missing_mse": 0.02705863341149852,
+          "masked_gradient_mse": 0.02107244625414433
+        },
+        "no_coarse": {
+          "missing_mse": 0.02705863341149852,
+          "masked_gradient_mse": 0.02107244625414433
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.006344122739404488,
+      "mean_coarse_hidden_mse": 0.028947794809937477,
+      "conditioned_vs_mean_coarse_l2": 1.5024259263612445,
+      "fine_revised_coarse_l2": 0.20197742310018726,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        13,
+        6,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        13,
+        6,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 13,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.013000233957804294,
+          "masked_gradient_mse": 0.00997493631774175
+        },
+        "nearest4": {
+          "missing_mse": 0.02429354190826416,
+          "masked_gradient_mse": 0.01442679762840271
+        },
+        "original_sihti3": {
+          "missing_mse": 0.009682369153178449,
+          "masked_gradient_mse": 0.00855688811533597
+        },
+        "mean": {
+          "missing_mse": 0.015855100181152576,
+          "masked_gradient_mse": 0.013146497605112658
+        },
+        "shuffled": {
+          "missing_mse": 0.015855100181152576,
+          "masked_gradient_mse": 0.013146497605112658
+        },
+        "frozen": {
+          "missing_mse": 0.015855100181152576,
+          "masked_gradient_mse": 0.013146497605112658
+        },
+        "live": {
+          "missing_mse": 0.015855100181152576,
+          "masked_gradient_mse": 0.013146497605112658
+        },
+        "no_coarse": {
+          "missing_mse": 0.015855100181152576,
+          "masked_gradient_mse": 0.013146497605112658
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.001930040541255131,
+      "mean_coarse_hidden_mse": 0.048049118369817734,
+      "conditioned_vs_mean_coarse_l2": 1.6775209828444575,
+      "fine_revised_coarse_l2": 0.09874428827018863,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        19,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        19,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 14,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.008687571823767368,
+          "masked_gradient_mse": 0.0071589164943323645
+        },
+        "nearest4": {
+          "missing_mse": 0.017377156764268875,
+          "masked_gradient_mse": 0.00837821513414383
+        },
+        "original_sihti3": {
+          "missing_mse": 0.006242160690259848,
+          "masked_gradient_mse": 0.006265412509387638
+        },
+        "mean": {
+          "missing_mse": 0.009863040539869316,
+          "masked_gradient_mse": 0.007249395501654697
+        },
+        "shuffled": {
+          "missing_mse": 0.009863040539869316,
+          "masked_gradient_mse": 0.007249395501654697
+        },
+        "frozen": {
+          "missing_mse": 0.009863040539869316,
+          "masked_gradient_mse": 0.007249395501654697
+        },
+        "live": {
+          "missing_mse": 0.009863040539869316,
+          "masked_gradient_mse": 0.007249395501654697
+        },
+        "no_coarse": {
+          "missing_mse": 0.009863040539869316,
+          "masked_gradient_mse": 0.007249395501654697
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.002096381079175531,
+      "mean_coarse_hidden_mse": 0.019972432404756546,
+      "conditioned_vs_mean_coarse_l2": 1.0396061629160018,
+      "fine_revised_coarse_l2": 0.1488296648571426,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        18,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        18,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 15,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.006293409103908755,
+          "masked_gradient_mse": 0.004531032675076361
+        },
+        "nearest4": {
+          "missing_mse": 0.018041379749774933,
+          "masked_gradient_mse": 0.008090118877589703
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0065272224036467255,
+          "masked_gradient_mse": 0.003923682188210871
+        },
+        "mean": {
+          "missing_mse": 0.01629792361616933,
+          "masked_gradient_mse": 0.0086381157237498
+        },
+        "shuffled": {
+          "missing_mse": 0.01425705745103915,
+          "masked_gradient_mse": 0.008105794555296423
+        },
+        "frozen": {
+          "missing_mse": 0.01425705745103915,
+          "masked_gradient_mse": 0.008105794555296423
+        },
+        "live": {
+          "missing_mse": 0.01425705745103915,
+          "masked_gradient_mse": 0.008105794555296423
+        },
+        "no_coarse": {
+          "missing_mse": 0.015897791701360412,
+          "masked_gradient_mse": 0.00874645145899736
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.00026153275380855467,
+      "mean_coarse_hidden_mse": 0.02195683866739273,
+      "conditioned_vs_mean_coarse_l2": 1.480589608023234,
+      "fine_revised_coarse_l2": 0.08692889082054514,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        30,
+        10,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        30,
+        10,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 16,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.005017160690059214,
+          "masked_gradient_mse": 0.004581441175746586
+        },
+        "nearest4": {
+          "missing_mse": 0.012100419029593468,
+          "masked_gradient_mse": 0.005820511374622583
+        },
+        "original_sihti3": {
+          "missing_mse": 0.006637651789786173,
+          "masked_gradient_mse": 0.00469981466386613
+        },
+        "mean": {
+          "missing_mse": 0.0066466857339880624,
+          "masked_gradient_mse": 0.0053476439667634835
+        },
+        "shuffled": {
+          "missing_mse": 0.0066466857339880624,
+          "masked_gradient_mse": 0.0053476439667634835
+        },
+        "frozen": {
+          "missing_mse": 0.0066466857339880624,
+          "masked_gradient_mse": 0.0053476439667634835
+        },
+        "live": {
+          "missing_mse": 0.0066466857339880624,
+          "masked_gradient_mse": 0.0053476439667634835
+        },
+        "no_coarse": {
+          "missing_mse": 0.0066466857339880624,
+          "masked_gradient_mse": 0.0053476439667634835
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0012050110049413945,
+      "mean_coarse_hidden_mse": 0.020124858245253563,
+      "conditioned_vs_mean_coarse_l2": 1.148064283484069,
+      "fine_revised_coarse_l2": 0.12019622940587268,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        25,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        25,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 17,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.017976234072268865,
+          "masked_gradient_mse": 0.014670594962857254
+        },
+        "nearest4": {
+          "missing_mse": 0.06018917262554169,
+          "masked_gradient_mse": 0.01645338162779808
+        },
+        "original_sihti3": {
+          "missing_mse": 0.020726775565664893,
+          "masked_gradient_mse": 0.013239056762181694
+        },
+        "mean": {
+          "missing_mse": 0.02409940737023866,
+          "masked_gradient_mse": 0.01654723502563398
+        },
+        "shuffled": {
+          "missing_mse": 0.02409940737023866,
+          "masked_gradient_mse": 0.01654723502563398
+        },
+        "frozen": {
+          "missing_mse": 0.02409940737023866,
+          "masked_gradient_mse": 0.01654723502563398
+        },
+        "live": {
+          "missing_mse": 0.02409940737023866,
+          "masked_gradient_mse": 0.01654723502563398
+        },
+        "no_coarse": {
+          "missing_mse": 0.02409940737023866,
+          "masked_gradient_mse": 0.01654723502563398
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.002008781528023639,
+      "mean_coarse_hidden_mse": 0.0253327414393425,
+      "conditioned_vs_mean_coarse_l2": 1.0019103729742957,
+      "fine_revised_coarse_l2": 0.08142109300790286,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        28,
+        12,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        28,
+        12,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 18,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.02855906692449476,
+          "masked_gradient_mse": 0.019320410838233753
+        },
+        "nearest4": {
+          "missing_mse": 0.05326853320002556,
+          "masked_gradient_mse": 0.02013087272644043
+        },
+        "original_sihti3": {
+          "missing_mse": 0.018985049862421798,
+          "masked_gradient_mse": 0.01578110028556422
+        },
+        "mean": {
+          "missing_mse": 0.024030646889262774,
+          "masked_gradient_mse": 0.01955261809316375
+        },
+        "shuffled": {
+          "missing_mse": 0.024030646889262774,
+          "masked_gradient_mse": 0.01955261809316375
+        },
+        "frozen": {
+          "missing_mse": 0.024030646889262774,
+          "masked_gradient_mse": 0.01955261809316375
+        },
+        "live": {
+          "missing_mse": 0.024030646889262774,
+          "masked_gradient_mse": 0.01955261809316375
+        },
+        "no_coarse": {
+          "missing_mse": 0.024030646889262774,
+          "masked_gradient_mse": 0.01955261809316375
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.009932212993964028,
+      "mean_coarse_hidden_mse": 0.039655059576034546,
+      "conditioned_vs_mean_coarse_l2": 1.5137037687745694,
+      "fine_revised_coarse_l2": 0.20809588187166922,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        19,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        19,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 19,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.023867286325815494,
+          "masked_gradient_mse": 0.018395719725948004
+        },
+        "nearest4": {
+          "missing_mse": 0.027044694870710373,
+          "masked_gradient_mse": 0.019087238237261772
+        },
+        "original_sihti3": {
+          "missing_mse": 0.016909168317332864,
+          "masked_gradient_mse": 0.016081642443628676
+        },
+        "mean": {
+          "missing_mse": 0.03292999355884278,
+          "masked_gradient_mse": 0.020104862860593736
+        },
+        "shuffled": {
+          "missing_mse": 0.03292999355884278,
+          "masked_gradient_mse": 0.020104862860593736
+        },
+        "frozen": {
+          "missing_mse": 0.03292999355884278,
+          "masked_gradient_mse": 0.020104862860593736
+        },
+        "live": {
+          "missing_mse": 0.03292999355884278,
+          "masked_gradient_mse": 0.020104862860593736
+        },
+        "no_coarse": {
+          "missing_mse": 0.03292999355884278,
+          "masked_gradient_mse": 0.020104862860593736
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0028094604125821518,
+      "mean_coarse_hidden_mse": 0.014866041019558907,
+      "conditioned_vs_mean_coarse_l2": 1.7885213117912684,
+      "fine_revised_coarse_l2": 0.06950438696410759,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        18,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        18,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 20,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.025001172667319067,
+          "masked_gradient_mse": 0.018919218669163785
+        },
+        "nearest4": {
+          "missing_mse": 0.04351568967103958,
+          "masked_gradient_mse": 0.019091861322522163
+        },
+        "original_sihti3": {
+          "missing_mse": 0.02763007451684728,
+          "masked_gradient_mse": 0.018421455925772528
+        },
+        "mean": {
+          "missing_mse": 0.02769337389376277,
+          "masked_gradient_mse": 0.020081720214359486
+        },
+        "shuffled": {
+          "missing_mse": 0.027333926555230557,
+          "masked_gradient_mse": 0.020288561018354866
+        },
+        "frozen": {
+          "missing_mse": 0.026614700056104768,
+          "masked_gradient_mse": 0.019608311965336505
+        },
+        "live": {
+          "missing_mse": 0.026614700056104768,
+          "masked_gradient_mse": 0.019608311965336505
+        },
+        "no_coarse": {
+          "missing_mse": 0.025462674577693613,
+          "masked_gradient_mse": 0.019955643676962266
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0053697742969496184,
+      "mean_coarse_hidden_mse": 0.09291766583919525,
+      "conditioned_vs_mean_coarse_l2": 2.333898587338708,
+      "fine_revised_coarse_l2": 0.1321038280203195,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        16,
+        8,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        16,
+        8,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 21,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.016106419008712472,
+          "masked_gradient_mse": 0.008820072471484404
+        },
+        "nearest4": {
+          "missing_mse": 0.039671190083026886,
+          "masked_gradient_mse": 0.012129715643823147
+        },
+        "original_sihti3": {
+          "missing_mse": 0.02321453436949651,
+          "masked_gradient_mse": 0.009743256141915159
+        },
+        "mean": {
+          "missing_mse": 0.036338530909757916,
+          "masked_gradient_mse": 0.012666872590348476
+        },
+        "shuffled": {
+          "missing_mse": 0.036338530909757916,
+          "masked_gradient_mse": 0.012666872590348476
+        },
+        "frozen": {
+          "missing_mse": 0.036338530909757916,
+          "masked_gradient_mse": 0.012666872590348476
+        },
+        "live": {
+          "missing_mse": 0.036338530909757916,
+          "masked_gradient_mse": 0.012666872590348476
+        },
+        "no_coarse": {
+          "missing_mse": 0.036338530909757916,
+          "masked_gradient_mse": 0.012666872590348476
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.005536898286337053,
+      "mean_coarse_hidden_mse": 0.07889983057975769,
+      "conditioned_vs_mean_coarse_l2": 1.9100945845312987,
+      "fine_revised_coarse_l2": 0.11874018412158474,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        34,
+        6,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        34,
+        6,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 22,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.044260851826434,
+          "masked_gradient_mse": 0.019284157096406296
+        },
+        "nearest4": {
+          "missing_mse": 0.05418124049901962,
+          "masked_gradient_mse": 0.025440238416194916
+        },
+        "original_sihti3": {
+          "missing_mse": 0.05083814384036689,
+          "masked_gradient_mse": 0.020334813389222772
+        },
+        "mean": {
+          "missing_mse": 0.06692322509735307,
+          "masked_gradient_mse": 0.02549986406401263
+        },
+        "shuffled": {
+          "missing_mse": 0.05279816480160968,
+          "masked_gradient_mse": 0.02279118984220682
+        },
+        "frozen": {
+          "missing_mse": 0.06692322509735307,
+          "masked_gradient_mse": 0.02549986406401263
+        },
+        "live": {
+          "missing_mse": 0.06692322509735307,
+          "masked_gradient_mse": 0.02549986406401263
+        },
+        "no_coarse": {
+          "missing_mse": 0.06782637039498633,
+          "masked_gradient_mse": 0.02597162692789015
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.015931330045628224,
+      "mean_coarse_hidden_mse": 0.03119487874209881,
+      "conditioned_vs_mean_coarse_l2": 1.3366923471653895,
+      "fine_revised_coarse_l2": 0.13733592221215202,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        25,
+        6,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        25,
+        6,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 23,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.01186355584389924,
+          "masked_gradient_mse": 0.011031893146171368
+        },
+        "nearest4": {
+          "missing_mse": 0.023226074874401093,
+          "masked_gradient_mse": 0.018667392432689667
+        },
+        "original_sihti3": {
+          "missing_mse": 0.01197341039879609,
+          "masked_gradient_mse": 0.010603304439091694
+        },
+        "mean": {
+          "missing_mse": 0.011880349511785768,
+          "masked_gradient_mse": 0.011780800477021507
+        },
+        "shuffled": {
+          "missing_mse": 0.011880349511785768,
+          "masked_gradient_mse": 0.011780800477021507
+        },
+        "frozen": {
+          "missing_mse": 0.011880349511785768,
+          "masked_gradient_mse": 0.011780800477021507
+        },
+        "live": {
+          "missing_mse": 0.011880349511785768,
+          "masked_gradient_mse": 0.011780800477021507
+        },
+        "no_coarse": {
+          "missing_mse": 0.011880349511785768,
+          "masked_gradient_mse": 0.011780800477021507
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0008619241523306603,
+      "mean_coarse_hidden_mse": 0.003127902513369918,
+      "conditioned_vs_mean_coarse_l2": 0.8661964247736161,
+      "fine_revised_coarse_l2": 0.08783493652880711,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        32,
+        10,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        32,
+        10,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 24,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.016366655365163584,
+          "masked_gradient_mse": 0.009205067556814158
+        },
+        "nearest4": {
+          "missing_mse": 0.03847825527191162,
+          "masked_gradient_mse": 0.009633962996304035
+        },
+        "original_sihti3": {
+          "missing_mse": 0.014928216748204732,
+          "masked_gradient_mse": 0.007791175439505486
+        },
+        "mean": {
+          "missing_mse": 0.022272991616172865,
+          "masked_gradient_mse": 0.01008880293947403
+        },
+        "shuffled": {
+          "missing_mse": 0.022272991616172865,
+          "masked_gradient_mse": 0.01008880293947403
+        },
+        "frozen": {
+          "missing_mse": 0.022272991616172865,
+          "masked_gradient_mse": 0.01008880293947403
+        },
+        "live": {
+          "missing_mse": 0.022272991616172865,
+          "masked_gradient_mse": 0.01008880293947403
+        },
+        "no_coarse": {
+          "missing_mse": 0.022272991616172865,
+          "masked_gradient_mse": 0.01008880293947403
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.006505586680250237,
+      "mean_coarse_hidden_mse": 0.06296344846487045,
+      "conditioned_vs_mean_coarse_l2": 1.5515200449233917,
+      "fine_revised_coarse_l2": 0.12092120667575308,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        32,
+        8,
+        4,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        32,
+        8,
+        4,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 25,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.027234684580218358,
+          "masked_gradient_mse": 0.021833794160524903
+        },
+        "nearest4": {
+          "missing_mse": 0.024955742061138153,
+          "masked_gradient_mse": 0.02185198664665222
+        },
+        "original_sihti3": {
+          "missing_mse": 0.034882163332987944,
+          "masked_gradient_mse": 0.02227968297143926
+        },
+        "mean": {
+          "missing_mse": 0.02956038015587183,
+          "masked_gradient_mse": 0.027554211400329206
+        },
+        "shuffled": {
+          "missing_mse": 0.02956038015587183,
+          "masked_gradient_mse": 0.027554211400329206
+        },
+        "frozen": {
+          "missing_mse": 0.02956038015587183,
+          "masked_gradient_mse": 0.027554211400329206
+        },
+        "live": {
+          "missing_mse": 0.02956038015587183,
+          "masked_gradient_mse": 0.027554211400329206
+        },
+        "no_coarse": {
+          "missing_mse": 0.02956038015587183,
+          "masked_gradient_mse": 0.027554211400329206
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.014167859931222902,
+      "mean_coarse_hidden_mse": 0.03330899775028229,
+      "conditioned_vs_mean_coarse_l2": 1.907561007045068,
+      "fine_revised_coarse_l2": 0.2644857217054835,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        27,
+        12,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        27,
+        12,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 26,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.022665303316428204,
+          "masked_gradient_mse": 0.022027448726244184
+        },
+        "nearest4": {
+          "missing_mse": 0.02736656926572323,
+          "masked_gradient_mse": 0.023437321186065674
+        },
+        "original_sihti3": {
+          "missing_mse": 0.025140733421060567,
+          "masked_gradient_mse": 0.021803607314845017
+        },
+        "mean": {
+          "missing_mse": 0.024634655371680268,
+          "masked_gradient_mse": 0.02344272016747863
+        },
+        "shuffled": {
+          "missing_mse": 0.024634655371680268,
+          "masked_gradient_mse": 0.02344272016747863
+        },
+        "frozen": {
+          "missing_mse": 0.024634655371680268,
+          "masked_gradient_mse": 0.02344272016747863
+        },
+        "live": {
+          "missing_mse": 0.024634655371680268,
+          "masked_gradient_mse": 0.02344272016747863
+        },
+        "no_coarse": {
+          "missing_mse": 0.024634655371680268,
+          "masked_gradient_mse": 0.02344272016747863
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0026111473277417698,
+      "mean_coarse_hidden_mse": 0.03855611011385918,
+      "conditioned_vs_mean_coarse_l2": 2.1749671454253,
+      "fine_revised_coarse_l2": 0.14916539105769477,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        32,
+        9,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        32,
+        9,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 27,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.025827875525505854,
+          "masked_gradient_mse": 0.014234886461590927
+        },
+        "nearest4": {
+          "missing_mse": 0.03878703713417053,
+          "masked_gradient_mse": 0.016002869233489037
+        },
+        "original_sihti3": {
+          "missing_mse": 0.017490597129382016,
+          "masked_gradient_mse": 0.011686038255268927
+        },
+        "mean": {
+          "missing_mse": 0.02797691879076266,
+          "masked_gradient_mse": 0.016201593275209328
+        },
+        "shuffled": {
+          "missing_mse": 0.02797691879076266,
+          "masked_gradient_mse": 0.016201593275209328
+        },
+        "frozen": {
+          "missing_mse": 0.02797691879076266,
+          "masked_gradient_mse": 0.016201593275209328
+        },
+        "live": {
+          "missing_mse": 0.02797691879076266,
+          "masked_gradient_mse": 0.016201593275209328
+        },
+        "no_coarse": {
+          "missing_mse": 0.02797691879076266,
+          "masked_gradient_mse": 0.016201593275209328
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.006517350636351026,
+      "mean_coarse_hidden_mse": 0.01712188497185707,
+      "conditioned_vs_mean_coarse_l2": 0.9978764889528948,
+      "fine_revised_coarse_l2": 0.13105292807201988,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        31,
+        11,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        31,
+        11,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 28,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.031838003529931026,
+          "masked_gradient_mse": 0.021138931439890794
+        },
+        "nearest4": {
+          "missing_mse": 0.03162424638867378,
+          "masked_gradient_mse": 0.0242854505777359
+        },
+        "original_sihti3": {
+          "missing_mse": 0.03200867757901928,
+          "masked_gradient_mse": 0.021229887199822384
+        },
+        "mean": {
+          "missing_mse": 0.0341972775382204,
+          "masked_gradient_mse": 0.022546070491812075
+        },
+        "shuffled": {
+          "missing_mse": 0.0341972775382204,
+          "masked_gradient_mse": 0.022546070491812075
+        },
+        "frozen": {
+          "missing_mse": 0.0341972775382204,
+          "masked_gradient_mse": 0.022546070491812075
+        },
+        "live": {
+          "missing_mse": 0.0341972775382204,
+          "masked_gradient_mse": 0.022546070491812075
+        },
+        "no_coarse": {
+          "missing_mse": 0.0341972775382204,
+          "masked_gradient_mse": 0.022546070491812075
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.006049249706828481,
+      "mean_coarse_hidden_mse": 0.0191868357360363,
+      "conditioned_vs_mean_coarse_l2": 1.0175415803955505,
+      "fine_revised_coarse_l2": 0.1220416260895816,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        32,
+        7,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        32,
+        7,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 29,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.05635246765070512,
+          "masked_gradient_mse": 0.045971032385458854
+        },
+        "nearest4": {
+          "missing_mse": 0.0679701566696167,
+          "masked_gradient_mse": 0.05298657342791557
+        },
+        "original_sihti3": {
+          "missing_mse": 0.04797342331090453,
+          "masked_gradient_mse": 0.04297712711558535
+        },
+        "mean": {
+          "missing_mse": 0.05989267695467417,
+          "masked_gradient_mse": 0.04921184072012098
+        },
+        "shuffled": {
+          "missing_mse": 0.06040080759123015,
+          "masked_gradient_mse": 0.0486653872706134
+        },
+        "frozen": {
+          "missing_mse": 0.06040080759123015,
+          "masked_gradient_mse": 0.0486653872706134
+        },
+        "live": {
+          "missing_mse": 0.06040080759123015,
+          "masked_gradient_mse": 0.0486653872706134
+        },
+        "no_coarse": {
+          "missing_mse": 0.06040080759123015,
+          "masked_gradient_mse": 0.0486653872706134
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.014609096392221575,
+      "mean_coarse_hidden_mse": 0.03745332360267639,
+      "conditioned_vs_mean_coarse_l2": 1.877747188839446,
+      "fine_revised_coarse_l2": 0.14112520147700178,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        21,
+        11,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        21,
+        11,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 30,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.019044341932633223,
+          "masked_gradient_mse": 0.013985678784839611
+        },
+        "nearest4": {
+          "missing_mse": 0.028077900409698486,
+          "masked_gradient_mse": 0.015569285489618778
+        },
+        "original_sihti3": {
+          "missing_mse": 0.016912509675876465,
+          "masked_gradient_mse": 0.013241821168486025
+        },
+        "mean": {
+          "missing_mse": 0.01975634850593385,
+          "masked_gradient_mse": 0.014991073806135995
+        },
+        "shuffled": {
+          "missing_mse": 0.01975634850593385,
+          "masked_gradient_mse": 0.014991073806135995
+        },
+        "frozen": {
+          "missing_mse": 0.01975634850593385,
+          "masked_gradient_mse": 0.014991073806135995
+        },
+        "live": {
+          "missing_mse": 0.01975634850593385,
+          "masked_gradient_mse": 0.014991073806135995
+        },
+        "no_coarse": {
+          "missing_mse": 0.01975634850593385,
+          "masked_gradient_mse": 0.014991073806135995
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.004167260604810313,
+      "mean_coarse_hidden_mse": 0.035365812480449677,
+      "conditioned_vs_mean_coarse_l2": 1.834172962022663,
+      "fine_revised_coarse_l2": 0.09527431302019031,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        20,
+        7,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        20,
+        7,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 31,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.04253002466444802,
+          "masked_gradient_mse": 0.03477269863819342
+        },
+        "nearest4": {
+          "missing_mse": 0.05871745944023132,
+          "masked_gradient_mse": 0.043370142579078674
+        },
+        "original_sihti3": {
+          "missing_mse": 0.04185636943163441,
+          "masked_gradient_mse": 0.03435926967949438
+        },
+        "mean": {
+          "missing_mse": 0.049350746421101266,
+          "masked_gradient_mse": 0.037971397448656484
+        },
+        "shuffled": {
+          "missing_mse": 0.049350746421101266,
+          "masked_gradient_mse": 0.037971397448656484
+        },
+        "frozen": {
+          "missing_mse": 0.049350746421101266,
+          "masked_gradient_mse": 0.037971397448656484
+        },
+        "live": {
+          "missing_mse": 0.049350746421101266,
+          "masked_gradient_mse": 0.037971397448656484
+        },
+        "no_coarse": {
+          "missing_mse": 0.049350746421101266,
+          "masked_gradient_mse": 0.037971397448656484
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.005524021336358414,
+      "mean_coarse_hidden_mse": 0.012088645249605179,
+      "conditioned_vs_mean_coarse_l2": 1.2571466200013044,
+      "fine_revised_coarse_l2": 0.12480592111780789,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        29,
+        17,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        29,
+        17,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 32,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.015588954349666473,
+          "masked_gradient_mse": 0.006851217745706113
+        },
+        "nearest4": {
+          "missing_mse": 0.03198457881808281,
+          "masked_gradient_mse": 0.009487365372478962
+        },
+        "original_sihti3": {
+          "missing_mse": 0.018922849218802506,
+          "masked_gradient_mse": 0.00734268875309821
+        },
+        "mean": {
+          "missing_mse": 0.021538768167298876,
+          "masked_gradient_mse": 0.01134529891783911
+        },
+        "shuffled": {
+          "missing_mse": 0.021538768167298876,
+          "masked_gradient_mse": 0.01134529891783911
+        },
+        "frozen": {
+          "missing_mse": 0.021538768167298876,
+          "masked_gradient_mse": 0.01134529891783911
+        },
+        "live": {
+          "missing_mse": 0.021538768167298876,
+          "masked_gradient_mse": 0.01134529891783911
+        },
+        "no_coarse": {
+          "missing_mse": 0.021538768167298876,
+          "masked_gradient_mse": 0.01134529891783911
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.005810636370575835,
+      "mean_coarse_hidden_mse": 0.09416306763887405,
+      "conditioned_vs_mean_coarse_l2": 1.9698742767033472,
+      "fine_revised_coarse_l2": 0.20433687348020288,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        26,
+        9,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        26,
+        10,
+        7,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 33,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.07943532563123834,
+          "masked_gradient_mse": 0.04438940575542071
+        },
+        "nearest4": {
+          "missing_mse": 0.07020522654056549,
+          "masked_gradient_mse": 0.051285792142152786
+        },
+        "original_sihti3": {
+          "missing_mse": 0.07292732741704736,
+          "masked_gradient_mse": 0.0422824694562385
+        },
+        "mean": {
+          "missing_mse": 0.08014277425961164,
+          "masked_gradient_mse": 0.04456994283554303
+        },
+        "shuffled": {
+          "missing_mse": 0.08014277425961164,
+          "masked_gradient_mse": 0.04456994283554303
+        },
+        "frozen": {
+          "missing_mse": 0.08014277425961164,
+          "masked_gradient_mse": 0.04456994283554303
+        },
+        "live": {
+          "missing_mse": 0.08014277425961164,
+          "masked_gradient_mse": 0.04456994283554303
+        },
+        "no_coarse": {
+          "missing_mse": 0.08014277425961164,
+          "masked_gradient_mse": 0.04456994283554303
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.031920437018311876,
+      "mean_coarse_hidden_mse": 0.033042728900909424,
+      "conditioned_vs_mean_coarse_l2": 1.0032994603522702,
+      "fine_revised_coarse_l2": 0.09687997062740947,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        22,
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        22,
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 34,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.03326874587805469,
+          "masked_gradient_mse": 0.02637073504575523
+        },
+        "nearest4": {
+          "missing_mse": 0.03646146506071091,
+          "masked_gradient_mse": 0.026734838262200356
+        },
+        "original_sihti3": {
+          "missing_mse": 0.040072772312153185,
+          "masked_gradient_mse": 0.027412901642465484
+        },
+        "mean": {
+          "missing_mse": 0.032187183804712236,
+          "masked_gradient_mse": 0.027160451216216977
+        },
+        "shuffled": {
+          "missing_mse": 0.033157711037645365,
+          "masked_gradient_mse": 0.02785682881096041
+        },
+        "frozen": {
+          "missing_mse": 0.03455083989148517,
+          "masked_gradient_mse": 0.028342440992776625
+        },
+        "live": {
+          "missing_mse": 0.03455083989148517,
+          "masked_gradient_mse": 0.028342440992776625
+        },
+        "no_coarse": {
+          "missing_mse": 0.033157711037645365,
+          "masked_gradient_mse": 0.02785682881096041
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.00629252687803432,
+      "mean_coarse_hidden_mse": 0.04952777922153473,
+      "conditioned_vs_mean_coarse_l2": 1.7534908840720442,
+      "fine_revised_coarse_l2": 0.12993988417259875,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        24,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        24,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 35,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.024202584232672054,
+          "masked_gradient_mse": 0.019068815529550774
+        },
+        "nearest4": {
+          "missing_mse": 0.040464136749506,
+          "masked_gradient_mse": 0.021104268729686737
+        },
+        "original_sihti3": {
+          "missing_mse": 0.022899400654338486,
+          "masked_gradient_mse": 0.01766205458993315
+        },
+        "mean": {
+          "missing_mse": 0.028556200440803835,
+          "masked_gradient_mse": 0.020467291045691338
+        },
+        "shuffled": {
+          "missing_mse": 0.028549873620916065,
+          "masked_gradient_mse": 0.02026463898795865
+        },
+        "frozen": {
+          "missing_mse": 0.028549873620916065,
+          "masked_gradient_mse": 0.02026463898795865
+        },
+        "live": {
+          "missing_mse": 0.028549873620916065,
+          "masked_gradient_mse": 0.02026463898795865
+        },
+        "no_coarse": {
+          "missing_mse": 0.028549873620916065,
+          "masked_gradient_mse": 0.02026463898795865
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.009111411281121449,
+      "mean_coarse_hidden_mse": 0.0570279099047184,
+      "conditioned_vs_mean_coarse_l2": 1.5865679528238787,
+      "fine_revised_coarse_l2": 0.0757926391626798,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        32,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        32,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 36,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.03631022041368011,
+          "masked_gradient_mse": 0.026439890767884704
+        },
+        "nearest4": {
+          "missing_mse": 0.04668543487787247,
+          "masked_gradient_mse": 0.025654161348938942
+        },
+        "original_sihti3": {
+          "missing_mse": 0.028723762816038678,
+          "masked_gradient_mse": 0.024170902299233746
+        },
+        "mean": {
+          "missing_mse": 0.045567487917764236,
+          "masked_gradient_mse": 0.02960153802189845
+        },
+        "shuffled": {
+          "missing_mse": 0.045567487917764236,
+          "masked_gradient_mse": 0.02960153802189845
+        },
+        "frozen": {
+          "missing_mse": 0.045567487917764236,
+          "masked_gradient_mse": 0.02960153802189845
+        },
+        "live": {
+          "missing_mse": 0.045567487917764236,
+          "masked_gradient_mse": 0.02960153802189845
+        },
+        "no_coarse": {
+          "missing_mse": 0.0467875995000429,
+          "masked_gradient_mse": 0.029873954627223625
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0032451029823689914,
+      "mean_coarse_hidden_mse": 0.03374163806438446,
+      "conditioned_vs_mean_coarse_l2": 1.5634620161728878,
+      "fine_revised_coarse_l2": 0.12892651688378773,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        28,
+        9,
+        6,
+        2,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        28,
+        9,
+        6,
+        2,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 37,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0373121006099793,
+          "masked_gradient_mse": 0.023202858916105698
+        },
+        "nearest4": {
+          "missing_mse": 0.055050041526556015,
+          "masked_gradient_mse": 0.02464187890291214
+        },
+        "original_sihti3": {
+          "missing_mse": 0.037906236590847193,
+          "masked_gradient_mse": 0.02382135561954331
+        },
+        "mean": {
+          "missing_mse": 0.04184649521979487,
+          "masked_gradient_mse": 0.023897576524987245
+        },
+        "shuffled": {
+          "missing_mse": 0.04184649521979487,
+          "masked_gradient_mse": 0.023897576524987245
+        },
+        "frozen": {
+          "missing_mse": 0.04184649521979487,
+          "masked_gradient_mse": 0.023897576524987245
+        },
+        "live": {
+          "missing_mse": 0.04184649521979487,
+          "masked_gradient_mse": 0.023897576524987245
+        },
+        "no_coarse": {
+          "missing_mse": 0.04184649521979487,
+          "masked_gradient_mse": 0.023897576524987245
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.011058212100069829,
+      "mean_coarse_hidden_mse": 0.07548567652702332,
+      "conditioned_vs_mean_coarse_l2": 2.1837986554273705,
+      "fine_revised_coarse_l2": 0.15460048844278404,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        25,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        25,
+        8,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 38,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.02474225227281708,
+          "masked_gradient_mse": 0.02075356143090324
+        },
+        "nearest4": {
+          "missing_mse": 0.029835307970643044,
+          "masked_gradient_mse": 0.02329246513545513
+        },
+        "original_sihti3": {
+          "missing_mse": 0.02705806155963041,
+          "masked_gradient_mse": 0.019857898434885345
+        },
+        "mean": {
+          "missing_mse": 0.024807304863722436,
+          "masked_gradient_mse": 0.02154750623831568
+        },
+        "shuffled": {
+          "missing_mse": 0.024807304863722436,
+          "masked_gradient_mse": 0.02154750623831568
+        },
+        "frozen": {
+          "missing_mse": 0.024807304863722436,
+          "masked_gradient_mse": 0.02154750623831568
+        },
+        "live": {
+          "missing_mse": 0.024807304863722436,
+          "masked_gradient_mse": 0.02154750623831568
+        },
+        "no_coarse": {
+          "missing_mse": 0.024807304863722436,
+          "masked_gradient_mse": 0.02154750623831568
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.002850871819671304,
+      "mean_coarse_hidden_mse": 0.07861995697021484,
+      "conditioned_vs_mean_coarse_l2": 1.989550388981787,
+      "fine_revised_coarse_l2": 0.13351569800097438,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        25,
+        13,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        25,
+        13,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 39,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.021759287182799167,
+          "masked_gradient_mse": 0.02714213938547238
+        },
+        "nearest4": {
+          "missing_mse": 0.03301967680454254,
+          "masked_gradient_mse": 0.028492189943790436
+        },
+        "original_sihti3": {
+          "missing_mse": 0.020900437844584115,
+          "masked_gradient_mse": 0.02603090179608586
+        },
+        "mean": {
+          "missing_mse": 0.026272573272724697,
+          "masked_gradient_mse": 0.03137000682334094
+        },
+        "shuffled": {
+          "missing_mse": 0.026272573272724697,
+          "masked_gradient_mse": 0.03137000682334094
+        },
+        "frozen": {
+          "missing_mse": 0.026272573272724697,
+          "masked_gradient_mse": 0.03137000682334094
+        },
+        "live": {
+          "missing_mse": 0.026272573272724697,
+          "masked_gradient_mse": 0.03137000682334094
+        },
+        "no_coarse": {
+          "missing_mse": 0.026272573272724697,
+          "masked_gradient_mse": 0.03137000682334094
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.003969207613139343,
+      "mean_coarse_hidden_mse": 0.026156067848205566,
+      "conditioned_vs_mean_coarse_l2": 1.9582178929009217,
+      "fine_revised_coarse_l2": 0.11817584882285381,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        23,
+        10,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        23,
+        10,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 40,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.017128991237984954,
+          "masked_gradient_mse": 0.021073845070081063
+        },
+        "nearest4": {
+          "missing_mse": 0.020128794014453888,
+          "masked_gradient_mse": 0.022287433966994286
+        },
+        "original_sihti3": {
+          "missing_mse": 0.016272211552171945,
+          "masked_gradient_mse": 0.020152836878968076
+        },
+        "mean": {
+          "missing_mse": 0.019638319405648176,
+          "masked_gradient_mse": 0.022486346859394397
+        },
+        "shuffled": {
+          "missing_mse": 0.01970037388185774,
+          "masked_gradient_mse": 0.022554493511850914
+        },
+        "frozen": {
+          "missing_mse": 0.01680906381601251,
+          "masked_gradient_mse": 0.020722921856411045
+        },
+        "live": {
+          "missing_mse": 0.01680906381601251,
+          "masked_gradient_mse": 0.020722921856411045
+        },
+        "no_coarse": {
+          "missing_mse": 0.01680906381601251,
+          "masked_gradient_mse": 0.020722921856411045
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0011123622788123896,
+      "mean_coarse_hidden_mse": 0.003760961350053549,
+      "conditioned_vs_mean_coarse_l2": 0.4673657449316628,
+      "fine_revised_coarse_l2": 0.10894836219959506,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        29,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        29,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 41,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.03133991012372685,
+          "masked_gradient_mse": 0.016940990267625904
+        },
+        "nearest4": {
+          "missing_mse": 0.03568451851606369,
+          "masked_gradient_mse": 0.016671057790517807
+        },
+        "original_sihti3": {
+          "missing_mse": 0.02569167988323668,
+          "masked_gradient_mse": 0.014975339924860696
+        },
+        "mean": {
+          "missing_mse": 0.03441409379105663,
+          "masked_gradient_mse": 0.019175889997193763
+        },
+        "shuffled": {
+          "missing_mse": 0.03441409379105663,
+          "masked_gradient_mse": 0.019175889997193763
+        },
+        "frozen": {
+          "missing_mse": 0.03441409379105663,
+          "masked_gradient_mse": 0.019175889997193763
+        },
+        "live": {
+          "missing_mse": 0.03441409379105663,
+          "masked_gradient_mse": 0.019175889997193763
+        },
+        "no_coarse": {
+          "missing_mse": 0.034544723152759124,
+          "masked_gradient_mse": 0.019535870249762513
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.008595878153139141,
+      "mean_coarse_hidden_mse": 0.030411647632718086,
+      "conditioned_vs_mean_coarse_l2": 0.7360735796326661,
+      "fine_revised_coarse_l2": 0.08181389668612186,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        24,
+        12,
+        7,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        24,
+        12,
+        7,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 42,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.039923538313143256,
+          "masked_gradient_mse": 0.03329373105393567
+        },
+        "nearest4": {
+          "missing_mse": 0.04112280532717705,
+          "masked_gradient_mse": 0.03220612555742264
+        },
+        "original_sihti3": {
+          "missing_mse": 0.03420937052830471,
+          "masked_gradient_mse": 0.030856800488446138
+        },
+        "mean": {
+          "missing_mse": 0.04060341943241311,
+          "masked_gradient_mse": 0.03511400514324945
+        },
+        "shuffled": {
+          "missing_mse": 0.0382442784757502,
+          "masked_gradient_mse": 0.03390441507626327
+        },
+        "frozen": {
+          "missing_mse": 0.0382442784757502,
+          "masked_gradient_mse": 0.03390441507626327
+        },
+        "live": {
+          "missing_mse": 0.0382442784757502,
+          "masked_gradient_mse": 0.03390441507626327
+        },
+        "no_coarse": {
+          "missing_mse": 0.04060341943241311,
+          "masked_gradient_mse": 0.03511400514324945
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0038776609157884253,
+      "mean_coarse_hidden_mse": 0.02320571430027485,
+      "conditioned_vs_mean_coarse_l2": 1.2827901247273068,
+      "fine_revised_coarse_l2": 0.1425313808790088,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        28,
+        11,
+        4,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        28,
+        11,
+        4,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 43,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.04370055763687052,
+          "masked_gradient_mse": 0.048239726077995
+        },
+        "nearest4": {
+          "missing_mse": 0.08873162418603897,
+          "masked_gradient_mse": 0.05336681753396988
+        },
+        "original_sihti3": {
+          "missing_mse": 0.04212352193554346,
+          "masked_gradient_mse": 0.04535774021242592
+        },
+        "mean": {
+          "missing_mse": 0.04932244933354904,
+          "masked_gradient_mse": 0.04886636419797895
+        },
+        "shuffled": {
+          "missing_mse": 0.04932244933354904,
+          "masked_gradient_mse": 0.04886636419797895
+        },
+        "frozen": {
+          "missing_mse": 0.04932244933354904,
+          "masked_gradient_mse": 0.04886636419797895
+        },
+        "live": {
+          "missing_mse": 0.04932244933354904,
+          "masked_gradient_mse": 0.04886636419797895
+        },
+        "no_coarse": {
+          "missing_mse": 0.04932244933354904,
+          "masked_gradient_mse": 0.04886636419797895
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.012788170479039976,
+      "mean_coarse_hidden_mse": 0.015271357260644436,
+      "conditioned_vs_mean_coarse_l2": 1.7394871917843324,
+      "fine_revised_coarse_l2": 0.11911736995245512,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        18,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        18,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 44,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.011329831015387851,
+          "masked_gradient_mse": 0.012853140655433661
+        },
+        "nearest4": {
+          "missing_mse": 0.0151212764903903,
+          "masked_gradient_mse": 0.01532459631562233
+        },
+        "original_sihti3": {
+          "missing_mse": 0.012083743959992971,
+          "masked_gradient_mse": 0.01265175257901178
+        },
+        "mean": {
+          "missing_mse": 0.01180972091841804,
+          "masked_gradient_mse": 0.012492272648175196
+        },
+        "shuffled": {
+          "missing_mse": 0.01180972091841804,
+          "masked_gradient_mse": 0.012492272648175196
+        },
+        "frozen": {
+          "missing_mse": 0.01180972091841804,
+          "masked_gradient_mse": 0.012492272648175196
+        },
+        "live": {
+          "missing_mse": 0.01180972091841804,
+          "masked_gradient_mse": 0.012492272648175196
+        },
+        "no_coarse": {
+          "missing_mse": 0.01180972091841804,
+          "masked_gradient_mse": 0.012492272648175196
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0018736716525360104,
+      "mean_coarse_hidden_mse": 0.004004165530204773,
+      "conditioned_vs_mean_coarse_l2": 0.5161682861564922,
+      "fine_revised_coarse_l2": 0.1210425249627831,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        28,
+        7,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        28,
+        7,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 45,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.03828493227257092,
+          "masked_gradient_mse": 0.027199028414457076
+        },
+        "nearest4": {
+          "missing_mse": 0.04567388445138931,
+          "masked_gradient_mse": 0.025556083768606186
+        },
+        "original_sihti3": {
+          "missing_mse": 0.030737728439623548,
+          "masked_gradient_mse": 0.022911505919096267
+        },
+        "mean": {
+          "missing_mse": 0.0480343644101239,
+          "masked_gradient_mse": 0.03380645142408875
+        },
+        "shuffled": {
+          "missing_mse": 0.04698892920010311,
+          "masked_gradient_mse": 0.03349036833487287
+        },
+        "frozen": {
+          "missing_mse": 0.05510887702174419,
+          "masked_gradient_mse": 0.03583466086354116
+        },
+        "live": {
+          "missing_mse": 0.05510887702174419,
+          "masked_gradient_mse": 0.03583466086354116
+        },
+        "no_coarse": {
+          "missing_mse": 0.05510887702174419,
+          "masked_gradient_mse": 0.03583466086354116
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.009025473393786128,
+      "mean_coarse_hidden_mse": 0.04262573644518852,
+      "conditioned_vs_mean_coarse_l2": 1.8488068147021723,
+      "fine_revised_coarse_l2": 0.17387874638274958,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        25,
+        6,
+        3,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        25,
+        6,
+        3,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 46,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.042186880255116396,
+          "masked_gradient_mse": 0.04268089270863039
+        },
+        "nearest4": {
+          "missing_mse": 0.06265293061733246,
+          "masked_gradient_mse": 0.0470573753118515
+        },
+        "original_sihti3": {
+          "missing_mse": 0.04493415748550154,
+          "masked_gradient_mse": 0.04359621551491505
+        },
+        "mean": {
+          "missing_mse": 0.042527461845939675,
+          "masked_gradient_mse": 0.04329355292148859
+        },
+        "shuffled": {
+          "missing_mse": 0.04195264113443779,
+          "masked_gradient_mse": 0.043227588157132776
+        },
+        "frozen": {
+          "missing_mse": 0.04195264113443779,
+          "masked_gradient_mse": 0.043227588157132776
+        },
+        "live": {
+          "missing_mse": 0.04195264113443779,
+          "masked_gradient_mse": 0.043227588157132776
+        },
+        "no_coarse": {
+          "missing_mse": 0.04195264113443779,
+          "masked_gradient_mse": 0.043227588157132776
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0036116192721652183,
+      "mean_coarse_hidden_mse": 0.06941859424114227,
+      "conditioned_vs_mean_coarse_l2": 2.353273061480724,
+      "fine_revised_coarse_l2": 0.13755829593843008,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        29,
+        9,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        29,
+        9,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 47,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.03483479227284134,
+          "masked_gradient_mse": 0.016876938847770678
+        },
+        "nearest4": {
+          "missing_mse": 0.036369651556015015,
+          "masked_gradient_mse": 0.01844438910484314
+        },
+        "original_sihti3": {
+          "missing_mse": 0.03897149359808238,
+          "masked_gradient_mse": 0.017838179140407712
+        },
+        "mean": {
+          "missing_mse": 0.02551357608693176,
+          "masked_gradient_mse": 0.01724338437078862
+        },
+        "shuffled": {
+          "missing_mse": 0.025100881018152967,
+          "masked_gradient_mse": 0.01599504490568405
+        },
+        "frozen": {
+          "missing_mse": 0.025100881018152967,
+          "masked_gradient_mse": 0.01599504490568405
+        },
+        "live": {
+          "missing_mse": 0.025100881018152967,
+          "masked_gradient_mse": 0.01599504490568405
+        },
+        "no_coarse": {
+          "missing_mse": 0.02551357608693176,
+          "masked_gradient_mse": 0.01724338437078862
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0030531536280473297,
+      "mean_coarse_hidden_mse": 0.08620525896549225,
+      "conditioned_vs_mean_coarse_l2": 2.087408134173791,
+      "fine_revised_coarse_l2": 0.07588619435669051,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        24,
+        4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        24,
+        4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 48,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.013047951622129628,
+          "masked_gradient_mse": 0.010905128395741405
+        },
+        "nearest4": {
+          "missing_mse": 0.028906846418976784,
+          "masked_gradient_mse": 0.011455293744802475
+        },
+        "original_sihti3": {
+          "missing_mse": 0.01226875240752651,
+          "masked_gradient_mse": 0.010823800746659947
+        },
+        "mean": {
+          "missing_mse": 0.016609030584625224,
+          "masked_gradient_mse": 0.012991183409950969
+        },
+        "shuffled": {
+          "missing_mse": 0.01699756934849711,
+          "masked_gradient_mse": 0.012988266822947193
+        },
+        "frozen": {
+          "missing_mse": 0.016944972174062104,
+          "masked_gradient_mse": 0.013062470981835519
+        },
+        "live": {
+          "missing_mse": 0.016944972174062104,
+          "masked_gradient_mse": 0.013062470981835519
+        },
+        "no_coarse": {
+          "missing_mse": 0.016944972174062104,
+          "masked_gradient_mse": 0.013062470981835519
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.002562864950159436,
+      "mean_coarse_hidden_mse": 0.037410423159599304,
+      "conditioned_vs_mean_coarse_l2": 1.576355648555318,
+      "fine_revised_coarse_l2": 0.25272478271636756,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        21,
+        10,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        21,
+        10,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 49,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.002937097706648297,
+          "masked_gradient_mse": 0.0014754072773864098
+        },
+        "nearest4": {
+          "missing_mse": 0.030382156372070312,
+          "masked_gradient_mse": 0.005660275463014841
+        },
+        "original_sihti3": {
+          "missing_mse": 0.002708469433198404,
+          "masked_gradient_mse": 0.001302240026725454
+        },
+        "mean": {
+          "missing_mse": 0.004820389969308994,
+          "masked_gradient_mse": 0.0020630600897134973
+        },
+        "shuffled": {
+          "missing_mse": 0.006603570339772636,
+          "masked_gradient_mse": 0.0024158553058967924
+        },
+        "frozen": {
+          "missing_mse": 0.006603570339772636,
+          "masked_gradient_mse": 0.0024158553058967924
+        },
+        "live": {
+          "missing_mse": 0.006603570339772636,
+          "masked_gradient_mse": 0.0024158553058967924
+        },
+        "no_coarse": {
+          "missing_mse": 0.006603570339772636,
+          "masked_gradient_mse": 0.0024158553058967924
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0003179387313140296,
+      "mean_coarse_hidden_mse": 0.010487777180969715,
+      "conditioned_vs_mean_coarse_l2": 1.1248885393554398,
+      "fine_revised_coarse_l2": 0.09552368626551834,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        16,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        16,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 50,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.026710650835476597,
+          "masked_gradient_mse": 0.015362424170840824
+        },
+        "nearest4": {
+          "missing_mse": 0.044038500636816025,
+          "masked_gradient_mse": 0.017665302380919456
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0270869764707548,
+          "masked_gradient_mse": 0.0161422422248301
+        },
+        "mean": {
+          "missing_mse": 0.03392295869441177,
+          "masked_gradient_mse": 0.018404099666428243
+        },
+        "shuffled": {
+          "missing_mse": 0.030724034707797842,
+          "masked_gradient_mse": 0.017469596601916586
+        },
+        "frozen": {
+          "missing_mse": 0.030724034707797842,
+          "masked_gradient_mse": 0.017469596601916586
+        },
+        "live": {
+          "missing_mse": 0.030724034707797842,
+          "masked_gradient_mse": 0.017469596601916586
+        },
+        "no_coarse": {
+          "missing_mse": 0.03392295869441177,
+          "masked_gradient_mse": 0.018404099666428243
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.008799693138714489,
+      "mean_coarse_hidden_mse": 0.02980642393231392,
+      "conditioned_vs_mean_coarse_l2": 1.3779586449431835,
+      "fine_revised_coarse_l2": 0.2457324844218142,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        21,
+        6,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        21,
+        6,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 51,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.06561424457914516,
+          "masked_gradient_mse": 0.020831712351507645
+        },
+        "nearest4": {
+          "missing_mse": 0.0568544864654541,
+          "masked_gradient_mse": 0.023192724213004112
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0557652206546425,
+          "masked_gradient_mse": 0.019445091495410193
+        },
+        "mean": {
+          "missing_mse": 0.06923191773471583,
+          "masked_gradient_mse": 0.021191049719115243
+        },
+        "shuffled": {
+          "missing_mse": 0.06923191773471583,
+          "masked_gradient_mse": 0.021191049719115243
+        },
+        "frozen": {
+          "missing_mse": 0.06923191773471583,
+          "masked_gradient_mse": 0.021191049719115243
+        },
+        "live": {
+          "missing_mse": 0.06923191773471583,
+          "masked_gradient_mse": 0.021191049719115243
+        },
+        "no_coarse": {
+          "missing_mse": 0.06904232020265015,
+          "masked_gradient_mse": 0.019074078685222946
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.016619134647234038,
+      "mean_coarse_hidden_mse": 0.032190509140491486,
+      "conditioned_vs_mean_coarse_l2": 1.3758798536636188,
+      "fine_revised_coarse_l2": 0.1021191173312214,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        21,
+        12,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        21,
+        12,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 52,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.01738593548419547,
+          "masked_gradient_mse": 0.014824687294255514
+        },
+        "nearest4": {
+          "missing_mse": 0.030034804716706276,
+          "masked_gradient_mse": 0.017505595460534096
+        },
+        "original_sihti3": {
+          "missing_mse": 0.014415912523376267,
+          "masked_gradient_mse": 0.013410618983590233
+        },
+        "mean": {
+          "missing_mse": 0.020750153145680565,
+          "masked_gradient_mse": 0.016359819118668937
+        },
+        "shuffled": {
+          "missing_mse": 0.020750153145680565,
+          "masked_gradient_mse": 0.016359819118668937
+        },
+        "frozen": {
+          "missing_mse": 0.021480510147080942,
+          "masked_gradient_mse": 0.016601343690980146
+        },
+        "live": {
+          "missing_mse": 0.021480510147080942,
+          "masked_gradient_mse": 0.016601343690980146
+        },
+        "no_coarse": {
+          "missing_mse": 0.021480510147080942,
+          "masked_gradient_mse": 0.016601343690980146
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.001791929396365822,
+      "mean_coarse_hidden_mse": 0.009775996208190918,
+      "conditioned_vs_mean_coarse_l2": 0.8683801141223229,
+      "fine_revised_coarse_l2": 0.10300196732390195,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        19,
+        12,
+        3,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        19,
+        12,
+        3,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 53,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.05335622956149469,
+          "masked_gradient_mse": 0.04238977623489831
+        },
+        "nearest4": {
+          "missing_mse": 0.08578535914421082,
+          "masked_gradient_mse": 0.0459117628633976
+        },
+        "original_sihti3": {
+          "missing_mse": 0.058553741081168384,
+          "masked_gradient_mse": 0.04276930873568736
+        },
+        "mean": {
+          "missing_mse": 0.0651449144647577,
+          "masked_gradient_mse": 0.0460803737817973
+        },
+        "shuffled": {
+          "missing_mse": 0.07630660880365846,
+          "masked_gradient_mse": 0.04908976568366716
+        },
+        "frozen": {
+          "missing_mse": 0.07630660880365846,
+          "masked_gradient_mse": 0.04908976568366716
+        },
+        "live": {
+          "missing_mse": 0.07630660880365846,
+          "masked_gradient_mse": 0.04908976568366716
+        },
+        "no_coarse": {
+          "missing_mse": 0.07630660880365846,
+          "masked_gradient_mse": 0.04908976568366716
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.010574562313897517,
+      "mean_coarse_hidden_mse": 0.018631640821695328,
+      "conditioned_vs_mean_coarse_l2": 1.5027870406628467,
+      "fine_revised_coarse_l2": 0.13166097504293728,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        28,
+        19,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        28,
+        19,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 54,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.014072332503636254,
+          "masked_gradient_mse": 0.010368488737174823
+        },
+        "nearest4": {
+          "missing_mse": 0.05346071720123291,
+          "masked_gradient_mse": 0.009920906275510788
+        },
+        "original_sihti3": {
+          "missing_mse": 0.00913221380983901,
+          "masked_gradient_mse": 0.007565453465674065
+        },
+        "mean": {
+          "missing_mse": 0.01609421705751047,
+          "masked_gradient_mse": 0.011173884516303538
+        },
+        "shuffled": {
+          "missing_mse": 0.01609421705751047,
+          "masked_gradient_mse": 0.011173884516303538
+        },
+        "frozen": {
+          "missing_mse": 0.014982232347399382,
+          "masked_gradient_mse": 0.010930540518057254
+        },
+        "live": {
+          "missing_mse": 0.014982232347399382,
+          "masked_gradient_mse": 0.010930540518057254
+        },
+        "no_coarse": {
+          "missing_mse": 0.01609421705751047,
+          "masked_gradient_mse": 0.011173884516303538
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0024096042771308583,
+      "mean_coarse_hidden_mse": 0.06508462131023407,
+      "conditioned_vs_mean_coarse_l2": 1.8538020151631815,
+      "fine_revised_coarse_l2": 0.16279697247568492,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        20,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        20,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 55,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.024214894207701038,
+          "masked_gradient_mse": 0.0164542754402512
+        },
+        "nearest4": {
+          "missing_mse": 0.06895159184932709,
+          "masked_gradient_mse": 0.02031385712325573
+        },
+        "original_sihti3": {
+          "missing_mse": 0.0301386015102941,
+          "masked_gradient_mse": 0.01838187602938645
+        },
+        "mean": {
+          "missing_mse": 0.022538808008421306,
+          "masked_gradient_mse": 0.015801054381632144
+        },
+        "shuffled": {
+          "missing_mse": 0.03199172775565201,
+          "masked_gradient_mse": 0.016899939695961992
+        },
+        "frozen": {
+          "missing_mse": 0.032723965173669003,
+          "masked_gradient_mse": 0.017351214442468243
+        },
+        "live": {
+          "missing_mse": 0.032723965173669003,
+          "masked_gradient_mse": 0.017351214442468243
+        },
+        "no_coarse": {
+          "missing_mse": 0.032723965173669003,
+          "masked_gradient_mse": 0.017351214442468243
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0031968002187958947,
+      "mean_coarse_hidden_mse": 0.020314672961831093,
+      "conditioned_vs_mean_coarse_l2": 1.1744736204675856,
+      "fine_revised_coarse_l2": 0.1255236388763472,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        21,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        21,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 56,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.011238686393648608,
+          "masked_gradient_mse": 0.007375287701560845
+        },
+        "nearest4": {
+          "missing_mse": 0.029857542365789413,
+          "masked_gradient_mse": 0.00872873980551958
+        },
+        "original_sihti3": {
+          "missing_mse": 0.008556666985638745,
+          "masked_gradient_mse": 0.006413011346313718
+        },
+        "mean": {
+          "missing_mse": 0.016021980419485125,
+          "masked_gradient_mse": 0.008801766638266498
+        },
+        "shuffled": {
+          "missing_mse": 0.01413419819329938,
+          "masked_gradient_mse": 0.008619458987439302
+        },
+        "frozen": {
+          "missing_mse": 0.01413419819329938,
+          "masked_gradient_mse": 0.008619458987439302
+        },
+        "live": {
+          "missing_mse": 0.01413419819329938,
+          "masked_gradient_mse": 0.008619458987439302
+        },
+        "no_coarse": {
+          "missing_mse": 0.01413419819329938,
+          "masked_gradient_mse": 0.008619458987439302
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0022605247498167927,
+      "mean_coarse_hidden_mse": 0.051326554268598557,
+      "conditioned_vs_mean_coarse_l2": 1.6021529361475282,
+      "fine_revised_coarse_l2": 0.14701177327820622,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        24,
+        7,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        24,
+        7,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 57,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.020582916673250615,
+          "masked_gradient_mse": 0.012784586412820726
+        },
+        "nearest4": {
+          "missing_mse": 0.02464551106095314,
+          "masked_gradient_mse": 0.013074655085802078
+        },
+        "original_sihti3": {
+          "missing_mse": 0.030715039100692752,
+          "masked_gradient_mse": 0.015452644229700255
+        },
+        "mean": {
+          "missing_mse": 0.0215239792070666,
+          "masked_gradient_mse": 0.014090150019171145
+        },
+        "shuffled": {
+          "missing_mse": 0.0215239792070666,
+          "masked_gradient_mse": 0.014090150019171145
+        },
+        "frozen": {
+          "missing_mse": 0.0215239792070666,
+          "masked_gradient_mse": 0.014090150019171145
+        },
+        "live": {
+          "missing_mse": 0.0215239792070666,
+          "masked_gradient_mse": 0.014090150019171145
+        },
+        "no_coarse": {
+          "missing_mse": 0.0215239792070666,
+          "masked_gradient_mse": 0.014090150019171145
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.006182386325206378,
+      "mean_coarse_hidden_mse": 0.013281586579978466,
+      "conditioned_vs_mean_coarse_l2": 1.1111345350259232,
+      "fine_revised_coarse_l2": 0.13864057330125476,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        31,
+        12,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        31,
+        12,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 58,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.016630300207788377,
+          "masked_gradient_mse": 0.009283405519551154
+        },
+        "nearest4": {
+          "missing_mse": 0.03521718829870224,
+          "masked_gradient_mse": 0.0089876065030694
+        },
+        "original_sihti3": {
+          "missing_mse": 0.009900982908458653,
+          "masked_gradient_mse": 0.007415475058956206
+        },
+        "mean": {
+          "missing_mse": 0.013177676659749074,
+          "masked_gradient_mse": 0.00881581742678685
+        },
+        "shuffled": {
+          "missing_mse": 0.013177676659749074,
+          "masked_gradient_mse": 0.00881581742678685
+        },
+        "frozen": {
+          "missing_mse": 0.013177676659749074,
+          "masked_gradient_mse": 0.00881581742678685
+        },
+        "live": {
+          "missing_mse": 0.013177676659749074,
+          "masked_gradient_mse": 0.00881581742678685
+        },
+        "no_coarse": {
+          "missing_mse": 0.013177676659749074,
+          "masked_gradient_mse": 0.00881581742678685
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.00298545975124541,
+      "mean_coarse_hidden_mse": 0.04334791749715805,
+      "conditioned_vs_mean_coarse_l2": 2.1098746521450424,
+      "fine_revised_coarse_l2": 0.20003531151830956,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        17,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        17,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 59,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.002725225861840129,
+          "masked_gradient_mse": 0.0011164438894860716
+        },
+        "nearest4": {
+          "missing_mse": 0.008609414100646973,
+          "masked_gradient_mse": 0.0028499322943389416
+        },
+        "original_sihti3": {
+          "missing_mse": 0.002802392765622827,
+          "masked_gradient_mse": 0.001117706556872388
+        },
+        "mean": {
+          "missing_mse": 0.007050329129935532,
+          "masked_gradient_mse": 0.0024397735740226806
+        },
+        "shuffled": {
+          "missing_mse": 0.007050329129935532,
+          "masked_gradient_mse": 0.0024397735740226806
+        },
+        "frozen": {
+          "missing_mse": 0.007050329129935532,
+          "masked_gradient_mse": 0.0024397735740226806
+        },
+        "live": {
+          "missing_mse": 0.007050329129935532,
+          "masked_gradient_mse": 0.0024397735740226806
+        },
+        "no_coarse": {
+          "missing_mse": 0.007050329129935532,
+          "masked_gradient_mse": 0.0024397735740226806
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.004427337962902683,
+      "mean_coarse_hidden_mse": 0.028257692232728004,
+      "conditioned_vs_mean_coarse_l2": 1.1359951612191053,
+      "fine_revised_coarse_l2": 0.08207728133668662,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        29,
+        6,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        29,
+        6,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 60,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.012535300075373058,
+          "masked_gradient_mse": 0.010287831569923436
+        },
+        "nearest4": {
+          "missing_mse": 0.023169349879026413,
+          "masked_gradient_mse": 0.010897278785705566
+        },
+        "original_sihti3": {
+          "missing_mse": 0.01267444639060607,
+          "masked_gradient_mse": 0.009586809680703119
+        },
+        "mean": {
+          "missing_mse": 0.019843571068971604,
+          "masked_gradient_mse": 0.012338248906294619
+        },
+        "shuffled": {
+          "missing_mse": 0.019843571068971604,
+          "masked_gradient_mse": 0.012338248906294619
+        },
+        "frozen": {
+          "missing_mse": 0.019843571068971604,
+          "masked_gradient_mse": 0.012338248906294619
+        },
+        "live": {
+          "missing_mse": 0.019843571068971604,
+          "masked_gradient_mse": 0.012338248906294619
+        },
+        "no_coarse": {
+          "missing_mse": 0.019843571068971604,
+          "masked_gradient_mse": 0.012338248906294619
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.005510963837930836,
+      "mean_coarse_hidden_mse": 0.025996897369623184,
+      "conditioned_vs_mean_coarse_l2": 1.193759078563427,
+      "fine_revised_coarse_l2": 0.12918755980158173,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        25,
+        13,
+        5,
+        1,
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        25,
+        13,
+        5,
+        1,
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 61,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.0053205803483825755,
+          "masked_gradient_mse": 0.005915428153877066
+        },
+        "nearest4": {
+          "missing_mse": 0.00648536579683423,
+          "masked_gradient_mse": 0.007376916706562042
+        },
+        "original_sihti3": {
+          "missing_mse": 0.006193999673334637,
+          "masked_gradient_mse": 0.006259839417740901
+        },
+        "mean": {
+          "missing_mse": 0.006281383173928869,
+          "masked_gradient_mse": 0.006178585212772907
+        },
+        "shuffled": {
+          "missing_mse": 0.005607198421513348,
+          "masked_gradient_mse": 0.006135043294252817
+        },
+        "frozen": {
+          "missing_mse": 0.005607198421513348,
+          "masked_gradient_mse": 0.006135043294252817
+        },
+        "live": {
+          "missing_mse": 0.005607198421513348,
+          "masked_gradient_mse": 0.006135043294252817
+        },
+        "no_coarse": {
+          "missing_mse": 0.005607198421513348,
+          "masked_gradient_mse": 0.006135043294252817
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0007649139639966753,
+      "mean_coarse_hidden_mse": 0.015393351204693317,
+      "conditioned_vs_mean_coarse_l2": 1.6067037836066447,
+      "fine_revised_coarse_l2": 0.09879483126946564,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        15,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        15,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 62,
+      "mask_kind": "gap",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.01661109777998418,
+          "masked_gradient_mse": 0.016423819575143373
+        },
+        "nearest4": {
+          "missing_mse": 0.02648838236927986,
+          "masked_gradient_mse": 0.016608834266662598
+        },
+        "original_sihti3": {
+          "missing_mse": 0.016608411291372416,
+          "masked_gradient_mse": 0.015158171885773996
+        },
+        "mean": {
+          "missing_mse": 0.018574619299890356,
+          "masked_gradient_mse": 0.017622437007960224
+        },
+        "shuffled": {
+          "missing_mse": 0.0205876793629022,
+          "masked_gradient_mse": 0.018150750078489618
+        },
+        "frozen": {
+          "missing_mse": 0.0205876793629022,
+          "masked_gradient_mse": 0.018150750078489618
+        },
+        "live": {
+          "missing_mse": 0.0205876793629022,
+          "masked_gradient_mse": 0.018150750078489618
+        },
+        "no_coarse": {
+          "missing_mse": 0.0205876793629022,
+          "masked_gradient_mse": 0.018150750078489618
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0015931704455698584,
+      "mean_coarse_hidden_mse": 0.008849574252963066,
+      "conditioned_vs_mean_coarse_l2": 0.8876844185945791,
+      "fine_revised_coarse_l2": 0.10344865390953097,
+      "live_vs_frozen_hidden_patch_changes": 0,
+      "live_patch_changes_by_sweep": [
+        26,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        26,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    },
+    {
+      "index": 63,
+      "mask_kind": "hole",
+      "scores": {
+        "linear": {
+          "missing_mse": 0.011685509828297292,
+          "masked_gradient_mse": 0.012202891740080265
+        },
+        "nearest4": {
+          "missing_mse": 0.03285380080342293,
+          "masked_gradient_mse": 0.017812855541706085
+        },
+        "original_sihti3": {
+          "missing_mse": 0.013002466415505171,
+          "masked_gradient_mse": 0.012556758716954056
+        },
+        "mean": {
+          "missing_mse": 0.013824803693660105,
+          "masked_gradient_mse": 0.013000568707939357
+        },
+        "shuffled": {
+          "missing_mse": 0.012564618266645162,
+          "masked_gradient_mse": 0.011839782001612932
+        },
+        "frozen": {
+          "missing_mse": 0.012564618266645162,
+          "masked_gradient_mse": 0.011839782001612932
+        },
+        "live": {
+          "missing_mse": 0.01258372736811892,
+          "masked_gradient_mse": 0.012151760491983509
+        },
+        "no_coarse": {
+          "missing_mse": 0.014130199157768048,
+          "masked_gradient_mse": 0.014433529456029388
+        }
+      },
+      "conditional_coarse_hidden_mse": 0.0011946587978112846,
+      "mean_coarse_hidden_mse": 0.011735652573406696,
+      "conditioned_vs_mean_coarse_l2": 0.8901189886333507,
+      "fine_revised_coarse_l2": 0.06099048038335534,
+      "live_vs_frozen_hidden_patch_changes": 1,
+      "live_patch_changes_by_sweep": [
+        26,
+        3,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frozen_patch_changes_by_sweep": [
+        26,
+        3,
+        3,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coarse_revision_energy_nonincreasing": true
+    }
+  ]
+}

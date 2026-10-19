@@ -1,0 +1,487 @@
+{
+  "training_images": 320,
+  "held_out_images": 12,
+  "steps": 16,
+  "dataset": "user image folders (32x32 luminance, center crop)",
+  "measure": "MSE on never-seen missing pixels (lower is better)",
+  "mean_missing_mse": {
+    "open_loop": 0.013803184820850113,
+    "nearest_train_image": 0.04069314276178678,
+    "four_train_images": 0.03455684448514754,
+    "independent_patches": 0.016945921185170455,
+    "no_global_feedback": 0.012058204333998825,
+    "no_patch_prior": 0.012143953504513458,
+    "coupled_no_ping": 0.012086180292067103,
+    "coupled_ping": 0.01209185045427353
+  },
+  "cases": [
+    {
+      "sample": 0,
+      "occlusion": "gap",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.002101942909687986,
+          "missing_mae": 0.025452825707132608
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.006806612946093082,
+          "missing_mae": 0.06387254595756531
+        },
+        "four_train_images": {
+          "missing_mse": 0.009581645019352436,
+          "missing_mae": 0.07749387621879578
+        },
+        "independent_patches": {
+          "missing_mse": 0.004301198553238057,
+          "missing_mae": 0.05174613577158501
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.0029630231041846145,
+          "missing_mae": 0.03978909951281671
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.002537825853099801,
+          "missing_mae": 0.039003058164407536
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.003077447132261083,
+          "missing_mae": 0.04183527689245141
+        },
+        "coupled_ping": {
+          "missing_mse": 0.0030701519275137517,
+          "missing_mae": 0.04164992194563736
+        }
+      },
+      "ping_accepted": 3
+    },
+    {
+      "sample": 1,
+      "occlusion": "hole",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.0018349739660579489,
+          "missing_mae": 0.030794197722421843
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.01836937852203846,
+          "missing_mae": 0.1044117659330368
+        },
+        "four_train_images": {
+          "missing_mse": 0.0037888826336711645,
+          "missing_mae": 0.049096204340457916
+        },
+        "independent_patches": {
+          "missing_mse": 0.004804285735398199,
+          "missing_mae": 0.058353033321004166
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.0017729054981323543,
+          "missing_mae": 0.032838926896414114
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.0020778997849285165,
+          "missing_mae": 0.03845856921890161
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.001788683809820293,
+          "missing_mae": 0.03292845367506815
+        },
+        "coupled_ping": {
+          "missing_mse": 0.001786391463648109,
+          "missing_mae": 0.032936257218279315
+        }
+      },
+      "ping_accepted": 3
+    },
+    {
+      "sample": 2,
+      "occlusion": "gap",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.013378619579931467,
+          "missing_mae": 0.07859734453518212
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.025826897472143173,
+          "missing_mae": 0.12414216995239258
+        },
+        "four_train_images": {
+          "missing_mse": 0.024579063057899475,
+          "missing_mae": 0.1232781857252121
+        },
+        "independent_patches": {
+          "missing_mse": 0.01402217382158522,
+          "missing_mae": 0.0859767999771672
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.01240260069218294,
+          "missing_mae": 0.07735624186469761
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.014247291553188716,
+          "missing_mae": 0.08532474207246322
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.012151616829396823,
+          "missing_mae": 0.07716281668827117
+        },
+        "coupled_ping": {
+          "missing_mse": 0.012214373771470461,
+          "missing_mae": 0.07721678470998432
+        }
+      },
+      "ping_accepted": 2
+    },
+    {
+      "sample": 3,
+      "occlusion": "hole",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.013089886270246338,
+          "missing_mae": 0.07981427337785715
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.025377023965120316,
+          "missing_mae": 0.11942403018474579
+        },
+        "four_train_images": {
+          "missing_mse": 0.02060803212225437,
+          "missing_mae": 0.11326593160629272
+        },
+        "independent_patches": {
+          "missing_mse": 0.011749499618024902,
+          "missing_mae": 0.07734700041894232
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.013352107767347066,
+          "missing_mae": 0.08137081291362541
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.012071168638764165,
+          "missing_mae": 0.07733154539449541
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.013351752354943942,
+          "missing_mae": 0.08133409812876943
+        },
+        "coupled_ping": {
+          "missing_mse": 0.013350459762945362,
+          "missing_mae": 0.0813316611940198
+        }
+      },
+      "ping_accepted": 1
+    },
+    {
+      "sample": 4,
+      "occlusion": "gap",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.00325522280586536,
+          "missing_mae": 0.030347721710166965
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.011445985175669193,
+          "missing_mae": 0.0804411917924881
+        },
+        "four_train_images": {
+          "missing_mse": 0.008411380462348461,
+          "missing_mae": 0.07242647558450699
+        },
+        "independent_patches": {
+          "missing_mse": 0.004013516109413955,
+          "missing_mae": 0.04624678560843071
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.003748102447675942,
+          "missing_mae": 0.038439547374151194
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.0031655173030019947,
+          "missing_mae": 0.0341926611572134
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.003815434212041511,
+          "missing_mae": 0.039198091745997705
+        },
+        "coupled_ping": {
+          "missing_mse": 0.003824110048536414,
+          "missing_mae": 0.03931857616354308
+        }
+      },
+      "ping_accepted": 3
+    },
+    {
+      "sample": 5,
+      "occlusion": "hole",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.04890094850810765,
+          "missing_mae": 0.1981104851642658
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.0965227335691452,
+          "missing_mae": 0.23069852590560913
+        },
+        "four_train_images": {
+          "missing_mse": 0.07456269860267639,
+          "missing_mae": 0.2491421401500702
+        },
+        "independent_patches": {
+          "missing_mse": 0.06010889077854808,
+          "missing_mae": 0.2236860380540343
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.036601388894689835,
+          "missing_mae": 0.1692972514738553
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.03606745846471321,
+          "missing_mae": 0.17097026120092906
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.03708876583101473,
+          "missing_mae": 0.1694275705931367
+        },
+        "coupled_ping": {
+          "missing_mse": 0.03711806234649327,
+          "missing_mae": 0.1693524167452247
+        }
+      },
+      "ping_accepted": 3
+    },
+    {
+      "sample": 6,
+      "occlusion": "gap",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.005308229816002275,
+          "missing_mae": 0.04582632802007124
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.01316099800169468,
+          "missing_mae": 0.08713235706090927
+        },
+        "four_train_images": {
+          "missing_mse": 0.010538200847804546,
+          "missing_mae": 0.07941789925098419
+        },
+        "independent_patches": {
+          "missing_mse": 0.0073413718138419185,
+          "missing_mae": 0.06954560919063321
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.005825741005660427,
+          "missing_mae": 0.051468810349474356
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.005216947815869228,
+          "missing_mae": 0.04832359563670992
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.005882658076399478,
+          "missing_mae": 0.05194238978881362
+        },
+        "coupled_ping": {
+          "missing_mse": 0.005880644842207656,
+          "missing_mae": 0.05193165727764206
+        }
+      },
+      "ping_accepted": 2
+    },
+    {
+      "sample": 7,
+      "occlusion": "hole",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.0006912015850382219,
+          "missing_mae": 0.02151953105858942
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.026854095980525017,
+          "missing_mae": 0.1455882340669632
+        },
+        "four_train_images": {
+          "missing_mse": 0.04753289371728897,
+          "missing_mae": 0.20220588147640228
+        },
+        "independent_patches": {
+          "missing_mse": 0.012314384289651883,
+          "missing_mae": 0.09885026931604242
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.002192472206619794,
+          "missing_mae": 0.03906824427774193
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.001965273209183074,
+          "missing_mae": 0.038475308607386786
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.0023277550380714804,
+          "missing_mae": 0.04038840392800802
+        },
+        "coupled_ping": {
+          "missing_mse": 0.0023285205599234294,
+          "missing_mae": 0.04039422698510406
+        }
+      },
+      "ping_accepted": 2
+    },
+    {
+      "sample": 8,
+      "occlusion": "gap",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.01997311131288751,
+          "missing_mae": 0.11734357388268049
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.06130075454711914,
+          "missing_mae": 0.20536765456199646
+        },
+        "four_train_images": {
+          "missing_mse": 0.04217810928821564,
+          "missing_mae": 0.17487746477127075
+        },
+        "independent_patches": {
+          "missing_mse": 0.017845986956521308,
+          "missing_mae": 0.10832815975623414
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.01414718563051065,
+          "missing_mae": 0.0964557337567596
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.01697088542328042,
+          "missing_mae": 0.10817801031576768
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.014094585596427595,
+          "missing_mae": 0.09619666383214867
+        },
+        "coupled_ping": {
+          "missing_mse": 0.01411647462927602,
+          "missing_mae": 0.09626722940746968
+        }
+      },
+      "ping_accepted": 3
+    },
+    {
+      "sample": 9,
+      "occlusion": "hole",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.01261383409096651,
+          "missing_mae": 0.10014254813158023
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.09037943184375763,
+          "missing_mae": 0.24859069287776947
+        },
+        "four_train_images": {
+          "missing_mse": 0.0650673359632492,
+          "missing_mae": 0.23534008860588074
+        },
+        "independent_patches": {
+          "missing_mse": 0.012162477226722992,
+          "missing_mae": 0.0949839076953746
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.009219391816836058,
+          "missing_mae": 0.0786576010507057
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.011871486573595148,
+          "missing_mae": 0.0970987020880046
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.009148134461339531,
+          "missing_mae": 0.07808398688574758
+        },
+        "coupled_ping": {
+          "missing_mse": 0.00908058669032384,
+          "missing_mae": 0.07771688012821878
+        }
+      },
+      "ping_accepted": 3
+    },
+    {
+      "sample": 10,
+      "occlusion": "gap",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.015618600394811088,
+          "missing_mae": 0.09536567923513932
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.048988278955221176,
+          "missing_mae": 0.17730394005775452
+        },
+        "four_train_images": {
+          "missing_mse": 0.05801236629486084,
+          "missing_mae": 0.2078186273574829
+        },
+        "independent_patches": {
+          "missing_mse": 0.02552336867757542,
+          "missing_mae": 0.12759248801998588
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.012956406690969835,
+          "missing_mae": 0.08218462730287819
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.014529136536846279,
+          "missing_mae": 0.09416494673385623
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.01288441966841902,
+          "missing_mae": 0.08177943583459835
+        },
+        "coupled_ping": {
+          "missing_mse": 0.012867262388929435,
+          "missing_mae": 0.0816818874633058
+        }
+      },
+      "ping_accepted": 3
+    },
+    {
+      "sample": 11,
+      "occlusion": "hole",
+      "arms": {
+        "open_loop": {
+          "missing_mse": 0.028871646610599017,
+          "missing_mae": 0.13381669448375516
+        },
+        "nearest_train_image": {
+          "missing_mse": 0.06328552216291428,
+          "missing_mae": 0.21072305738925934
+        },
+        "four_train_images": {
+          "missing_mse": 0.04982152581214905,
+          "missing_mae": 0.18860295414924622
+        },
+        "independent_patches": {
+          "missing_mse": 0.029163900641523535,
+          "missing_mae": 0.13273752781242365
+        },
+        "no_global_feedback": {
+          "missing_mse": 0.029517126253176366,
+          "missing_mae": 0.13468639368338856
+        },
+        "no_patch_prior": {
+          "missing_mse": 0.02500655089769096,
+          "missing_mae": 0.12497408173932538
+        },
+        "coupled_no_ping": {
+          "missing_mse": 0.029422910494669777,
+          "missing_mae": 0.13431170708448403
+        },
+        "coupled_ping": {
+          "missing_mse": 0.02946516702001461,
+          "missing_mae": 0.1343774158757426
+        }
+      },
+      "ping_accepted": 3
+    }
+  ]
+}
