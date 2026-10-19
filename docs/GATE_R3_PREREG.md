@@ -1,0 +1,26 @@
+# Gate R3 — Oracle coarse-to-fine readout diagnostic (pre-registration)
+
+Committed **before adding or running** the new R3 experiment. R2 is frozen and will not be altered. This is an explicitly privileged **evaluation-only oracle**, NOT an inference model.
+
+## Which failure are we locating?
+R2 now predicts coarse missing-region averages from actual visible pixels, yet its 32-state patch reader almost never changes in response. Does the reader fail because the learned coarse prediction is wrong or because the patch-code vocabulary and greedy solver cannot use even the **correct** coarse state?
+
+## Frozen protocol
+- Train the existing `ConditionalBridge` on the original 320 synthetic training contours, fit codebook K=32 with seed 2026; evaluate 32 *new* held-out contours with seed **287**, 12 code sweeps, alternating five-column stripe and 8×8 hole. Any secondary natural-photo run uses the user's `train` and `unseen` folders without any training/test cross-use, default 64 test images.
+- Keep all codebook, unary and pairwise terms and initial patch choices identical to R2. **No tuning** using seed 287 or any of the 64 seen photographs. The only varied axis is which coarse message is supplied and its prespecified weight.
+- Compare normal R2 `frozen` coarse (computed from observed pixels only) with `oracle_hidden`: overwrite ONLY coarse cells that overlap the missing pixels (`visible_fraction < 1`) with their true block averages from the held-out image; keep all fully visible coarse cells identical to R2's estimate. True pixels enter this named oracle only.
+- Compare the oracle at exactly **1x, 4x, 16x** the normal coarse-to-fine coupling coefficient `2.5`. At each strength, rerun the *nonoracle conditioned frozen* arm at the SAME strength, same code init and number of sweeps. This distinguishes an actual information benefit from brute-force constraint amplification. No learned feedback or ping: hold supplied message fixed to diagnose the reader.
+- Add a **codebook ceiling**, deliberately nondeployable: independently select the closest learned 7×7 dictionary patch to each *complete held-out target patch* and render them using the ordinary overlapping patch renderer; overlay the true visible pixels exactly as all other arms. This measures what the dictionary can approximately reproduce with the correct fine code chosen by an oracle. It is not the global best projection nor a bound on all code combinations; report its actual measured error, not a guaranteed mathematical lower bound.
+- Baselines: ordinary linear fill, R2 conditioned frozen at 1x, and original SihtiImageModel3 coupled model. The baseline may be skipped in user quick runs but not in the frozen CI.
+- The target image must never enter the normal conditioned arm; use separate oracle helpers with an explicit `target` argument. Prove by tests that corrupting every masked placeholder doesn't change the normal arm, while changing the hidden true target changes only oracle outputs.
+
+## Diagnostic outcomes — no success by threshold shopping
+1. **Message distinguishability:** log MSE of learned conditional coarse vs actual coarse on fully invisible (`coverage == 0`), partially observed (`0 < coverage < 1`), and all affected cells separately; log number of cells in each bin. At least one fully hidden cell must be included on the stripe test; otherwise this case does not support an extrapolation claim.
+2. **Can the reader respond?** Log hidden-region patch code disagreements between oracle and matched-strength conditioned for each image, overall and specifically on affected coarse cells. An oracle that changes fewer than 10% of images' patch choices at all strengths means the hard reader is effectively insensitive under this experiment.
+3. **Does knowing the correct coarse message help?** Report missing-region pixel MSE, masked-gradient MSE and per-case changes for oracle and conditioned at every strength; no claim if better performance only comes from stronger coupling and a same-strength nonoracle arm improves equally. For a meaningful signal, require >=10% mean missing MSE improvement with the oracle compared with *matched strength* learned conditional, and the oracle must change patch decisions on >=25% of test images. This is a diagnostic conditional success, NOT normal inference success.
+4. **Representation ceiling:** report target-selected codebook projection and compare against ordinary R2/Sihti3 performance and oracle coarse runs, with visual outputs. If oracle fine projection remains poor then dictionary expressiveness itself is limited; if excellent but oracle coarse reader fails then the inference/readout rather than the vocabulary is implicated.
+
+A score of 0.0 for a single mean-square quantity does not imply pixelwise identity; verify code differences separately. No oracle variant can be marketed as a deployable image model. Do not label this a neural ping. Holdout truth is privileged *only* for oracle arms and scoring.
+
+## Interpretation
+This gate discriminates "upper message is insufficient" from "lower representation/readout cannot exploit a correct upper message". It does not prove either problem is unique to Sihti, and does not reintroduce the original continuous residual-gradient dynamics. Preserve negative findings, no post-hoc codebook tuning.
