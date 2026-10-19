@@ -100,8 +100,8 @@ def run(output="runs/conditional", train_folder=None, eval_folder=None,
                   for name in all_cases[0]["scores"]}
     gain = lambda x, y: 1.-means[x]/max(means[y], 1e-12)
     difference_count = sum(r["live_vs_frozen_hidden_patch_changes"] > 0 for r in all_cases)
-    down_count = sum(np.abs(r["scores"]["frozen"]["missing_mse"] -
-                            r["scores"]["mean"]["missing_mse"]) > 1e-12 for r in all_cases)
+    down_count = int(sum(np.abs(r["scores"]["frozen"]["missing_mse"] -
+                            r["scores"]["mean"]["missing_mse"]) > 1e-12 for r in all_cases))
     report = {
         "protocol": "R2; no ping; compare frozen vs live under same learned conditioned coarse prior",
         "dataset": domain, "training_images": len(train),
