@@ -140,8 +140,12 @@ class FluxMedium:
         """
         baseline=self.solve(observation,mask,message,"both")
         shifted=np.asarray(message,float).copy()
-        shifted[64+28]+=kick
-        shifted[128+35]-=kick
+        affected=np.flatnonzero((~np.asarray(mask,bool)).reshape(G,B,G,B).any((1,3)).ravel())
+        if not len(affected):
+            raise ValueError("No masked pixels to probe")
+        cell=int(affected[len(affected)//2])
+        shifted[64+cell]+=kick
+        shifted[128+cell]-=kick
         return self.solve(observation,mask,shifted,"both")-baseline
 
 
