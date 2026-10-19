@@ -18,7 +18,7 @@ jobs:
         run: python -m pip install -r requirements.txt pytest
       - name: Run tests, including exact energy and hidden-data controls
         run: python -m pytest -q tests
-      - name: Frozen holdout: all prespecified control arms
+      - name: Frozen holdout with all prespecified control arms
         env:
           OPENBLAS_NUM_THREADS: '1'
           OMP_NUM_THREADS: '1'
