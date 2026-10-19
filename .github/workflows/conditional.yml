@@ -1,0 +1,35 @@
+name: R2 conditioned up-down gate
+on:
+  push:
+    branches: [main, sol/conditioned-up-down-gate-r2]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  conditioned:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU dependencies
+        run: python -m pip install -r requirements.txt pytest
+      - name: Exact-energy and no-hidden-leak tests
+        run: python -m pytest -q tests
+      - name: Frozen R2 32-image held-out gate
+        run: python conditional_demo.py --output runs/conditional --train-limit 320 --eval-limit 32 --seed 179 --show-index 0 --steps 12
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r2-conditioned-coarse-visuals-and-metrics
+          path: |
+            runs/conditional/comparison.png
+            runs/conditional/loop.gif
+            runs/conditional/energy.png
+            runs/conditional/metrics.json
