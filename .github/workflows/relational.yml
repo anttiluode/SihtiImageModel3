@@ -1,0 +1,35 @@
+name: Relational energy R1
+on:
+  push:
+    branches: [main, sol/learned-relational-energy]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  relational:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU dependencies
+        run: python -m pip install -r requirements.txt pytest
+      - name: Run tests, including exact energy and hidden-data controls
+        run: python -m pytest -q tests
+      - name: Frozen holdout with all prespecified control arms
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+          MPLBACKEND: Agg
+        run: python relational_demo.py --output runs/relational --train-limit 320 --eval-limit 32 --seed 73
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relational-r1-visual-and-metrics
+          path: |
+            runs/relational/comparison.png
+            runs/relational/loop.gif
+            runs/relational/energy.png
+            runs/relational/metrics.json

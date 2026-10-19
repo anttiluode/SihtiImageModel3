@@ -1,5 +1,21 @@
 # SihtiImageModel3 — can fine detail talk back to the core?
 
+
+> **New Gate R1 (learned relational energy):** Instead of heuristic PCA/patch blending, [relational.py](relational.py) fits directional neighbor-code compatibility, overlap factors and an explicit coarse prior; both local and global updates minimize **one joint energy**. It has a side-by-side GIF demo, seven exactness/leakage tests, a precommitted [protocol](docs/GATE_R1_PREREG.md), and a [post-run negative result](docs/GATE_R1_RESULT.md). The clean CI run showed **no improvement** over original Sihti3 or simple four-neighbor retrieval: relational model 0.13145 missing MSE, original 0.08176, four-example retrieval 0.08018; coarse feedback and pulse ablations did not help. This is a more faithful **mathematical test**, not a solved image model.
+
+```bash
+python -m pip install -r requirements.txt pytest
+python -m pytest -q tests
+python relational_demo.py --output runs/relational
+# For your image folders (evaluate 64 or use 0 for all):
+python relational_demo.py --train-folder train --eval-folder unseen --eval-limit 64 --output runs/photos_relational
+```
+
+Outputs: `comparison.png`, `energy.png`, `loop.gif`, `metrics.json`. See [successful reproducible CI run](https://github.com/anttiluode/SihtiImageModel3/actions/runs/39251420922).
+
+---
+
+
 One **CPU-only visual experiment**. No transformer, Qwen, pretrained weights or labels.
 
 The question is whether an image is more than a core decorated with residue bands: can a learned *local* image prior, coupled through overlapping patches, repeatedly revise a *global* state and produce a better completion than ordinary methods?
