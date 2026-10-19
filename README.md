@@ -1,5 +1,15 @@
 # SihtiImageModel3 — can fine detail talk back to the core?
 
+> **Gate R5 — latent vs image-space gradient diagnostic:** [latent_bridge_demo.py](latent_bridge_demo.py) tests whether the original Sihti3 **32-dimensional PCA decoder** can express R4's predicted pixel/gradient correction. The same visible-only flux prediction is fed into direct pixels, one/16 exact Jacobian-transpose steps and a regularized latent least-squares update; a shuffled signal is the negative control. Privileged **oracle PCA** and **oracle coarse-flux** reveal whether poor completion comes from the learned message or the decoder's limited directions. Uses fresh held-out seed **569**, records missing-pixel/edge metrics, and explicitly measures the fraction of required hidden correction outside the PCA's masked Jacobian span. **No positive result is claimed until CI is complete.** [Frozen preregistration](docs/GATE_R5_PREREG.md) · [PR #6](https://github.com/anttiluode/SihtiImageModel3/pull/6).
+
+```bash
+python latent_bridge_demo.py --output runs/latent_r5
+python latent_bridge_demo.py --train-folder train --eval-folder unseen --eval-limit 64 --show-index 8 --output runs/latent_photos
+```
+
+---
+
+
 > **Gate R4 — signed gradient/flux coarse messages:** [flux.py](flux.py) replaces R2/R3's k-means patch code selection with a continuous image reconstruction driven by learned conditional **X/Y block gradients plus brightness**. On 32 untouched synthetic contours, adding signed flux improved missing-pixel MSE from **0.08480 → 0.08020**, while a shuffled-gradient control scored **0.15482**. But edge-gradient error *worsened* from **0.05337 → 0.05632**; **the preregistered combined gate FAILS**. A privileged true-gradient oracle scores 0.04407 MSE; true scalar+gradient oracle scores 0.01906. No biological neuron or true image generator is claimed. See [R4 preregistration](docs/GATE_R4_PREREG.md), [R4 results](docs/GATE_R4_RESULT.md), and the [reproducible CI visuals](https://github.com/anttiluode/SihtiImageModel3/actions/runs/39275112619).
 
 ```cmd
