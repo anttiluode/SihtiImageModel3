@@ -18,7 +18,15 @@ python demo.py --output runs/first
 
 Open `runs/first/comparison.png`, `timeline.png` and **`loop.gif`**. The GIF shows all 16 successive predictions of the same held-out object, using the same unchanging visible pixels. `metrics.json` contains every held-out case and every ablation. The GitHub Actions workflow also makes the image, GIF and metrics available as a downloadable workflow artifact.
 
-This first run is a deterministic **32×32 synthetic contour-world smoke test**, not proof on MNIST, Fashion-MNIST, BSDS500, CIFAR-10 or real photos. Training uses 320 procedurally generated images; the 12 held-out images have disjoint generation seeds. Half of the targets have a missing five-pixel-wide vertical strip; half an 8×8 square. The original unmasked target enters *only* the post-hoc evaluation function.
+This first run is a deterministic **32×32 synthetic contour-world smoke test**, not proof on MNIST, Fashion-MNIST, BSDS500, CIFAR-10 or real photos.
+
+**To try real photos without changing the program**, provide two strictly separated directories of PNG/JPG images:
+
+```bash
+python demo.py --train-folder ./my_train_photos --eval-folder ./my_unseen_photos --train 320 --output runs/photos
+```
+
+The loader converts pictures to luminance and center-crops/resizes to 32×32, then masks pixels in each held-out evaluation picture. It rejects duplicate processed images across training/evaluation. These are 32×32 greyscale completion experiments, not color generation or high-resolution restoration. A photo folder is optional; the offline synthetic demo is reproducible with no external downloads. Training uses 320 procedurally generated images; the 12 held-out images have disjoint generation seeds. Half of the targets have a missing five-pixel-wide vertical strip; half an 8×8 square. The original unmasked target enters *only* the post-hoc evaluation function.
 
 ## What is learned, exactly?
 
