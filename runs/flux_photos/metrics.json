@@ -1,0 +1,5575 @@
+{
+  "gate": "R4 directional 8x8 block flux, continuous decoder; no ping",
+  "domain": "user supplied 32x32 grayscale photos",
+  "n_train": 384,
+  "n_test": 64,
+  "results": {
+    "smooth": {
+      "mse": 0.01960954550336005,
+      "masked_gradient_mse": 0.01497528896350394,
+      "strong_edge_cosine": 0.3967140809912042
+    },
+    "scalar": {
+      "mse": 0.022173083448860143,
+      "masked_gradient_mse": 0.015650354861474824,
+      "strong_edge_cosine": 0.3316381156345301
+    },
+    "gradient": {
+      "mse": 0.02115495480688974,
+      "masked_gradient_mse": 0.01670542705768583,
+      "strong_edge_cosine": 0.3153917493272125
+    },
+    "both": {
+      "mse": 0.02257670489927408,
+      "masked_gradient_mse": 0.017460442307974576,
+      "strong_edge_cosine": 0.287041507951032
+    },
+    "shuffled": {
+      "mse": 0.044957667053792026,
+      "masked_gradient_mse": 0.03731063163842442,
+      "strong_edge_cosine": 0.04485607983688578
+    },
+    "oracle_gradient": {
+      "mse": 0.012920076007212632,
+      "masked_gradient_mse": 0.011569518438008517,
+      "strong_edge_cosine": 0.5947413703319965
+    },
+    "oracle_scalar": {
+      "mse": 0.015387267230593298,
+      "masked_gradient_mse": 0.015530242128240297,
+      "strong_edge_cosine": 0.37924096167951926
+    },
+    "oracle_both": {
+      "mse": 0.006179951372740538,
+      "masked_gradient_mse": 0.008915114210574112,
+      "strong_edge_cosine": 0.6934193767729588
+    },
+    "linear": {
+      "mse": 0.023658042987035124,
+      "masked_gradient_mse": 0.017408313070666016,
+      "strong_edge_cosine": 0.2604329978034906
+    },
+    "original_sihti3": {
+      "mse": 0.022699654622180293,
+      "masked_gradient_mse": 0.016880036212327525,
+      "strong_edge_cosine": 0.24513357967700072
+    }
+  },
+  "gains": {
+    "both_vs_scalar_mse": -0.018203217037668473,
+    "both_vs_scalar_masked_gradient": -0.11565791718598617,
+    "both_vs_shuffled_mse": 0.49782303267069083
+  },
+  "gates": {
+    "both_beats_scalar_5pct_mse": false,
+    "both_beats_scalar_5pct_gradient_error": false,
+    "both_beats_shuffled_5pct_mse": true,
+    "all_pass": false
+  },
+  "cases": [
+    {
+      "index": 0,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.0023865742154137596,
+          "masked_gradient_mse": 0.002326820713899737,
+          "strong_edge_cosine": 0.24812321907801013,
+          "strong_edge_pixels": 30
+        },
+        "scalar": {
+          "mse": 0.002126496417274284,
+          "masked_gradient_mse": 0.002358500710730297,
+          "strong_edge_cosine": 0.21666254718116856,
+          "strong_edge_pixels": 30
+        },
+        "gradient": {
+          "mse": 0.0025617519304727285,
+          "masked_gradient_mse": 0.002477224755389839,
+          "strong_edge_cosine": 0.029271688508443305,
+          "strong_edge_pixels": 30
+        },
+        "both": {
+          "mse": 0.0024358793082805644,
+          "masked_gradient_mse": 0.0024829350930253504,
+          "strong_edge_cosine": 0.024892836257978647,
+          "strong_edge_pixels": 30
+        },
+        "shuffled": {
+          "mse": 0.0035492183258076784,
+          "masked_gradient_mse": 0.0034442094348798237,
+          "strong_edge_cosine": -0.19668203722347694,
+          "strong_edge_pixels": 30
+        },
+        "oracle_gradient": {
+          "mse": 0.0012675277734267778,
+          "masked_gradient_mse": 0.001502776496393144,
+          "strong_edge_cosine": 0.8740681827952573,
+          "strong_edge_pixels": 30
+        },
+        "oracle_scalar": {
+          "mse": 0.0020998476015364506,
+          "masked_gradient_mse": 0.0023126541765899978,
+          "strong_edge_cosine": 0.11907675326370375,
+          "strong_edge_pixels": 30
+        },
+        "oracle_both": {
+          "mse": 0.0009268521247509504,
+          "masked_gradient_mse": 0.001342202698169824,
+          "strong_edge_cosine": 0.8539531055632317,
+          "strong_edge_pixels": 30
+        },
+        "linear": {
+          "mse": 0.0025493784113649167,
+          "masked_gradient_mse": 0.002465322310364449,
+          "strong_edge_cosine": -0.025866432362415002,
+          "strong_edge_pixels": 30
+        },
+        "original_sihti3": {
+          "mse": 0.0026299371641512956,
+          "masked_gradient_mse": 0.002571826685451356,
+          "strong_edge_cosine": 0.21674522912194252,
+          "strong_edge_pixels": 30
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0006304224057776848,
+          "gy_mse": 0.0005488749681397519,
+          "dc_mse": 0.0005877155402193227
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 7.714709668998445e-06,
+          "gy_mse": 2.2218487305171912e-05,
+          "dc_mse": 7.882017909875627e-05
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0003190685577233416,
+          "gy_mse": 0.00028554672772246196,
+          "dc_mse": 0.0003332678596590394
+        }
+      }
+    },
+    {
+      "index": 1,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.004122704474126698,
+          "masked_gradient_mse": 0.0038441904634292836,
+          "strong_edge_cosine": 0.18200031811571923,
+          "strong_edge_pixels": 13
+        },
+        "scalar": {
+          "mse": 0.005282150640149887,
+          "masked_gradient_mse": 0.003913547848696598,
+          "strong_edge_cosine": 0.12117608940034663,
+          "strong_edge_pixels": 13
+        },
+        "gradient": {
+          "mse": 0.003839148465874591,
+          "masked_gradient_mse": 0.004113856040311154,
+          "strong_edge_cosine": 0.3689863454320748,
+          "strong_edge_pixels": 13
+        },
+        "both": {
+          "mse": 0.004330947705646916,
+          "masked_gradient_mse": 0.004179996541276624,
+          "strong_edge_cosine": 0.37914572880674174,
+          "strong_edge_pixels": 13
+        },
+        "shuffled": {
+          "mse": 0.004607296720673826,
+          "masked_gradient_mse": 0.005106465472836482,
+          "strong_edge_cosine": 0.26495187612325305,
+          "strong_edge_pixels": 13
+        },
+        "oracle_gradient": {
+          "mse": 0.0034129769721803816,
+          "masked_gradient_mse": 0.0036809146994260114,
+          "strong_edge_cosine": 0.6512329306434634,
+          "strong_edge_pixels": 13
+        },
+        "oracle_scalar": {
+          "mse": 0.0032756158574827983,
+          "masked_gradient_mse": 0.003986994574510938,
+          "strong_edge_cosine": 0.38644553634841566,
+          "strong_edge_pixels": 13
+        },
+        "oracle_both": {
+          "mse": 0.0024238043831442254,
+          "masked_gradient_mse": 0.003397088401739729,
+          "strong_edge_cosine": 0.7028373337654119,
+          "strong_edge_pixels": 13
+        },
+        "linear": {
+          "mse": 0.004428263931994963,
+          "masked_gradient_mse": 0.004401276164541445,
+          "strong_edge_cosine": 0.04806133994671055,
+          "strong_edge_pixels": 13
+        },
+        "original_sihti3": {
+          "mse": 0.0042329500635250525,
+          "masked_gradient_mse": 0.004036847326968251,
+          "strong_edge_cosine": 0.5407057959400701,
+          "strong_edge_pixels": 13
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 0.00046756270258841175,
+          "gy_mse": 0.00016480873183298715,
+          "dc_mse": 0.0025289973764572597
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 2.5980675147368698e-05,
+          "gy_mse": 0.00012345068085393797,
+          "dc_mse": 0.0002208999286208774
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 0.00017317468429438307,
+          "gy_mse": 0.00013723669784695438,
+          "dc_mse": 0.0009902657445663382
+        }
+      }
+    },
+    {
+      "index": 2,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.013084234424428891,
+          "masked_gradient_mse": 0.01139225789593213,
+          "strong_edge_cosine": 0.19244718136369576,
+          "strong_edge_pixels": 87
+        },
+        "scalar": {
+          "mse": 0.018407373148431928,
+          "masked_gradient_mse": 0.012740999792204414,
+          "strong_edge_cosine": 0.005650520250970434,
+          "strong_edge_pixels": 87
+        },
+        "gradient": {
+          "mse": 0.014486665776568236,
+          "masked_gradient_mse": 0.012840173097832908,
+          "strong_edge_cosine": 0.1875731266132718,
+          "strong_edge_pixels": 87
+        },
+        "both": {
+          "mse": 0.017946555559668852,
+          "masked_gradient_mse": 0.01414792668958852,
+          "strong_edge_cosine": 0.1986257509544564,
+          "strong_edge_pixels": 87
+        },
+        "shuffled": {
+          "mse": 0.029383486194680352,
+          "masked_gradient_mse": 0.024244351138284104,
+          "strong_edge_cosine": 0.12143487346451336,
+          "strong_edge_pixels": 87
+        },
+        "oracle_gradient": {
+          "mse": 0.00986760185729466,
+          "masked_gradient_mse": 0.009986775137617471,
+          "strong_edge_cosine": 0.6261257339306734,
+          "strong_edge_pixels": 87
+        },
+        "oracle_scalar": {
+          "mse": 0.01299420855172261,
+          "masked_gradient_mse": 0.012991751573395096,
+          "strong_edge_cosine": 0.2644919085442542,
+          "strong_edge_pixels": 87
+        },
+        "oracle_both": {
+          "mse": 0.005036612143764619,
+          "masked_gradient_mse": 0.00778385315409096,
+          "strong_edge_cosine": 0.6775422199012339,
+          "strong_edge_pixels": 87
+        },
+        "linear": {
+          "mse": 0.015850103400659225,
+          "masked_gradient_mse": 0.013019513071263113,
+          "strong_edge_cosine": 0.17212334984514838,
+          "strong_edge_pixels": 87
+        },
+        "original_sihti3": {
+          "mse": 0.013926753300826638,
+          "masked_gradient_mse": 0.012621884754850704,
+          "strong_edge_cosine": 0.21378789902158463,
+          "strong_edge_pixels": 87
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 0,
+          "gx_mse": null,
+          "gy_mse": null,
+          "dc_mse": null
+        },
+        "partially_visible": {
+          "blocks": 16,
+          "gx_mse": 0.0008075150750102814,
+          "gy_mse": 0.0016753638868150147,
+          "dc_mse": 0.004565070634824739
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0008075150750102814,
+          "gy_mse": 0.0016753638868150147,
+          "dc_mse": 0.004565070634824739
+        }
+      }
+    },
+    {
+      "index": 3,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.007146195599125856,
+          "masked_gradient_mse": 0.008486754002762185,
+          "strong_edge_cosine": 0.3678758093385938,
+          "strong_edge_pixels": 43
+        },
+        "scalar": {
+          "mse": 0.008571262212515246,
+          "masked_gradient_mse": 0.008717716352005541,
+          "strong_edge_cosine": 0.35908864842658167,
+          "strong_edge_pixels": 43
+        },
+        "gradient": {
+          "mse": 0.006152449084720473,
+          "masked_gradient_mse": 0.007367577821229664,
+          "strong_edge_cosine": 0.5296537912363953,
+          "strong_edge_pixels": 43
+        },
+        "both": {
+          "mse": 0.007616274498943059,
+          "masked_gradient_mse": 0.008352685678776848,
+          "strong_edge_cosine": 0.4358797807316479,
+          "strong_edge_pixels": 43
+        },
+        "shuffled": {
+          "mse": 0.015871762292789214,
+          "masked_gradient_mse": 0.016460173263345906,
+          "strong_edge_cosine": 0.13211285691076244,
+          "strong_edge_pixels": 43
+        },
+        "oracle_gradient": {
+          "mse": 0.005581146330726551,
+          "masked_gradient_mse": 0.006786394272396019,
+          "strong_edge_cosine": 0.47079838764778864,
+          "strong_edge_pixels": 43
+        },
+        "oracle_scalar": {
+          "mse": 0.005194058664185697,
+          "masked_gradient_mse": 0.006720558738247371,
+          "strong_edge_cosine": 0.6104596911667831,
+          "strong_edge_pixels": 43
+        },
+        "oracle_both": {
+          "mse": 0.0030315274217332672,
+          "masked_gradient_mse": 0.0055326730049965024,
+          "strong_edge_cosine": 0.6769563124765775,
+          "strong_edge_pixels": 43
+        },
+        "linear": {
+          "mse": 0.008411961935616575,
+          "masked_gradient_mse": 0.009705060517294983,
+          "strong_edge_cosine": 0.2369594368714569,
+          "strong_edge_pixels": 43
+        },
+        "original_sihti3": {
+          "mse": 0.0076033260568196745,
+          "masked_gradient_mse": 0.009390390771150383,
+          "strong_edge_cosine": 0.2528421065822476,
+          "strong_edge_pixels": 43
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.00035093366958740115,
+          "gy_mse": 0.00041634780026938366,
+          "dc_mse": 0.0028871418146544725
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.00012050165391495166,
+          "gy_mse": 0.00020279856838009287,
+          "dc_mse": 0.001118458531614798
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.00014610521121189048,
+          "gy_mse": 0.0002265262608122363,
+          "dc_mse": 0.001314978896396984
+        }
+      }
+    },
+    {
+      "index": 4,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.0030976452041253126,
+          "masked_gradient_mse": 0.002707920296412799,
+          "strong_edge_cosine": 0.21183516734596003,
+          "strong_edge_pixels": 31
+        },
+        "scalar": {
+          "mse": 0.0034283465079896374,
+          "masked_gradient_mse": 0.00272856808932088,
+          "strong_edge_cosine": 0.019986565482517153,
+          "strong_edge_pixels": 31
+        },
+        "gradient": {
+          "mse": 0.00270110334393946,
+          "masked_gradient_mse": 0.002555860202876353,
+          "strong_edge_cosine": 0.2032518901490241,
+          "strong_edge_pixels": 31
+        },
+        "both": {
+          "mse": 0.0031626516533541744,
+          "masked_gradient_mse": 0.0026115047194036002,
+          "strong_edge_cosine": 0.1871242358870991,
+          "strong_edge_pixels": 31
+        },
+        "shuffled": {
+          "mse": 0.007027534197437765,
+          "masked_gradient_mse": 0.005666156630038639,
+          "strong_edge_cosine": -0.3163026124796658,
+          "strong_edge_pixels": 31
+        },
+        "oracle_gradient": {
+          "mse": 0.0023913817922660025,
+          "masked_gradient_mse": 0.002213267067138135,
+          "strong_edge_cosine": 0.33897283892572566,
+          "strong_edge_pixels": 31
+        },
+        "oracle_scalar": {
+          "mse": 0.00226669442900023,
+          "masked_gradient_mse": 0.0025185543093120856,
+          "strong_edge_cosine": 0.45653062796464,
+          "strong_edge_pixels": 31
+        },
+        "oracle_both": {
+          "mse": 0.0015371219279465484,
+          "masked_gradient_mse": 0.002065692521954674,
+          "strong_edge_cosine": 0.5658483743925402,
+          "strong_edge_pixels": 31
+        },
+        "linear": {
+          "mse": 0.00353655992426651,
+          "masked_gradient_mse": 0.0028951878418462976,
+          "strong_edge_cosine": 0.2082643978245737,
+          "strong_edge_pixels": 31
+        },
+        "original_sihti3": {
+          "mse": 0.0045696542187934185,
+          "masked_gradient_mse": 0.003017405848360854,
+          "strong_edge_cosine": 0.20624321817214913,
+          "strong_edge_pixels": 31
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 9.792967336508249e-05,
+          "gy_mse": 0.0005655216927314516,
+          "dc_mse": 0.001023951935615483
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 6.310529159183191e-06,
+          "gy_mse": 5.808658678491947e-06,
+          "dc_mse": 1.5075995827715462e-05
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 5.2120101262132837e-05,
+          "gy_mse": 0.0002856651757049718,
+          "dc_mse": 0.0005195139657215994
+        }
+      }
+    },
+    {
+      "index": 5,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.054425635615655575,
+          "masked_gradient_mse": 0.03346567382514899,
+          "strong_edge_cosine": 0.5576354325834592,
+          "strong_edge_pixels": 45
+        },
+        "scalar": {
+          "mse": 0.05604174027300106,
+          "masked_gradient_mse": 0.03295484551297807,
+          "strong_edge_cosine": 0.5767409429996786,
+          "strong_edge_pixels": 45
+        },
+        "gradient": {
+          "mse": 0.03802366151480842,
+          "masked_gradient_mse": 0.028687085495336717,
+          "strong_edge_cosine": 0.7084088306860986,
+          "strong_edge_pixels": 45
+        },
+        "both": {
+          "mse": 0.03765077345879737,
+          "masked_gradient_mse": 0.02680296774826924,
+          "strong_edge_cosine": 0.689510561481583,
+          "strong_edge_pixels": 45
+        },
+        "shuffled": {
+          "mse": 0.23188374968243933,
+          "masked_gradient_mse": 0.18963788040338384,
+          "strong_edge_cosine": -0.11942192211447726,
+          "strong_edge_pixels": 45
+        },
+        "oracle_gradient": {
+          "mse": 0.014954730229015866,
+          "masked_gradient_mse": 0.013755346571684103,
+          "strong_edge_cosine": 0.8434369221694169,
+          "strong_edge_pixels": 45
+        },
+        "oracle_scalar": {
+          "mse": 0.03167955713733051,
+          "masked_gradient_mse": 0.025747961893178854,
+          "strong_edge_cosine": 0.688294199856504,
+          "strong_edge_pixels": 45
+        },
+        "oracle_both": {
+          "mse": 0.010252493493478846,
+          "masked_gradient_mse": 0.012037207892227984,
+          "strong_edge_cosine": 0.8648016419919522,
+          "strong_edge_pixels": 45
+        },
+        "linear": {
+          "mse": 0.0628685911760651,
+          "masked_gradient_mse": 0.039285707804560796,
+          "strong_edge_cosine": 0.5176481883913344,
+          "strong_edge_pixels": 45
+        },
+        "original_sihti3": {
+          "mse": 0.038565374513698826,
+          "masked_gradient_mse": 0.027319708409529568,
+          "strong_edge_cosine": 0.7618246130112448,
+          "strong_edge_pixels": 45
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.021001548651539633,
+          "gy_mse": 3.1085759469712743e-05,
+          "dc_mse": 0.020014393991204322
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0024833893232191545,
+          "gy_mse": 0.0005941640923253614,
+          "dc_mse": 0.0013070169095339347
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.004540962581921429,
+          "gy_mse": 0.0005315998331191782,
+          "dc_mse": 0.0033856143630528667
+        }
+      }
+    },
+    {
+      "index": 6,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.004505609605682229,
+          "masked_gradient_mse": 0.0049136615593261485,
+          "strong_edge_cosine": 0.36962169605269296,
+          "strong_edge_pixels": 48
+        },
+        "scalar": {
+          "mse": 0.004824514213206911,
+          "masked_gradient_mse": 0.005036782341301912,
+          "strong_edge_cosine": 0.46071375978125867,
+          "strong_edge_pixels": 48
+        },
+        "gradient": {
+          "mse": 0.005169752386496233,
+          "masked_gradient_mse": 0.00529661642110671,
+          "strong_edge_cosine": 0.22145708982796627,
+          "strong_edge_pixels": 48
+        },
+        "both": {
+          "mse": 0.005196734842824559,
+          "masked_gradient_mse": 0.005301513458012825,
+          "strong_edge_cosine": 0.3220050001839697,
+          "strong_edge_pixels": 48
+        },
+        "shuffled": {
+          "mse": 0.007872765459712215,
+          "masked_gradient_mse": 0.007959386972566741,
+          "strong_edge_cosine": -0.07333206685253549,
+          "strong_edge_pixels": 48
+        },
+        "oracle_gradient": {
+          "mse": 0.003552102621064053,
+          "masked_gradient_mse": 0.004089193260832498,
+          "strong_edge_cosine": 0.661547107586144,
+          "strong_edge_pixels": 48
+        },
+        "oracle_scalar": {
+          "mse": 0.0037164852086951166,
+          "masked_gradient_mse": 0.0049952652653489854,
+          "strong_edge_cosine": 0.4572310870570843,
+          "strong_edge_pixels": 48
+        },
+        "oracle_both": {
+          "mse": 0.0022121558363172923,
+          "masked_gradient_mse": 0.003633437496180809,
+          "strong_edge_cosine": 0.8107815956634279,
+          "strong_edge_pixels": 48
+        },
+        "linear": {
+          "mse": 0.005308229816002275,
+          "masked_gradient_mse": 0.00560971917509491,
+          "strong_edge_cosine": 0.2234808673281927,
+          "strong_edge_pixels": 48
+        },
+        "original_sihti3": {
+          "mse": 0.005173362749187612,
+          "masked_gradient_mse": 0.005612620551758474,
+          "strong_edge_cosine": 0.1650045912608971,
+          "strong_edge_pixels": 48
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0006565402266968537,
+          "gy_mse": 0.0005606788978627926,
+          "dc_mse": 0.001718293376132718
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0002379784631740093,
+          "gy_mse": 2.577366926259797e-05,
+          "dc_mse": 0.00019434155710980534
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.00044725934493543154,
+          "gy_mse": 0.0002932262835626953,
+          "dc_mse": 0.0009563174666212616
+        }
+      }
+    },
+    {
+      "index": 7,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.003096150198886197,
+          "masked_gradient_mse": 0.0019072015599049992,
+          "strong_edge_cosine": 0.8983092579655535,
+          "strong_edge_pixels": 10
+        },
+        "scalar": {
+          "mse": 0.008692462064699296,
+          "masked_gradient_mse": 0.0028002789821787418,
+          "strong_edge_cosine": -0.3869791787430667,
+          "strong_edge_pixels": 10
+        },
+        "gradient": {
+          "mse": 0.004829680129466121,
+          "masked_gradient_mse": 0.001964858736941711,
+          "strong_edge_cosine": 0.8594886600619767,
+          "strong_edge_pixels": 10
+        },
+        "both": {
+          "mse": 0.008466362556455592,
+          "masked_gradient_mse": 0.0028015203165010346,
+          "strong_edge_cosine": 0.29996490613583215,
+          "strong_edge_pixels": 10
+        },
+        "shuffled": {
+          "mse": 0.013832865512993182,
+          "masked_gradient_mse": 0.00863307335726808,
+          "strong_edge_cosine": -0.06783073782193796,
+          "strong_edge_pixels": 10
+        },
+        "oracle_gradient": {
+          "mse": 0.007134413007684053,
+          "masked_gradient_mse": 0.002558410041831048,
+          "strong_edge_cosine": 0.8280820902424411,
+          "strong_edge_pixels": 10
+        },
+        "oracle_scalar": {
+          "mse": 0.0014109374107654806,
+          "masked_gradient_mse": 0.0013944907028835126,
+          "strong_edge_cosine": 0.9103837946713782,
+          "strong_edge_pixels": 10
+        },
+        "oracle_both": {
+          "mse": 0.0003797563282456652,
+          "masked_gradient_mse": 0.0006321469759312089,
+          "strong_edge_cosine": 0.9768145624846511,
+          "strong_edge_pixels": 10
+        },
+        "linear": {
+          "mse": 0.003861706430053544,
+          "masked_gradient_mse": 0.0025197495610132107,
+          "strong_edge_cosine": 0.20549216476001905,
+          "strong_edge_pixels": 10
+        },
+        "original_sihti3": {
+          "mse": 0.0059979953027445645,
+          "masked_gradient_mse": 0.0028649370737964,
+          "strong_edge_cosine": -0.6428839623040867,
+          "strong_edge_pixels": 10
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 8.663175068216151e-05,
+          "gy_mse": 0.0008673271908967459,
+          "dc_mse": 0.015423759159873412
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 4.96671412724325e-05,
+          "gy_mse": 0.00017665241744853347,
+          "dc_mse": 0.0006825135202185228
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 6.198867774234216e-05,
+          "gy_mse": 0.00040687734193127094,
+          "dc_mse": 0.005596262066770152
+        }
+      }
+    },
+    {
+      "index": 8,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.016388757065299835,
+          "masked_gradient_mse": 0.00885382014193781,
+          "strong_edge_cosine": 0.4601928933341165,
+          "strong_edge_pixels": 86
+        },
+        "scalar": {
+          "mse": 0.014347717478052042,
+          "masked_gradient_mse": 0.008622200893168567,
+          "strong_edge_cosine": 0.4369099250506722,
+          "strong_edge_pixels": 86
+        },
+        "gradient": {
+          "mse": 0.013430082409936423,
+          "masked_gradient_mse": 0.008583506197068994,
+          "strong_edge_cosine": 0.491694960238277,
+          "strong_edge_pixels": 86
+        },
+        "both": {
+          "mse": 0.012978549337489065,
+          "masked_gradient_mse": 0.008656378500666114,
+          "strong_edge_cosine": 0.40739281645099856,
+          "strong_edge_pixels": 86
+        },
+        "shuffled": {
+          "mse": 0.04508580882242854,
+          "masked_gradient_mse": 0.03814430279955029,
+          "strong_edge_cosine": 0.22399074558205778,
+          "strong_edge_pixels": 86
+        },
+        "oracle_gradient": {
+          "mse": 0.00859626133293532,
+          "masked_gradient_mse": 0.006778016358496546,
+          "strong_edge_cosine": 0.5294012058617933,
+          "strong_edge_pixels": 86
+        },
+        "oracle_scalar": {
+          "mse": 0.00774092410676242,
+          "masked_gradient_mse": 0.0074663516933192635,
+          "strong_edge_cosine": 0.6059111637563199,
+          "strong_edge_pixels": 86
+        },
+        "oracle_both": {
+          "mse": 0.0036440029658900636,
+          "masked_gradient_mse": 0.005217878777339314,
+          "strong_edge_cosine": 0.7607738080028731,
+          "strong_edge_pixels": 86
+        },
+        "linear": {
+          "mse": 0.01987188059906549,
+          "masked_gradient_mse": 0.011039793897117203,
+          "strong_edge_cosine": 0.3626044053533785,
+          "strong_edge_pixels": 86
+        },
+        "original_sihti3": {
+          "mse": 0.012821663340245718,
+          "masked_gradient_mse": 0.007867023175888882,
+          "strong_edge_cosine": 0.406220006997995,
+          "strong_edge_pixels": 86
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0012521770785199077,
+          "gy_mse": 0.0016996095456280709,
+          "dc_mse": 0.0068303649438053995
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 9.021519283865863e-05,
+          "gy_mse": 8.731596629805413e-05,
+          "dc_mse": 0.0004318902248159937
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0006711961356792831,
+          "gy_mse": 0.0008934627559630624,
+          "dc_mse": 0.0036311275843106967
+        }
+      }
+    },
+    {
+      "index": 9,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.0014655127851683472,
+          "masked_gradient_mse": 0.0004736650441464745,
+          "strong_edge_cosine": 0.9489303808157402,
+          "strong_edge_pixels": 3
+        },
+        "scalar": {
+          "mse": 0.005853455596687478,
+          "masked_gradient_mse": 0.0011595618292806946,
+          "strong_edge_cosine": 0.980903342793844,
+          "strong_edge_pixels": 3
+        },
+        "gradient": {
+          "mse": 0.0007446986603987865,
+          "masked_gradient_mse": 0.0006107057826727323,
+          "strong_edge_cosine": 0.9509481177953822,
+          "strong_edge_pixels": 3
+        },
+        "both": {
+          "mse": 0.0036312027318393817,
+          "masked_gradient_mse": 0.0015488350565468223,
+          "strong_edge_cosine": 0.8367747930576006,
+          "strong_edge_pixels": 3
+        },
+        "shuffled": {
+          "mse": 0.013951048916300262,
+          "masked_gradient_mse": 0.01235805713169077,
+          "strong_edge_cosine": -0.7911200294368741,
+          "strong_edge_pixels": 3
+        },
+        "oracle_gradient": {
+          "mse": 0.003294255059513582,
+          "masked_gradient_mse": 0.0012673658670159704,
+          "strong_edge_cosine": 0.9551469490162123,
+          "strong_edge_pixels": 3
+        },
+        "oracle_scalar": {
+          "mse": 0.0005881729403474543,
+          "masked_gradient_mse": 0.0005599367636050232,
+          "strong_edge_cosine": 0.9772488453456752,
+          "strong_edge_pixels": 3
+        },
+        "oracle_both": {
+          "mse": 0.00016403949260403823,
+          "masked_gradient_mse": 0.0002565166986027547,
+          "strong_edge_cosine": 0.9872559684813503,
+          "strong_edge_pixels": 3
+        },
+        "linear": {
+          "mse": 0.006719544400947379,
+          "masked_gradient_mse": 0.0018897682691770556,
+          "strong_edge_cosine": 0.5909825193074997,
+          "strong_edge_pixels": 3
+        },
+        "original_sihti3": {
+          "mse": 0.007129678797490679,
+          "masked_gradient_mse": 0.001970959915153137,
+          "strong_edge_cosine": -0.4575063465232844,
+          "strong_edge_pixels": 3
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 0.00028714031644464844,
+          "gy_mse": 0.00030339846602449945,
+          "dc_mse": 0.004179481491741105
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 7.631046521410362e-05,
+          "gy_mse": 4.94477871016649e-06,
+          "dc_mse": 0.0031661584843533513
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 0.00014658708229095186,
+          "gy_mse": 0.00010442934114827749,
+          "dc_mse": 0.003503932820149269
+        }
+      }
+    },
+    {
+      "index": 10,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.012733307163319687,
+          "masked_gradient_mse": 0.008275161087405064,
+          "strong_edge_cosine": 0.5992627277179444,
+          "strong_edge_pixels": 54
+        },
+        "scalar": {
+          "mse": 0.019493782843448448,
+          "masked_gradient_mse": 0.00990797355556948,
+          "strong_edge_cosine": 0.5800120338196543,
+          "strong_edge_pixels": 54
+        },
+        "gradient": {
+          "mse": 0.01542783944627613,
+          "masked_gradient_mse": 0.011335183586472352,
+          "strong_edge_cosine": 0.5377579842828616,
+          "strong_edge_pixels": 54
+        },
+        "both": {
+          "mse": 0.018728456358943255,
+          "masked_gradient_mse": 0.01383868231370568,
+          "strong_edge_cosine": 0.4587245163250675,
+          "strong_edge_pixels": 54
+        },
+        "shuffled": {
+          "mse": 0.03282526748302951,
+          "masked_gradient_mse": 0.02551309919176348,
+          "strong_edge_cosine": 0.3920145646011,
+          "strong_edge_pixels": 54
+        },
+        "oracle_gradient": {
+          "mse": 0.009455267955702246,
+          "masked_gradient_mse": 0.008680191781962459,
+          "strong_edge_cosine": 0.6302837630421956,
+          "strong_edge_pixels": 54
+        },
+        "oracle_scalar": {
+          "mse": 0.012254963286041884,
+          "masked_gradient_mse": 0.011665365677597921,
+          "strong_edge_cosine": 0.48635085240041365,
+          "strong_edge_pixels": 54
+        },
+        "oracle_both": {
+          "mse": 0.003222620497315684,
+          "masked_gradient_mse": 0.004839517338854171,
+          "strong_edge_cosine": 0.778190126511185,
+          "strong_edge_pixels": 54
+        },
+        "linear": {
+          "mse": 0.018609085621174037,
+          "masked_gradient_mse": 0.010478807435466737,
+          "strong_edge_cosine": 0.49248359548234066,
+          "strong_edge_pixels": 54
+        },
+        "original_sihti3": {
+          "mse": 0.01648768421607079,
+          "masked_gradient_mse": 0.010579892972376947,
+          "strong_edge_cosine": 0.4496266128292814,
+          "strong_edge_pixels": 54
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 0,
+          "gx_mse": null,
+          "gy_mse": null,
+          "dc_mse": null
+        },
+        "partially_visible": {
+          "blocks": 16,
+          "gx_mse": 0.0017278063764884384,
+          "gy_mse": 0.001076367466024712,
+          "dc_mse": 0.006268537832557016
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0017278063764884384,
+          "gy_mse": 0.001076367466024712,
+          "dc_mse": 0.006268537832557016
+        }
+      }
+    },
+    {
+      "index": 11,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.02048410229054213,
+          "masked_gradient_mse": 0.023707922209376706,
+          "strong_edge_cosine": 0.4611065961366895,
+          "strong_edge_pixels": 45
+        },
+        "scalar": {
+          "mse": 0.02089199882577961,
+          "masked_gradient_mse": 0.02424786845296127,
+          "strong_edge_cosine": 0.43811585763236965,
+          "strong_edge_pixels": 45
+        },
+        "gradient": {
+          "mse": 0.025302062641758466,
+          "masked_gradient_mse": 0.026553726490375063,
+          "strong_edge_cosine": 0.3157154891842785,
+          "strong_edge_pixels": 45
+        },
+        "both": {
+          "mse": 0.02643151053200371,
+          "masked_gradient_mse": 0.028829434424645615,
+          "strong_edge_cosine": 0.2696632226389003,
+          "strong_edge_pixels": 45
+        },
+        "shuffled": {
+          "mse": 0.06648457714611916,
+          "masked_gradient_mse": 0.07767412553689322,
+          "strong_edge_cosine": 0.06969725101932596,
+          "strong_edge_pixels": 45
+        },
+        "oracle_gradient": {
+          "mse": 0.015037193896705773,
+          "masked_gradient_mse": 0.01841137696468385,
+          "strong_edge_cosine": 0.6685379889929,
+          "strong_edge_pixels": 45
+        },
+        "oracle_scalar": {
+          "mse": 0.023762694800780342,
+          "masked_gradient_mse": 0.02608590671997138,
+          "strong_edge_cosine": 0.33888173217723827,
+          "strong_edge_pixels": 45
+        },
+        "oracle_both": {
+          "mse": 0.01204707769627582,
+          "masked_gradient_mse": 0.01655229296357412,
+          "strong_edge_cosine": 0.7005251492995863,
+          "strong_edge_pixels": 45
+        },
+        "linear": {
+          "mse": 0.027267837087352864,
+          "masked_gradient_mse": 0.027609246542935256,
+          "strong_edge_cosine": 0.31853423511533113,
+          "strong_edge_pixels": 45
+        },
+        "original_sihti3": {
+          "mse": 0.02437053920866095,
+          "masked_gradient_mse": 0.02728678875425809,
+          "strong_edge_cosine": 0.3025846638473167,
+          "strong_edge_pixels": 45
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 2.3767937346556857e-05,
+          "gy_mse": 0.00013226928799312573,
+          "dc_mse": 3.131452079958182e-06
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0007002323495263029,
+          "gy_mse": 0.001676001496998014,
+          "dc_mse": 0.001482745103277715
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0006250696370618868,
+          "gy_mse": 0.0015044756959974707,
+          "dc_mse": 0.0013183435864779643
+        }
+      }
+    },
+    {
+      "index": 12,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.016553548306702043,
+          "masked_gradient_mse": 0.013416082086660959,
+          "strong_edge_cosine": 0.41112102889480295,
+          "strong_edge_pixels": 92
+        },
+        "scalar": {
+          "mse": 0.013800027548213056,
+          "masked_gradient_mse": 0.01345335038006233,
+          "strong_edge_cosine": 0.38557097067036333,
+          "strong_edge_pixels": 92
+        },
+        "gradient": {
+          "mse": 0.019976269387391533,
+          "masked_gradient_mse": 0.014566943071866885,
+          "strong_edge_cosine": 0.37930958615210303,
+          "strong_edge_pixels": 92
+        },
+        "both": {
+          "mse": 0.016612076682824613,
+          "masked_gradient_mse": 0.0140429061289315,
+          "strong_edge_cosine": 0.3223646593249699,
+          "strong_edge_pixels": 92
+        },
+        "shuffled": {
+          "mse": 0.026936088390068797,
+          "masked_gradient_mse": 0.02517124127246798,
+          "strong_edge_cosine": 0.15376241986470895,
+          "strong_edge_pixels": 92
+        },
+        "oracle_gradient": {
+          "mse": 0.009268358228255155,
+          "masked_gradient_mse": 0.01041584852682035,
+          "strong_edge_cosine": 0.5368948000160544,
+          "strong_edge_pixels": 92
+        },
+        "oracle_scalar": {
+          "mse": 0.013060598171857302,
+          "masked_gradient_mse": 0.013231123068727837,
+          "strong_edge_cosine": 0.3761501728783408,
+          "strong_edge_pixels": 92
+        },
+        "oracle_both": {
+          "mse": 0.0060170475557104405,
+          "masked_gradient_mse": 0.00908459199748294,
+          "strong_edge_cosine": 0.6216916345329002,
+          "strong_edge_pixels": 92
+        },
+        "linear": {
+          "mse": 0.01708081640099604,
+          "masked_gradient_mse": 0.015733246663129863,
+          "strong_edge_cosine": 0.27456332468312217,
+          "strong_edge_pixels": 92
+        },
+        "original_sihti3": {
+          "mse": 0.01597775801550192,
+          "masked_gradient_mse": 0.015347409929474233,
+          "strong_edge_cosine": 0.27327994218994084,
+          "strong_edge_pixels": 92
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0012663923987250288,
+          "gy_mse": 0.0031754564231850115,
+          "dc_mse": 0.005137940557660974
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0007893273038868327,
+          "gy_mse": 0.0001437818189894055,
+          "dc_mse": 0.0005814137511192331
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0010278598513059308,
+          "gy_mse": 0.0016596191210872086,
+          "dc_mse": 0.0028596771543901037
+        }
+      }
+    },
+    {
+      "index": 13,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.006539881154378844,
+          "masked_gradient_mse": 0.005951729549121892,
+          "strong_edge_cosine": 0.5184187642584028,
+          "strong_edge_pixels": 24
+        },
+        "scalar": {
+          "mse": 0.008288786134801048,
+          "masked_gradient_mse": 0.006666925065165499,
+          "strong_edge_cosine": 0.31342901375395216,
+          "strong_edge_pixels": 24
+        },
+        "gradient": {
+          "mse": 0.010568975432943953,
+          "masked_gradient_mse": 0.008274635945019046,
+          "strong_edge_cosine": 0.10801715032141501,
+          "strong_edge_pixels": 24
+        },
+        "both": {
+          "mse": 0.010108230427594843,
+          "masked_gradient_mse": 0.009654818913439927,
+          "strong_edge_cosine": 0.15725029099330237,
+          "strong_edge_pixels": 24
+        },
+        "shuffled": {
+          "mse": 0.021086467245846948,
+          "masked_gradient_mse": 0.03207267969111697,
+          "strong_edge_cosine": 0.2978416850717976,
+          "strong_edge_pixels": 24
+        },
+        "oracle_gradient": {
+          "mse": 0.004345286751752812,
+          "masked_gradient_mse": 0.00535787795503849,
+          "strong_edge_cosine": 0.5890718120730053,
+          "strong_edge_pixels": 24
+        },
+        "oracle_scalar": {
+          "mse": 0.00912725714227984,
+          "masked_gradient_mse": 0.00823701954749934,
+          "strong_edge_cosine": 0.13449688847215632,
+          "strong_edge_pixels": 24
+        },
+        "oracle_both": {
+          "mse": 0.0027351303567722213,
+          "masked_gradient_mse": 0.004264200668412419,
+          "strong_edge_cosine": 0.7411156383480311,
+          "strong_edge_pixels": 24
+        },
+        "linear": {
+          "mse": 0.008105186755919508,
+          "masked_gradient_mse": 0.006081990643927519,
+          "strong_edge_cosine": 0.5033826028083631,
+          "strong_edge_pixels": 24
+        },
+        "original_sihti3": {
+          "mse": 0.005549125690977664,
+          "masked_gradient_mse": 0.005723225432550738,
+          "strong_edge_cosine": 0.40562084755719346,
+          "strong_edge_pixels": 24
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.0014837201133397657,
+          "gy_mse": 0.0023098535587427033,
+          "dc_mse": 0.00036053253259445183
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0007922656180318292,
+          "gy_mse": 0.0002870330488606241,
+          "dc_mse": 0.0020146565131126557
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0008690938952882667,
+          "gy_mse": 0.0005117908832919662,
+          "dc_mse": 0.001830864959721744
+        }
+      }
+    },
+    {
+      "index": 14,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.007054578762519331,
+          "masked_gradient_mse": 0.0053259210780558985,
+          "strong_edge_cosine": 0.3289831709422805,
+          "strong_edge_pixels": 75
+        },
+        "scalar": {
+          "mse": 0.008869264550109595,
+          "masked_gradient_mse": 0.005442647360580621,
+          "strong_edge_cosine": 0.2885483946332624,
+          "strong_edge_pixels": 75
+        },
+        "gradient": {
+          "mse": 0.010658616271414905,
+          "masked_gradient_mse": 0.007728903132359993,
+          "strong_edge_cosine": 0.16582198821038066,
+          "strong_edge_pixels": 75
+        },
+        "both": {
+          "mse": 0.01014978132761799,
+          "masked_gradient_mse": 0.007778018015302309,
+          "strong_edge_cosine": 0.1285587080245216,
+          "strong_edge_pixels": 75
+        },
+        "shuffled": {
+          "mse": 0.01706900617628342,
+          "masked_gradient_mse": 0.012814271516915837,
+          "strong_edge_cosine": 0.06474126097615576,
+          "strong_edge_pixels": 75
+        },
+        "oracle_gradient": {
+          "mse": 0.00445619128354819,
+          "masked_gradient_mse": 0.004695933560324077,
+          "strong_edge_cosine": 0.6178518541638405,
+          "strong_edge_pixels": 75
+        },
+        "oracle_scalar": {
+          "mse": 0.007724244040081971,
+          "masked_gradient_mse": 0.007402604945953251,
+          "strong_edge_cosine": 0.13359122504246385,
+          "strong_edge_pixels": 75
+        },
+        "oracle_both": {
+          "mse": 0.0023601793563525785,
+          "masked_gradient_mse": 0.0035365976673215446,
+          "strong_edge_cosine": 0.7660707946834691,
+          "strong_edge_pixels": 75
+        },
+        "linear": {
+          "mse": 0.00865490500193157,
+          "masked_gradient_mse": 0.00607702197226196,
+          "strong_edge_cosine": 0.2996373958384847,
+          "strong_edge_pixels": 75
+        },
+        "original_sihti3": {
+          "mse": 0.00846300183220497,
+          "masked_gradient_mse": 0.0061526227087711745,
+          "strong_edge_cosine": 0.07222528133500998,
+          "strong_edge_pixels": 75
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 0,
+          "gx_mse": null,
+          "gy_mse": null,
+          "dc_mse": null
+        },
+        "partially_visible": {
+          "blocks": 16,
+          "gx_mse": 0.0013859636475851832,
+          "gy_mse": 0.00045284550821741694,
+          "dc_mse": 0.002233633416175487
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0013859636475851832,
+          "gy_mse": 0.00045284550821741694,
+          "dc_mse": 0.002233633416175487
+        }
+      }
+    },
+    {
+      "index": 15,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.018898755914129477,
+          "masked_gradient_mse": 0.00888457058464047,
+          "strong_edge_cosine": 0.2602563816211753,
+          "strong_edge_pixels": 26
+        },
+        "scalar": {
+          "mse": 0.03437018281234312,
+          "masked_gradient_mse": 0.012093698256141192,
+          "strong_edge_cosine": -0.2642513031338012,
+          "strong_edge_pixels": 26
+        },
+        "gradient": {
+          "mse": 0.02368398644156714,
+          "masked_gradient_mse": 0.010939135826900197,
+          "strong_edge_cosine": 0.26715346162854725,
+          "strong_edge_pixels": 26
+        },
+        "both": {
+          "mse": 0.03099684157172218,
+          "masked_gradient_mse": 0.013621585606398874,
+          "strong_edge_cosine": 0.013123240712873489,
+          "strong_edge_pixels": 26
+        },
+        "shuffled": {
+          "mse": 0.0375083111099718,
+          "masked_gradient_mse": 0.014949607768639362,
+          "strong_edge_cosine": -0.2507751615939676,
+          "strong_edge_pixels": 26
+        },
+        "oracle_gradient": {
+          "mse": 0.01835849702833181,
+          "masked_gradient_mse": 0.010648174973970533,
+          "strong_edge_cosine": 0.3512621298757137,
+          "strong_edge_pixels": 26
+        },
+        "oracle_scalar": {
+          "mse": 0.01368198553803623,
+          "masked_gradient_mse": 0.011378037843647675,
+          "strong_edge_cosine": 0.44622988664033564,
+          "strong_edge_pixels": 26
+        },
+        "oracle_both": {
+          "mse": 0.0030745795386379897,
+          "masked_gradient_mse": 0.004618009396278165,
+          "strong_edge_cosine": 0.8015967078955316,
+          "strong_edge_pixels": 26
+        },
+        "linear": {
+          "mse": 0.027372004087030374,
+          "masked_gradient_mse": 0.00995770957548417,
+          "strong_edge_cosine": 0.18721604927836047,
+          "strong_edge_pixels": 26
+        },
+        "original_sihti3": {
+          "mse": 0.03059784449376234,
+          "masked_gradient_mse": 0.011620894499603514,
+          "strong_edge_cosine": -0.0027393242940852566,
+          "strong_edge_pixels": 26
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 0.0015557371687142875,
+          "gy_mse": 0.006060793010090502,
+          "dc_mse": 0.020019378979071387
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 0.001669676973370456,
+          "gy_mse": 0.0009075528467943667,
+          "dc_mse": 0.012249192227619606
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 0.0016316970384850664,
+          "gy_mse": 0.002625299567893078,
+          "dc_mse": 0.014839254478103534
+        }
+      }
+    },
+    {
+      "index": 16,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.003874633899628805,
+          "masked_gradient_mse": 0.003762251679682178,
+          "strong_edge_cosine": 0.4625638865407011,
+          "strong_edge_pixels": 55
+        },
+        "scalar": {
+          "mse": 0.004844223938545908,
+          "masked_gradient_mse": 0.003965520165794708,
+          "strong_edge_cosine": 0.4990641580450535,
+          "strong_edge_pixels": 55
+        },
+        "gradient": {
+          "mse": 0.005126221309336836,
+          "masked_gradient_mse": 0.004639038841157794,
+          "strong_edge_cosine": 0.33539474477998593,
+          "strong_edge_pixels": 55
+        },
+        "both": {
+          "mse": 0.005101889324842032,
+          "masked_gradient_mse": 0.004532304108942525,
+          "strong_edge_cosine": 0.38612308319260663,
+          "strong_edge_pixels": 55
+        },
+        "shuffled": {
+          "mse": 0.007057695710017966,
+          "masked_gradient_mse": 0.006915541406942429,
+          "strong_edge_cosine": 0.23080186571121972,
+          "strong_edge_pixels": 55
+        },
+        "oracle_gradient": {
+          "mse": 0.002599891186378292,
+          "masked_gradient_mse": 0.0030894582727220444,
+          "strong_edge_cosine": 0.5411504400089652,
+          "strong_edge_pixels": 55
+        },
+        "oracle_scalar": {
+          "mse": 0.004062219724012677,
+          "masked_gradient_mse": 0.004495390307342166,
+          "strong_edge_cosine": 0.39695517151902304,
+          "strong_edge_pixels": 55
+        },
+        "oracle_both": {
+          "mse": 0.0017396613902852687,
+          "masked_gradient_mse": 0.0028858155310341567,
+          "strong_edge_cosine": 0.5935369549326618,
+          "strong_edge_pixels": 55
+        },
+        "linear": {
+          "mse": 0.005017160690059214,
+          "masked_gradient_mse": 0.004581441175746586,
+          "strong_edge_cosine": 0.3987138265975871,
+          "strong_edge_pixels": 55
+        },
+        "original_sihti3": {
+          "mse": 0.006637651789786173,
+          "masked_gradient_mse": 0.00469981466386613,
+          "strong_edge_cosine": 0.4148835872052844,
+          "strong_edge_pixels": 55
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0006840399850433723,
+          "gy_mse": 0.0006060005350157288,
+          "dc_mse": 0.0013128923730460257
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.00025261389669863245,
+          "gy_mse": 0.00014607206994305408,
+          "dc_mse": 0.0007742441801883096
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.00046832694087100234,
+          "gy_mse": 0.0003760363024793914,
+          "dc_mse": 0.0010435682766171675
+        }
+      }
+    },
+    {
+      "index": 17,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.024673030860317708,
+          "masked_gradient_mse": 0.016688936462745156,
+          "strong_edge_cosine": 0.1361038072811689,
+          "strong_edge_pixels": 47
+        },
+        "scalar": {
+          "mse": 0.02981475695141269,
+          "masked_gradient_mse": 0.01994152710961655,
+          "strong_edge_cosine": 0.011710663383606875,
+          "strong_edge_pixels": 47
+        },
+        "gradient": {
+          "mse": 0.01644146200984016,
+          "masked_gradient_mse": 0.013477552812350975,
+          "strong_edge_cosine": 0.48424878878164074,
+          "strong_edge_pixels": 47
+        },
+        "both": {
+          "mse": 0.020653278653203343,
+          "masked_gradient_mse": 0.01595418713037759,
+          "strong_edge_cosine": 0.4126309185084179,
+          "strong_edge_pixels": 47
+        },
+        "shuffled": {
+          "mse": 0.06890284129160258,
+          "masked_gradient_mse": 0.06036237573909071,
+          "strong_edge_cosine": 0.21380721507322065,
+          "strong_edge_pixels": 47
+        },
+        "oracle_gradient": {
+          "mse": 0.00942084102773988,
+          "masked_gradient_mse": 0.009489443424241456,
+          "strong_edge_cosine": 0.6061501889334314,
+          "strong_edge_pixels": 47
+        },
+        "oracle_scalar": {
+          "mse": 0.014200200549241294,
+          "masked_gradient_mse": 0.013349395195078242,
+          "strong_edge_cosine": 0.44609177424451457,
+          "strong_edge_pixels": 47
+        },
+        "oracle_both": {
+          "mse": 0.004535212460786715,
+          "masked_gradient_mse": 0.006721377392246277,
+          "strong_edge_cosine": 0.7376377672650658,
+          "strong_edge_pixels": 47
+        },
+        "linear": {
+          "mse": 0.037126986746833734,
+          "masked_gradient_mse": 0.021463042862979675,
+          "strong_edge_cosine": -0.007341477482843166,
+          "strong_edge_pixels": 47
+        },
+        "original_sihti3": {
+          "mse": 0.029333165042239782,
+          "masked_gradient_mse": 0.019869633911374182,
+          "strong_edge_cosine": 0.3388593426085521,
+          "strong_edge_pixels": 47
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.006373181328861196,
+          "gy_mse": 0.0030154253926952534,
+          "dc_mse": 0.008284980799251074
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.00031334034549478285,
+          "gy_mse": 0.0010100940570345754,
+          "dc_mse": 0.006106858561220363
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0009866560103132733,
+          "gy_mse": 0.001232908649885762,
+          "dc_mse": 0.006348872143223775
+        }
+      }
+    },
+    {
+      "index": 18,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.02265430711500196,
+          "masked_gradient_mse": 0.015296748103823156,
+          "strong_edge_cosine": 0.432099101143388,
+          "strong_edge_pixels": 98
+        },
+        "scalar": {
+          "mse": 0.022850046246651216,
+          "masked_gradient_mse": 0.015743556576865707,
+          "strong_edge_cosine": 0.4035622360960054,
+          "strong_edge_pixels": 98
+        },
+        "gradient": {
+          "mse": 0.024614198220011384,
+          "masked_gradient_mse": 0.015981301757678302,
+          "strong_edge_cosine": 0.40804853533089863,
+          "strong_edge_pixels": 98
+        },
+        "both": {
+          "mse": 0.022753582417473224,
+          "masked_gradient_mse": 0.01569634345703672,
+          "strong_edge_cosine": 0.38795408448444724,
+          "strong_edge_pixels": 98
+        },
+        "shuffled": {
+          "mse": 0.0689554597312478,
+          "masked_gradient_mse": 0.05814445127474858,
+          "strong_edge_cosine": -0.025028014673119728,
+          "strong_edge_pixels": 98
+        },
+        "oracle_gradient": {
+          "mse": 0.016737720952786292,
+          "masked_gradient_mse": 0.012366661170167626,
+          "strong_edge_cosine": 0.5387548985512831,
+          "strong_edge_pixels": 98
+        },
+        "oracle_scalar": {
+          "mse": 0.011524418114366098,
+          "masked_gradient_mse": 0.014717435843614625,
+          "strong_edge_cosine": 0.47611192688484255,
+          "strong_edge_pixels": 98
+        },
+        "oracle_both": {
+          "mse": 0.006375854131846237,
+          "masked_gradient_mse": 0.010210976796926135,
+          "strong_edge_cosine": 0.6374941584168827,
+          "strong_edge_pixels": 98
+        },
+        "linear": {
+          "mse": 0.02855906692449476,
+          "masked_gradient_mse": 0.019320410838233753,
+          "strong_edge_cosine": 0.3616527140877186,
+          "strong_edge_pixels": 98
+        },
+        "original_sihti3": {
+          "mse": 0.018985049862421798,
+          "masked_gradient_mse": 0.01578110028556422,
+          "strong_edge_cosine": 0.3419406724302938,
+          "strong_edge_pixels": 98
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0006823427667293553,
+          "gy_mse": 0.0028351982463056553,
+          "dc_mse": 0.013861047727976054
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.000581289074232003,
+          "gy_mse": 0.0003101262918182771,
+          "dc_mse": 0.0008019408680339077
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0006318159204806791,
+          "gy_mse": 0.0015726622690619661,
+          "dc_mse": 0.007331494298004981
+        }
+      }
+    },
+    {
+      "index": 19,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.014614056128508746,
+          "masked_gradient_mse": 0.010812365047201265,
+          "strong_edge_cosine": 0.4363327027343329,
+          "strong_edge_pixels": 44
+        },
+        "scalar": {
+          "mse": 0.011060031853175292,
+          "masked_gradient_mse": 0.010509154101170644,
+          "strong_edge_cosine": 0.33699197259556785,
+          "strong_edge_pixels": 44
+        },
+        "gradient": {
+          "mse": 0.00994945783361599,
+          "masked_gradient_mse": 0.01268879246129409,
+          "strong_edge_cosine": 0.283535269597077,
+          "strong_edge_pixels": 44
+        },
+        "both": {
+          "mse": 0.011715663866561008,
+          "masked_gradient_mse": 0.014037195030092922,
+          "strong_edge_cosine": 0.21565103253306483,
+          "strong_edge_pixels": 44
+        },
+        "shuffled": {
+          "mse": 0.032779251008172416,
+          "masked_gradient_mse": 0.03170731958092188,
+          "strong_edge_cosine": -0.14810088804715146,
+          "strong_edge_pixels": 44
+        },
+        "oracle_gradient": {
+          "mse": 0.006278947494923994,
+          "masked_gradient_mse": 0.007068349181810445,
+          "strong_edge_cosine": 0.6280030466216638,
+          "strong_edge_pixels": 44
+        },
+        "oracle_scalar": {
+          "mse": 0.009315792765697932,
+          "masked_gradient_mse": 0.012202366221302247,
+          "strong_edge_cosine": 0.334520628841415,
+          "strong_edge_pixels": 44
+        },
+        "oracle_both": {
+          "mse": 0.0034413015612757697,
+          "masked_gradient_mse": 0.005438902683091332,
+          "strong_edge_cosine": 0.7163071563536992,
+          "strong_edge_pixels": 44
+        },
+        "linear": {
+          "mse": 0.018228034448502774,
+          "masked_gradient_mse": 0.0134888980327511,
+          "strong_edge_cosine": 0.20875217572345317,
+          "strong_edge_pixels": 44
+        },
+        "original_sihti3": {
+          "mse": 0.015059666494099212,
+          "masked_gradient_mse": 0.013160012020670627,
+          "strong_edge_cosine": 0.047552004993078476,
+          "strong_edge_pixels": 44
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.0022428938078995772,
+          "gy_mse": 0.0001574304584009516,
+          "dc_mse": 0.0006268378122437718
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0004948091566335012,
+          "gy_mse": 0.00030539732618446144,
+          "dc_mse": 0.0015127139400998634
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0006890407845519542,
+          "gy_mse": 0.0002889565630974048,
+          "dc_mse": 0.0014142832592269642
+        }
+      }
+    },
+    {
+      "index": 20,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.022231056626626965,
+          "masked_gradient_mse": 0.01664975046601681,
+          "strong_edge_cosine": 0.38886043357246103,
+          "strong_edge_pixels": 95
+        },
+        "scalar": {
+          "mse": 0.019669992673392468,
+          "masked_gradient_mse": 0.016936973413330676,
+          "strong_edge_cosine": 0.3748356638143865,
+          "strong_edge_pixels": 95
+        },
+        "gradient": {
+          "mse": 0.023055906491064537,
+          "masked_gradient_mse": 0.016366376649604726,
+          "strong_edge_cosine": 0.3790476217436844,
+          "strong_edge_pixels": 95
+        },
+        "both": {
+          "mse": 0.017850158843328662,
+          "masked_gradient_mse": 0.015357054597675526,
+          "strong_edge_cosine": 0.3891410385474716,
+          "strong_edge_pixels": 95
+        },
+        "shuffled": {
+          "mse": 0.034761007565549465,
+          "masked_gradient_mse": 0.03380551933097247,
+          "strong_edge_cosine": 0.04008601214122089,
+          "strong_edge_pixels": 95
+        },
+        "oracle_gradient": {
+          "mse": 0.012665438748464602,
+          "masked_gradient_mse": 0.01125007180210937,
+          "strong_edge_cosine": 0.6551659604607148,
+          "strong_edge_pixels": 95
+        },
+        "oracle_scalar": {
+          "mse": 0.011134956287037607,
+          "masked_gradient_mse": 0.013036409879895417,
+          "strong_edge_cosine": 0.4600402337762352,
+          "strong_edge_pixels": 95
+        },
+        "oracle_both": {
+          "mse": 0.0060967757428017485,
+          "masked_gradient_mse": 0.00905465095626701,
+          "strong_edge_cosine": 0.6391085472524789,
+          "strong_edge_pixels": 95
+        },
+        "linear": {
+          "mse": 0.024966477958730436,
+          "masked_gradient_mse": 0.019073663722932382,
+          "strong_edge_cosine": 0.19020358775512214,
+          "strong_edge_pixels": 95
+        },
+        "original_sihti3": {
+          "mse": 0.02162082402145065,
+          "masked_gradient_mse": 0.017695992781385304,
+          "strong_edge_cosine": 0.34314107273085337,
+          "strong_edge_pixels": 95
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0016625550847015147,
+          "gy_mse": 0.0014478906528194884,
+          "dc_mse": 0.007463900687133604
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0006503221596740629,
+          "gy_mse": 0.0001515583446524292,
+          "dc_mse": 0.0019540106071267035
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0011564386221877888,
+          "gy_mse": 0.0007997244987359587,
+          "dc_mse": 0.004708955647130154
+        }
+      }
+    },
+    {
+      "index": 21,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.013288143450370628,
+          "masked_gradient_mse": 0.007538474796494856,
+          "strong_edge_cosine": 0.42897571299310056,
+          "strong_edge_pixels": 32
+        },
+        "scalar": {
+          "mse": 0.02489411840685709,
+          "masked_gradient_mse": 0.009589822193007892,
+          "strong_edge_cosine": 0.25345836953687795,
+          "strong_edge_pixels": 32
+        },
+        "gradient": {
+          "mse": 0.017586383347493753,
+          "masked_gradient_mse": 0.010261121404678357,
+          "strong_edge_cosine": 0.2842313058798009,
+          "strong_edge_pixels": 32
+        },
+        "both": {
+          "mse": 0.024306668764568946,
+          "masked_gradient_mse": 0.011569740644598678,
+          "strong_edge_cosine": 0.21481215606202286,
+          "strong_edge_pixels": 32
+        },
+        "shuffled": {
+          "mse": 0.0727679562718574,
+          "masked_gradient_mse": 0.05044082944003512,
+          "strong_edge_cosine": -0.09843120900628449,
+          "strong_edge_pixels": 32
+        },
+        "oracle_gradient": {
+          "mse": 0.014159674152726547,
+          "masked_gradient_mse": 0.009390728241843367,
+          "strong_edge_cosine": 0.6755999391730927,
+          "strong_edge_pixels": 32
+        },
+        "oracle_scalar": {
+          "mse": 0.012337364404213524,
+          "masked_gradient_mse": 0.009912403188424464,
+          "strong_edge_cosine": 0.312779103861407,
+          "strong_edge_pixels": 32
+        },
+        "oracle_both": {
+          "mse": 0.0027196179304115366,
+          "masked_gradient_mse": 0.004272680618217881,
+          "strong_edge_cosine": 0.7011988385787582,
+          "strong_edge_pixels": 32
+        },
+        "linear": {
+          "mse": 0.017830291295445572,
+          "masked_gradient_mse": 0.010216181324831285,
+          "strong_edge_cosine": 0.2896312559959729,
+          "strong_edge_pixels": 32
+        },
+        "original_sihti3": {
+          "mse": 0.014552620180286528,
+          "masked_gradient_mse": 0.00906936164963499,
+          "strong_edge_cosine": 0.40538561367194315,
+          "strong_edge_pixels": 32
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.009404064300913142,
+          "gy_mse": 0.0012275751699809892,
+          "dc_mse": 0.015973420467865655
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0006785979731170426,
+          "gy_mse": 0.0007801513163744071,
+          "dc_mse": 0.0064683787185736185
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0016480942317610536,
+          "gy_mse": 0.0008298650778862496,
+          "dc_mse": 0.007524494468494956
+        }
+      }
+    },
+    {
+      "index": 22,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.01865842829624018,
+          "masked_gradient_mse": 0.013503190825749125,
+          "strong_edge_cosine": 0.547425322953326,
+          "strong_edge_pixels": 96
+        },
+        "scalar": {
+          "mse": 0.02066061375639569,
+          "masked_gradient_mse": 0.014413839827905318,
+          "strong_edge_cosine": 0.4383726011212877,
+          "strong_edge_pixels": 96
+        },
+        "gradient": {
+          "mse": 0.01958269027950368,
+          "masked_gradient_mse": 0.016512783542015262,
+          "strong_edge_cosine": 0.46126483512568556,
+          "strong_edge_pixels": 96
+        },
+        "both": {
+          "mse": 0.021096941089781523,
+          "masked_gradient_mse": 0.01631294292401508,
+          "strong_edge_cosine": 0.4745504717147204,
+          "strong_edge_pixels": 96
+        },
+        "shuffled": {
+          "mse": 0.07241977683605741,
+          "masked_gradient_mse": 0.05431618330192446,
+          "strong_edge_cosine": 0.0016929868943788863,
+          "strong_edge_pixels": 96
+        },
+        "oracle_gradient": {
+          "mse": 0.013166213414712224,
+          "masked_gradient_mse": 0.011546736558925833,
+          "strong_edge_cosine": 0.644015292001685,
+          "strong_edge_pixels": 96
+        },
+        "oracle_scalar": {
+          "mse": 0.014354970148783194,
+          "masked_gradient_mse": 0.015612478856139271,
+          "strong_edge_cosine": 0.4400765164345258,
+          "strong_edge_pixels": 96
+        },
+        "oracle_both": {
+          "mse": 0.006800045779247113,
+          "masked_gradient_mse": 0.010078601441194289,
+          "strong_edge_cosine": 0.7161984205339809,
+          "strong_edge_pixels": 96
+        },
+        "linear": {
+          "mse": 0.02961314862105604,
+          "masked_gradient_mse": 0.018754973421812465,
+          "strong_edge_cosine": 0.33824024482890575,
+          "strong_edge_pixels": 96
+        },
+        "original_sihti3": {
+          "mse": 0.028402151147084033,
+          "masked_gradient_mse": 0.017819373088476018,
+          "strong_edge_cosine": 0.2755046729166497,
+          "strong_edge_pixels": 96
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0015557081186852715,
+          "gy_mse": 0.003114710815674797,
+          "dc_mse": 0.00947384558271391
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0004283179637482389,
+          "gy_mse": 0.0006414336455865157,
+          "dc_mse": 0.0021155524441754422
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0009920130412167552,
+          "gy_mse": 0.0018780722306306562,
+          "dc_mse": 0.005794699013444677
+        }
+      }
+    },
+    {
+      "index": 23,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.009895958644297438,
+          "masked_gradient_mse": 0.008295940423501912,
+          "strong_edge_cosine": 0.45073798540357374,
+          "strong_edge_pixels": 38
+        },
+        "scalar": {
+          "mse": 0.011896561497289434,
+          "masked_gradient_mse": 0.00916352150843042,
+          "strong_edge_cosine": 0.25727361318937564,
+          "strong_edge_pixels": 38
+        },
+        "gradient": {
+          "mse": 0.011121712561002271,
+          "masked_gradient_mse": 0.00917955931422649,
+          "strong_edge_cosine": 0.37147501385288806,
+          "strong_edge_pixels": 38
+        },
+        "both": {
+          "mse": 0.012379647009060185,
+          "masked_gradient_mse": 0.009785713267324426,
+          "strong_edge_cosine": 0.31193857620846616,
+          "strong_edge_pixels": 38
+        },
+        "shuffled": {
+          "mse": 0.01518361829294904,
+          "masked_gradient_mse": 0.01246756599603777,
+          "strong_edge_cosine": 0.1536357628542461,
+          "strong_edge_pixels": 38
+        },
+        "oracle_gradient": {
+          "mse": 0.006128174901622964,
+          "masked_gradient_mse": 0.006837029147590484,
+          "strong_edge_cosine": 0.6787348055752421,
+          "strong_edge_pixels": 38
+        },
+        "oracle_scalar": {
+          "mse": 0.009545275439399807,
+          "masked_gradient_mse": 0.008628064824494087,
+          "strong_edge_cosine": 0.35725508776097914,
+          "strong_edge_pixels": 38
+        },
+        "oracle_both": {
+          "mse": 0.0036584864796850233,
+          "masked_gradient_mse": 0.0053820080987051,
+          "strong_edge_cosine": 0.7192882173325126,
+          "strong_edge_pixels": 38
+        },
+        "linear": {
+          "mse": 0.011204263649921359,
+          "masked_gradient_mse": 0.009830000039690848,
+          "strong_edge_cosine": 0.1935285216214939,
+          "strong_edge_pixels": 38
+        },
+        "original_sihti3": {
+          "mse": 0.01155218412324968,
+          "masked_gradient_mse": 0.010108708038996023,
+          "strong_edge_cosine": 0.10892297332425051,
+          "strong_edge_pixels": 38
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 0.0002186060324121176,
+          "gy_mse": 0.004457143845738063,
+          "dc_mse": 0.0032080409078196217
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 0.0006059792829371327,
+          "gy_mse": 0.00045741655824903135,
+          "dc_mse": 0.0022957279373785103
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 0.000476854866095461,
+          "gy_mse": 0.0017906589874120424,
+          "dc_mse": 0.0025998322608588808
+        }
+      }
+    },
+    {
+      "index": 24,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.012090365902202659,
+          "masked_gradient_mse": 0.00751176234439778,
+          "strong_edge_cosine": 0.4145875601417093,
+          "strong_edge_pixels": 70
+        },
+        "scalar": {
+          "mse": 0.014519596623205996,
+          "masked_gradient_mse": 0.007900446335029794,
+          "strong_edge_cosine": 0.3630749515745702,
+          "strong_edge_pixels": 70
+        },
+        "gradient": {
+          "mse": 0.012332249098973066,
+          "masked_gradient_mse": 0.008114355788415264,
+          "strong_edge_cosine": 0.28344080822021245,
+          "strong_edge_pixels": 70
+        },
+        "both": {
+          "mse": 0.014436141576703523,
+          "masked_gradient_mse": 0.008565253129237579,
+          "strong_edge_cosine": 0.26516102038667333,
+          "strong_edge_pixels": 70
+        },
+        "shuffled": {
+          "mse": 0.045086322962283196,
+          "masked_gradient_mse": 0.03092739139797968,
+          "strong_edge_cosine": -0.14047864280891892,
+          "strong_edge_pixels": 70
+        },
+        "oracle_gradient": {
+          "mse": 0.010106086701040167,
+          "masked_gradient_mse": 0.0063075614110097225,
+          "strong_edge_cosine": 0.660499582647248,
+          "strong_edge_pixels": 70
+        },
+        "oracle_scalar": {
+          "mse": 0.006827873787841526,
+          "masked_gradient_mse": 0.007046275814610859,
+          "strong_edge_cosine": 0.38885787893845997,
+          "strong_edge_pixels": 70
+        },
+        "oracle_both": {
+          "mse": 0.0028432298420992324,
+          "masked_gradient_mse": 0.004379644131485325,
+          "strong_edge_cosine": 0.6976420517554249,
+          "strong_edge_pixels": 70
+        },
+        "linear": {
+          "mse": 0.017509433962795213,
+          "masked_gradient_mse": 0.010125057663556399,
+          "strong_edge_cosine": 0.3036180720801909,
+          "strong_edge_pixels": 70
+        },
+        "original_sihti3": {
+          "mse": 0.012446892006030282,
+          "masked_gradient_mse": 0.008103625955199147,
+          "strong_edge_cosine": 0.18286496426797852,
+          "strong_edge_pixels": 70
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0009642755767800516,
+          "gy_mse": 0.0017968679540787812,
+          "dc_mse": 0.009580994448686094
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0002858199564200048,
+          "gy_mse": 0.0002103344893656584,
+          "dc_mse": 0.0006546203819700224
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0006250477666000282,
+          "gy_mse": 0.0010036012217222198,
+          "dc_mse": 0.005117807415328059
+        }
+      }
+    },
+    {
+      "index": 25,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.03640881302178357,
+          "masked_gradient_mse": 0.02472871336064862,
+          "strong_edge_cosine": 0.29746498920827097,
+          "strong_edge_pixels": 53
+        },
+        "scalar": {
+          "mse": 0.039711097164151374,
+          "masked_gradient_mse": 0.026109380541359355,
+          "strong_edge_cosine": 0.22924255624513343,
+          "strong_edge_pixels": 53
+        },
+        "gradient": {
+          "mse": 0.0408514688196335,
+          "masked_gradient_mse": 0.02783926214582814,
+          "strong_edge_cosine": 0.1579276692352353,
+          "strong_edge_pixels": 53
+        },
+        "both": {
+          "mse": 0.04255597456141934,
+          "masked_gradient_mse": 0.028457667663334178,
+          "strong_edge_cosine": 0.19271690788895005,
+          "strong_edge_pixels": 53
+        },
+        "shuffled": {
+          "mse": 0.04620982739063339,
+          "masked_gradient_mse": 0.03841708519855393,
+          "strong_edge_cosine": 0.09880204462819932,
+          "strong_edge_pixels": 53
+        },
+        "oracle_gradient": {
+          "mse": 0.018192060447604783,
+          "masked_gradient_mse": 0.01285507314151134,
+          "strong_edge_cosine": 0.6605906562598601,
+          "strong_edge_pixels": 53
+        },
+        "oracle_scalar": {
+          "mse": 0.0304607096498829,
+          "masked_gradient_mse": 0.025459189832891513,
+          "strong_edge_cosine": 0.34014686389631493,
+          "strong_edge_pixels": 53
+        },
+        "oracle_both": {
+          "mse": 0.00635872306295672,
+          "masked_gradient_mse": 0.008455935836840558,
+          "strong_edge_cosine": 0.7996493331414715,
+          "strong_edge_pixels": 53
+        },
+        "linear": {
+          "mse": 0.038408383354784574,
+          "masked_gradient_mse": 0.026528158810661732,
+          "strong_edge_cosine": 0.265815286258053,
+          "strong_edge_pixels": 53
+        },
+        "original_sihti3": {
+          "mse": 0.03936040338419101,
+          "masked_gradient_mse": 0.026968922841847934,
+          "strong_edge_cosine": 0.17232233270751834,
+          "strong_edge_pixels": 53
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.006152104161658052,
+          "gy_mse": 0.028350207332248446,
+          "dc_mse": 0.0259118372853474
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0008145802586247382,
+          "gy_mse": 0.002542687278515036,
+          "dc_mse": 0.004081469811731547
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.001407638470072884,
+          "gy_mse": 0.005410189506707637,
+          "dc_mse": 0.006507066197688864
+        }
+      }
+    },
+    {
+      "index": 26,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.02501191461121992,
+          "masked_gradient_mse": 0.0218513292077624,
+          "strong_edge_cosine": 0.1999032603399794,
+          "strong_edge_pixels": 128
+        },
+        "scalar": {
+          "mse": 0.024720400048872847,
+          "masked_gradient_mse": 0.021967862148261175,
+          "strong_edge_cosine": 0.21984055020717932,
+          "strong_edge_pixels": 128
+        },
+        "gradient": {
+          "mse": 0.028894133836320158,
+          "masked_gradient_mse": 0.024316580849442257,
+          "strong_edge_cosine": 0.1701463217452297,
+          "strong_edge_pixels": 128
+        },
+        "both": {
+          "mse": 0.027100718418019715,
+          "masked_gradient_mse": 0.024346413359894962,
+          "strong_edge_cosine": 0.17725291006506133,
+          "strong_edge_pixels": 128
+        },
+        "shuffled": {
+          "mse": 0.03678031899738489,
+          "masked_gradient_mse": 0.03226545365400376,
+          "strong_edge_cosine": 0.08113887340792961,
+          "strong_edge_pixels": 128
+        },
+        "oracle_gradient": {
+          "mse": 0.011956171031814684,
+          "masked_gradient_mse": 0.015932091843987483,
+          "strong_edge_cosine": 0.5079204010098093,
+          "strong_edge_pixels": 128
+        },
+        "oracle_scalar": {
+          "mse": 0.023362495242342306,
+          "masked_gradient_mse": 0.0246239641281755,
+          "strong_edge_cosine": 0.18868144468387787,
+          "strong_edge_pixels": 128
+        },
+        "oracle_both": {
+          "mse": 0.00860811056780503,
+          "masked_gradient_mse": 0.013951614744180146,
+          "strong_edge_cosine": 0.5554645238180046,
+          "strong_edge_pixels": 128
+        },
+        "linear": {
+          "mse": 0.026928291883934852,
+          "masked_gradient_mse": 0.02453493428368195,
+          "strong_edge_cosine": 0.13821826874206175,
+          "strong_edge_pixels": 128
+        },
+        "original_sihti3": {
+          "mse": 0.031740685507621005,
+          "masked_gradient_mse": 0.024166989789583107,
+          "strong_edge_cosine": 0.12561812068113937,
+          "strong_edge_pixels": 128
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 0,
+          "gx_mse": null,
+          "gy_mse": null,
+          "dc_mse": null
+        },
+        "partially_visible": {
+          "blocks": 16,
+          "gx_mse": 0.002549223399608302,
+          "gy_mse": 0.0021249008492413464,
+          "dc_mse": 0.0038159242005099342
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.002549223399608302,
+          "gy_mse": 0.0021249008492413464,
+          "dc_mse": 0.0038159242005099342
+        }
+      }
+    },
+    {
+      "index": 27,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.013534421932039143,
+          "masked_gradient_mse": 0.008715758301562987,
+          "strong_edge_cosine": 0.24497502679870317,
+          "strong_edge_pixels": 36
+        },
+        "scalar": {
+          "mse": 0.011389788858846719,
+          "masked_gradient_mse": 0.008399989492577852,
+          "strong_edge_cosine": 0.3548818585880238,
+          "strong_edge_pixels": 36
+        },
+        "gradient": {
+          "mse": 0.017827603645903124,
+          "masked_gradient_mse": 0.01123027345172586,
+          "strong_edge_cosine": 0.04974131215650489,
+          "strong_edge_pixels": 36
+        },
+        "both": {
+          "mse": 0.016568717558064897,
+          "masked_gradient_mse": 0.011591529733332604,
+          "strong_edge_cosine": 0.10486432772282366,
+          "strong_edge_pixels": 36
+        },
+        "shuffled": {
+          "mse": 0.05001564767540081,
+          "masked_gradient_mse": 0.04371756203601759,
+          "strong_edge_cosine": -0.024236877418142892,
+          "strong_edge_pixels": 36
+        },
+        "oracle_gradient": {
+          "mse": 0.005405102718230232,
+          "masked_gradient_mse": 0.005396245584957001,
+          "strong_edge_cosine": 0.7035127862272269,
+          "strong_edge_pixels": 36
+        },
+        "oracle_scalar": {
+          "mse": 0.01368954688328074,
+          "masked_gradient_mse": 0.011487721953262149,
+          "strong_edge_cosine": 0.26388969362098796,
+          "strong_edge_pixels": 36
+        },
+        "oracle_both": {
+          "mse": 0.0024773012075579677,
+          "masked_gradient_mse": 0.0038708908745491,
+          "strong_edge_cosine": 0.7663821858190231,
+          "strong_edge_pixels": 36
+        },
+        "linear": {
+          "mse": 0.01476469317847914,
+          "masked_gradient_mse": 0.010191925452152436,
+          "strong_edge_cosine": 0.06354104734435968,
+          "strong_edge_pixels": 36
+        },
+        "original_sihti3": {
+          "mse": 0.01906684141730446,
+          "masked_gradient_mse": 0.009737495822515242,
+          "strong_edge_cosine": 0.21618144503337575,
+          "strong_edge_pixels": 36
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.0001464979206790589,
+          "gy_mse": 0.006849729632332692,
+          "dc_mse": 4.004295829436404e-05
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0004927258230444033,
+          "gy_mse": 0.0013439532539626996,
+          "dc_mse": 0.0019653960586580098
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0004542560561149206,
+          "gy_mse": 0.0019557061848926986,
+          "dc_mse": 0.0017514679363953825
+        }
+      }
+    },
+    {
+      "index": 28,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.03213548829541177,
+          "masked_gradient_mse": 0.019989611386144336,
+          "strong_edge_cosine": 0.24724618288235822,
+          "strong_edge_pixels": 133
+        },
+        "scalar": {
+          "mse": 0.03222691702999407,
+          "masked_gradient_mse": 0.021483992278269106,
+          "strong_edge_cosine": 0.2308236184047696,
+          "strong_edge_pixels": 133
+        },
+        "gradient": {
+          "mse": 0.03553535129335615,
+          "masked_gradient_mse": 0.021918095677154272,
+          "strong_edge_cosine": 0.15388843042304856,
+          "strong_edge_pixels": 133
+        },
+        "both": {
+          "mse": 0.035981083841655485,
+          "masked_gradient_mse": 0.023752287410938433,
+          "strong_edge_cosine": 0.1277759837539005,
+          "strong_edge_pixels": 133
+        },
+        "shuffled": {
+          "mse": 0.06878636757187377,
+          "masked_gradient_mse": 0.04694847207496603,
+          "strong_edge_cosine": -0.07793886474626674,
+          "strong_edge_pixels": 133
+        },
+        "oracle_gradient": {
+          "mse": 0.019516506559556134,
+          "masked_gradient_mse": 0.01810042637717774,
+          "strong_edge_cosine": 0.48353802986586414,
+          "strong_edge_pixels": 133
+        },
+        "oracle_scalar": {
+          "mse": 0.023470170811983042,
+          "masked_gradient_mse": 0.020262180962486366,
+          "strong_edge_cosine": 0.24667100407404016,
+          "strong_edge_pixels": 133
+        },
+        "oracle_both": {
+          "mse": 0.007093862392413855,
+          "masked_gradient_mse": 0.011522861558951058,
+          "strong_edge_cosine": 0.6205611544612605,
+          "strong_edge_pixels": 133
+        },
+        "linear": {
+          "mse": 0.031838003529931026,
+          "masked_gradient_mse": 0.021138931439890794,
+          "strong_edge_cosine": 0.21825692149677642,
+          "strong_edge_pixels": 133
+        },
+        "original_sihti3": {
+          "mse": 0.03200867757901928,
+          "masked_gradient_mse": 0.021229887199822384,
+          "strong_edge_cosine": 0.19246699840916187,
+          "strong_edge_pixels": 133
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 0,
+          "gx_mse": null,
+          "gy_mse": null,
+          "dc_mse": null
+        },
+        "partially_visible": {
+          "blocks": 16,
+          "gx_mse": 0.003326524922869432,
+          "gy_mse": 0.002143656654215505,
+          "dc_mse": 0.009817034366474471
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.003326524922869432,
+          "gy_mse": 0.002143656654215505,
+          "dc_mse": 0.009817034366474471
+        }
+      }
+    },
+    {
+      "index": 29,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.05482138686277978,
+          "masked_gradient_mse": 0.055582900740625295,
+          "strong_edge_cosine": 0.2395411921452624,
+          "strong_edge_pixels": 60
+        },
+        "scalar": {
+          "mse": 0.051895797025864374,
+          "masked_gradient_mse": 0.055465410747598316,
+          "strong_edge_cosine": 0.22473658277911931,
+          "strong_edge_pixels": 60
+        },
+        "gradient": {
+          "mse": 0.058982886431216026,
+          "masked_gradient_mse": 0.05989198148392405,
+          "strong_edge_cosine": -0.011291246859542654,
+          "strong_edge_pixels": 60
+        },
+        "both": {
+          "mse": 0.05279444317208866,
+          "masked_gradient_mse": 0.05702840591807561,
+          "strong_edge_cosine": 0.17813504284106235,
+          "strong_edge_pixels": 60
+        },
+        "shuffled": {
+          "mse": 0.10324666716089341,
+          "masked_gradient_mse": 0.09218278341402879,
+          "strong_edge_cosine": 0.22612775162450274,
+          "strong_edge_pixels": 60
+        },
+        "oracle_gradient": {
+          "mse": 0.029451072131304948,
+          "masked_gradient_mse": 0.03732330156142859,
+          "strong_edge_cosine": 0.566466144889246,
+          "strong_edge_pixels": 60
+        },
+        "oracle_scalar": {
+          "mse": 0.04485407054823653,
+          "masked_gradient_mse": 0.05188487880799348,
+          "strong_edge_cosine": 0.3307770155046269,
+          "strong_edge_pixels": 60
+        },
+        "oracle_both": {
+          "mse": 0.022059516995863747,
+          "masked_gradient_mse": 0.03233981324420205,
+          "strong_edge_cosine": 0.5917515687792314,
+          "strong_edge_pixels": 60
+        },
+        "linear": {
+          "mse": 0.06153830686817916,
+          "masked_gradient_mse": 0.06164789099825975,
+          "strong_edge_cosine": 0.014350042571517915,
+          "strong_edge_pixels": 60
+        },
+        "original_sihti3": {
+          "mse": 0.06583221860627171,
+          "masked_gradient_mse": 0.06350584126901576,
+          "strong_edge_cosine": -0.06273997260353695,
+          "strong_edge_pixels": 60
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.005377996613309715,
+          "gy_mse": 0.0006630613094279978,
+          "dc_mse": 0.010733813875547518
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.00032849312946731487,
+          "gy_mse": 0.003428768613581803,
+          "dc_mse": 0.004659561000319664
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0008895490721164705,
+          "gy_mse": 0.003121467802009158,
+          "dc_mse": 0.005334477986456092
+        }
+      }
+    },
+    {
+      "index": 30,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.011905424129209578,
+          "masked_gradient_mse": 0.011410419890576314,
+          "strong_edge_cosine": 0.34392924935006447,
+          "strong_edge_pixels": 106
+        },
+        "scalar": {
+          "mse": 0.012778815222253142,
+          "masked_gradient_mse": 0.01162426153610916,
+          "strong_edge_cosine": 0.34629167315830445,
+          "strong_edge_pixels": 106
+        },
+        "gradient": {
+          "mse": 0.011772818673630926,
+          "masked_gradient_mse": 0.011294826234782037,
+          "strong_edge_cosine": 0.3660626415854754,
+          "strong_edge_pixels": 106
+        },
+        "both": {
+          "mse": 0.01141650876269829,
+          "masked_gradient_mse": 0.011278739717962913,
+          "strong_edge_cosine": 0.3974246477247366,
+          "strong_edge_pixels": 106
+        },
+        "shuffled": {
+          "mse": 0.026678905660822927,
+          "masked_gradient_mse": 0.026306703033840723,
+          "strong_edge_cosine": 0.08948605433301918,
+          "strong_edge_pixels": 106
+        },
+        "oracle_gradient": {
+          "mse": 0.006993190507075989,
+          "masked_gradient_mse": 0.007787421941754224,
+          "strong_edge_cosine": 0.578992542556021,
+          "strong_edge_pixels": 106
+        },
+        "oracle_scalar": {
+          "mse": 0.008692105183805778,
+          "masked_gradient_mse": 0.010386195202891926,
+          "strong_edge_cosine": 0.41670342596115556,
+          "strong_edge_pixels": 106
+        },
+        "oracle_both": {
+          "mse": 0.0042619834118458625,
+          "masked_gradient_mse": 0.006955087445915657,
+          "strong_edge_cosine": 0.6025690263693404,
+          "strong_edge_pixels": 106
+        },
+        "linear": {
+          "mse": 0.013519032358337091,
+          "masked_gradient_mse": 0.0129985167612569,
+          "strong_edge_cosine": 0.271154488731686,
+          "strong_edge_pixels": 106
+        },
+        "original_sihti3": {
+          "mse": 0.0114821335139846,
+          "masked_gradient_mse": 0.011919213425786045,
+          "strong_edge_cosine": 0.260146192466935,
+          "strong_edge_pixels": 106
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.002554576138605965,
+          "gy_mse": 0.0004083897128024182,
+          "dc_mse": 0.003598445289526549
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0004978437531594053,
+          "gy_mse": 0.00012101800107252233,
+          "dc_mse": 0.0010530537175505264
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0015262099458826853,
+          "gy_mse": 0.0002647038569374703,
+          "dc_mse": 0.0023257495035385375
+        }
+      }
+    },
+    {
+      "index": 31,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.0496457456552785,
+          "masked_gradient_mse": 0.0333219884974684,
+          "strong_edge_cosine": 0.08236221979051621,
+          "strong_edge_pixels": 53
+        },
+        "scalar": {
+          "mse": 0.04408443387174436,
+          "masked_gradient_mse": 0.02917677309258998,
+          "strong_edge_cosine": 0.2766228274488836,
+          "strong_edge_pixels": 53
+        },
+        "gradient": {
+          "mse": 0.06101734574536712,
+          "masked_gradient_mse": 0.03613945512707625,
+          "strong_edge_cosine": 0.08857945112554508,
+          "strong_edge_pixels": 53
+        },
+        "both": {
+          "mse": 0.047404826898018296,
+          "masked_gradient_mse": 0.028529268345655088,
+          "strong_edge_cosine": 0.18352379144764153,
+          "strong_edge_pixels": 53
+        },
+        "shuffled": {
+          "mse": 0.041694086746598524,
+          "masked_gradient_mse": 0.029363276011560413,
+          "strong_edge_cosine": 0.2726845629647413,
+          "strong_edge_pixels": 53
+        },
+        "oracle_gradient": {
+          "mse": 0.03042662038118706,
+          "masked_gradient_mse": 0.024452288108602914,
+          "strong_edge_cosine": 0.3577700273830525,
+          "strong_edge_pixels": 53
+        },
+        "oracle_scalar": {
+          "mse": 0.030058845784755116,
+          "masked_gradient_mse": 0.02388416522725426,
+          "strong_edge_cosine": 0.3105944190736783,
+          "strong_edge_pixels": 53
+        },
+        "oracle_both": {
+          "mse": 0.014800350775366171,
+          "masked_gradient_mse": 0.01619764151019544,
+          "strong_edge_cosine": 0.5539087044014258,
+          "strong_edge_pixels": 53
+        },
+        "linear": {
+          "mse": 0.046743392043628214,
+          "masked_gradient_mse": 0.03021454666607122,
+          "strong_edge_cosine": 0.041703187588165394,
+          "strong_edge_pixels": 53
+        },
+        "original_sihti3": {
+          "mse": 0.052174190925691775,
+          "masked_gradient_mse": 0.03485249681440996,
+          "strong_edge_cosine": 0.02375981352421154,
+          "strong_edge_pixels": 53
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 0.005965639515804651,
+          "gy_mse": 0.00011353456012658605,
+          "dc_mse": 0.012949318784703793
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 0.0012751121512849018,
+          "gy_mse": 0.0036594786075618063,
+          "dc_mse": 0.006196174209215211
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 0.002838621272791485,
+          "gy_mse": 0.002477497258416733,
+          "dc_mse": 0.008447222401044738
+        }
+      }
+    },
+    {
+      "index": 32,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.007669151340951623,
+          "masked_gradient_mse": 0.0037654507016667226,
+          "strong_edge_cosine": 0.6315029698048403,
+          "strong_edge_pixels": 70
+        },
+        "scalar": {
+          "mse": 0.01364802614987053,
+          "masked_gradient_mse": 0.0047723773907993655,
+          "strong_edge_cosine": 0.607923506512316,
+          "strong_edge_pixels": 70
+        },
+        "gradient": {
+          "mse": 0.008446510370198286,
+          "masked_gradient_mse": 0.006105515757018288,
+          "strong_edge_cosine": 0.4749670087559371,
+          "strong_edge_pixels": 70
+        },
+        "both": {
+          "mse": 0.01376881354648895,
+          "masked_gradient_mse": 0.0068094978498540355,
+          "strong_edge_cosine": 0.3946851070065017,
+          "strong_edge_pixels": 70
+        },
+        "shuffled": {
+          "mse": 0.029004528396248265,
+          "masked_gradient_mse": 0.020634508816190614,
+          "strong_edge_cosine": -0.07790017863510007,
+          "strong_edge_pixels": 70
+        },
+        "oracle_gradient": {
+          "mse": 0.008549476450508178,
+          "masked_gradient_mse": 0.003430626423884936,
+          "strong_edge_cosine": 0.6399665322969853,
+          "strong_edge_pixels": 70
+        },
+        "oracle_scalar": {
+          "mse": 0.006462893725705918,
+          "masked_gradient_mse": 0.005784639990332238,
+          "strong_edge_cosine": 0.5343411757048816,
+          "strong_edge_pixels": 70
+        },
+        "oracle_both": {
+          "mse": 0.0014451101078418512,
+          "masked_gradient_mse": 0.002093179808406018,
+          "strong_edge_cosine": 0.7695352999907668,
+          "strong_edge_pixels": 70
+        },
+        "linear": {
+          "mse": 0.014371590473639928,
+          "masked_gradient_mse": 0.005686175806680391,
+          "strong_edge_cosine": 0.5356462804509269,
+          "strong_edge_pixels": 70
+        },
+        "original_sihti3": {
+          "mse": 0.013923040163102663,
+          "masked_gradient_mse": 0.0053908431130815955,
+          "strong_edge_cosine": 0.5118968840016199,
+          "strong_edge_pixels": 70
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.003583507223713831,
+          "gy_mse": 0.00036464835558637043,
+          "dc_mse": 0.009918989493818774
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.00021745239656077129,
+          "gy_mse": 0.00014333912521166558,
+          "dc_mse": 0.0016997848585043498
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0019004798101373013,
+          "gy_mse": 0.000253993740399018,
+          "dc_mse": 0.005809387176161561
+        }
+      }
+    },
+    {
+      "index": 33,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.06631640491631298,
+          "masked_gradient_mse": 0.04871267706825648,
+          "strong_edge_cosine": 0.29800513386344546,
+          "strong_edge_pixels": 53
+        },
+        "scalar": {
+          "mse": 0.08686792127396814,
+          "masked_gradient_mse": 0.05202940090814619,
+          "strong_edge_cosine": 0.35820524339407706,
+          "strong_edge_pixels": 53
+        },
+        "gradient": {
+          "mse": 0.06176605941021354,
+          "masked_gradient_mse": 0.04580954764497553,
+          "strong_edge_cosine": 0.2182361409578439,
+          "strong_edge_pixels": 53
+        },
+        "both": {
+          "mse": 0.08071952864012079,
+          "masked_gradient_mse": 0.05240237356428346,
+          "strong_edge_cosine": 0.2243517952222215,
+          "strong_edge_pixels": 53
+        },
+        "shuffled": {
+          "mse": 0.09257989894612398,
+          "masked_gradient_mse": 0.058817396085448004,
+          "strong_edge_cosine": 0.1728698462417742,
+          "strong_edge_pixels": 53
+        },
+        "oracle_gradient": {
+          "mse": 0.05898741216975437,
+          "masked_gradient_mse": 0.04579892876884048,
+          "strong_edge_cosine": 0.33864345298106474,
+          "strong_edge_pixels": 53
+        },
+        "oracle_scalar": {
+          "mse": 0.041356867745605,
+          "masked_gradient_mse": 0.03800984914601099,
+          "strong_edge_cosine": 0.3745855058620784,
+          "strong_edge_pixels": 53
+        },
+        "oracle_both": {
+          "mse": 0.021049576065047794,
+          "masked_gradient_mse": 0.02601635607925409,
+          "strong_edge_cosine": 0.5178246626760087,
+          "strong_edge_pixels": 53
+        },
+        "linear": {
+          "mse": 0.0897568521668432,
+          "masked_gradient_mse": 0.05850094732788169,
+          "strong_edge_cosine": -0.010870301880036588,
+          "strong_edge_pixels": 53
+        },
+        "original_sihti3": {
+          "mse": 0.08334678033493306,
+          "masked_gradient_mse": 0.054490223474220494,
+          "strong_edge_cosine": 0.19580306244042686,
+          "strong_edge_pixels": 53
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.02110009607149144,
+          "gy_mse": 0.0007755013744466256,
+          "dc_mse": 0.01228360379936952
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0027556295750695604,
+          "gy_mse": 0.00018531562355714613,
+          "dc_mse": 0.020328941267697846
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.004793903630227547,
+          "gy_mse": 0.0002508918181004216,
+          "dc_mse": 0.01943501488232803
+        }
+      }
+    },
+    {
+      "index": 34,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.02927698909586061,
+          "masked_gradient_mse": 0.026571897789752677,
+          "strong_edge_cosine": 0.304751344839825,
+          "strong_edge_pixels": 135
+        },
+        "scalar": {
+          "mse": 0.028091357253127676,
+          "masked_gradient_mse": 0.026719035463188053,
+          "strong_edge_cosine": 0.27769002306950674,
+          "strong_edge_pixels": 135
+        },
+        "gradient": {
+          "mse": 0.029079433414187183,
+          "masked_gradient_mse": 0.027013692036157364,
+          "strong_edge_cosine": 0.3014584681229085,
+          "strong_edge_pixels": 135
+        },
+        "both": {
+          "mse": 0.027993691587170487,
+          "masked_gradient_mse": 0.0267356806014892,
+          "strong_edge_cosine": 0.33129790691886407,
+          "strong_edge_pixels": 135
+        },
+        "shuffled": {
+          "mse": 0.03629754771854346,
+          "masked_gradient_mse": 0.03436254275323651,
+          "strong_edge_cosine": 0.1236015361744764,
+          "strong_edge_pixels": 135
+        },
+        "oracle_gradient": {
+          "mse": 0.015707183145331354,
+          "masked_gradient_mse": 0.017528220790682957,
+          "strong_edge_cosine": 0.5506774690303421,
+          "strong_edge_pixels": 135
+        },
+        "oracle_scalar": {
+          "mse": 0.022381713197219728,
+          "masked_gradient_mse": 0.024868474396434703,
+          "strong_edge_cosine": 0.39559898660638926,
+          "strong_edge_pixels": 135
+        },
+        "oracle_both": {
+          "mse": 0.010255345614212142,
+          "masked_gradient_mse": 0.015514838423428634,
+          "strong_edge_cosine": 0.5920356883651183,
+          "strong_edge_pixels": 135
+        },
+        "linear": {
+          "mse": 0.030118209802869795,
+          "masked_gradient_mse": 0.029178510761100777,
+          "strong_edge_cosine": 0.1444716107470569,
+          "strong_edge_pixels": 135
+        },
+        "original_sihti3": {
+          "mse": 0.03139750107593179,
+          "masked_gradient_mse": 0.029447655851021486,
+          "strong_edge_cosine": 0.13090642225187954,
+          "strong_edge_pixels": 135
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.005221692738299196,
+          "gy_mse": 0.0037922424693575133,
+          "dc_mse": 0.006650916591531405
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0002452400264724603,
+          "gy_mse": 0.00040233691374448637,
+          "dc_mse": 0.001275946915457487
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0027334663823858282,
+          "gy_mse": 0.0020972896915509996,
+          "dc_mse": 0.003963431753494446
+        }
+      }
+    },
+    {
+      "index": 35,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.021157416239491827,
+          "masked_gradient_mse": 0.015715872681607755,
+          "strong_edge_cosine": 0.07673027082820326,
+          "strong_edge_pixels": 51
+        },
+        "scalar": {
+          "mse": 0.030408482985723066,
+          "masked_gradient_mse": 0.01626112452204553,
+          "strong_edge_cosine": 0.14990907380239904,
+          "strong_edge_pixels": 51
+        },
+        "gradient": {
+          "mse": 0.027186768305796742,
+          "masked_gradient_mse": 0.020597113857163393,
+          "strong_edge_cosine": -0.09629489424098406,
+          "strong_edge_pixels": 51
+        },
+        "both": {
+          "mse": 0.0354422627004212,
+          "masked_gradient_mse": 0.024828302019394264,
+          "strong_edge_cosine": -0.18979495371421035,
+          "strong_edge_pixels": 51
+        },
+        "shuffled": {
+          "mse": 0.04551736236521954,
+          "masked_gradient_mse": 0.031119491058771605,
+          "strong_edge_cosine": 0.029022557840370736,
+          "strong_edge_pixels": 51
+        },
+        "oracle_gradient": {
+          "mse": 0.024605269649898183,
+          "masked_gradient_mse": 0.015301449304750334,
+          "strong_edge_cosine": 0.3635086490561937,
+          "strong_edge_pixels": 51
+        },
+        "oracle_scalar": {
+          "mse": 0.016757551317376218,
+          "masked_gradient_mse": 0.017425741955352,
+          "strong_edge_cosine": 0.09821447898657251,
+          "strong_edge_pixels": 51
+        },
+        "oracle_both": {
+          "mse": 0.005514412108300967,
+          "masked_gradient_mse": 0.008164569791714437,
+          "strong_edge_cosine": 0.6599302069467218,
+          "strong_edge_pixels": 51
+        },
+        "linear": {
+          "mse": 0.02059001695955478,
+          "masked_gradient_mse": 0.01602855645069932,
+          "strong_edge_cosine": -0.015284550667198965,
+          "strong_edge_pixels": 51
+        },
+        "original_sihti3": {
+          "mse": 0.033589948257635636,
+          "masked_gradient_mse": 0.01864303812704473,
+          "strong_edge_cosine": -0.015449161618157705,
+          "strong_edge_pixels": 51
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.0022135047194360765,
+          "gy_mse": 0.0027961168386927276,
+          "dc_mse": 0.06421675345177534
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0010613906192626116,
+          "gy_mse": 0.0009269764410411248,
+          "dc_mse": 0.00249118905571254
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0011894032970596634,
+          "gy_mse": 0.0011346587074468585,
+          "dc_mse": 0.009349585099719518
+        }
+      }
+    },
+    {
+      "index": 36,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.03260665993730918,
+          "masked_gradient_mse": 0.021581705587891832,
+          "strong_edge_cosine": 0.4603514030907631,
+          "strong_edge_pixels": 121
+        },
+        "scalar": {
+          "mse": 0.03119112005587621,
+          "masked_gradient_mse": 0.021486197125386627,
+          "strong_edge_cosine": 0.4397692633988021,
+          "strong_edge_pixels": 121
+        },
+        "gradient": {
+          "mse": 0.03293104216405333,
+          "masked_gradient_mse": 0.023662676991237513,
+          "strong_edge_cosine": 0.3745701967769526,
+          "strong_edge_pixels": 121
+        },
+        "both": {
+          "mse": 0.033431319364937505,
+          "masked_gradient_mse": 0.023978688937647603,
+          "strong_edge_cosine": 0.3611084705898151,
+          "strong_edge_pixels": 121
+        },
+        "shuffled": {
+          "mse": 0.06550252426532163,
+          "masked_gradient_mse": 0.050037681935405295,
+          "strong_edge_cosine": 0.05945131905978005,
+          "strong_edge_pixels": 121
+        },
+        "oracle_gradient": {
+          "mse": 0.01692319580502487,
+          "masked_gradient_mse": 0.015769575358157956,
+          "strong_edge_cosine": 0.5919527341637612,
+          "strong_edge_pixels": 121
+        },
+        "oracle_scalar": {
+          "mse": 0.024769594538017924,
+          "masked_gradient_mse": 0.022491660296270387,
+          "strong_edge_cosine": 0.3979785048730944,
+          "strong_edge_pixels": 121
+        },
+        "oracle_both": {
+          "mse": 0.009007884342492167,
+          "masked_gradient_mse": 0.013311723457270457,
+          "strong_edge_cosine": 0.6643305164409099,
+          "strong_edge_pixels": 121
+        },
+        "linear": {
+          "mse": 0.04161534103037412,
+          "masked_gradient_mse": 0.027155240954079694,
+          "strong_edge_cosine": 0.22221427238656807,
+          "strong_edge_pixels": 121
+        },
+        "original_sihti3": {
+          "mse": 0.039450408506669296,
+          "masked_gradient_mse": 0.02525811044239888,
+          "strong_edge_cosine": 0.23434601941825337,
+          "strong_edge_pixels": 121
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0018498589161602137,
+          "gy_mse": 0.007968335382178735,
+          "dc_mse": 0.011363440942829572
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0008173280811903279,
+          "gy_mse": 0.000978356905235439,
+          "dc_mse": 0.0008095769615483949
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0013335934986752709,
+          "gy_mse": 0.0044733461437070875,
+          "dc_mse": 0.006086508952188983
+        }
+      }
+    },
+    {
+      "index": 37,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.03687076284351057,
+          "masked_gradient_mse": 0.025015376067969195,
+          "strong_edge_cosine": 0.44984515219895627,
+          "strong_edge_pixels": 57
+        },
+        "scalar": {
+          "mse": 0.03965704641224628,
+          "masked_gradient_mse": 0.026018569843404702,
+          "strong_edge_cosine": 0.27193657619746625,
+          "strong_edge_pixels": 57
+        },
+        "gradient": {
+          "mse": 0.0400207479169532,
+          "masked_gradient_mse": 0.025953599138084742,
+          "strong_edge_cosine": 0.30171590347109023,
+          "strong_edge_pixels": 57
+        },
+        "both": {
+          "mse": 0.04138692580940989,
+          "masked_gradient_mse": 0.027174015529838738,
+          "strong_edge_cosine": 0.22865101450451297,
+          "strong_edge_pixels": 57
+        },
+        "shuffled": {
+          "mse": 0.04704167024994937,
+          "masked_gradient_mse": 0.029962748306726288,
+          "strong_edge_cosine": 0.09043687433420719,
+          "strong_edge_pixels": 57
+        },
+        "oracle_gradient": {
+          "mse": 0.026877478216872256,
+          "masked_gradient_mse": 0.020379648301669075,
+          "strong_edge_cosine": 0.5888777384418368,
+          "strong_edge_pixels": 57
+        },
+        "oracle_scalar": {
+          "mse": 0.024950887431748454,
+          "masked_gradient_mse": 0.02368609416330572,
+          "strong_edge_cosine": 0.4082754266485158,
+          "strong_edge_pixels": 57
+        },
+        "oracle_both": {
+          "mse": 0.011504188074119487,
+          "masked_gradient_mse": 0.01584414535823472,
+          "strong_edge_cosine": 0.6240006238694388,
+          "strong_edge_pixels": 57
+        },
+        "linear": {
+          "mse": 0.04001321366575121,
+          "masked_gradient_mse": 0.030489738773928854,
+          "strong_edge_cosine": 0.1230735492190652,
+          "strong_edge_pixels": 57
+        },
+        "original_sihti3": {
+          "mse": 0.03631579789730907,
+          "masked_gradient_mse": 0.02876975933007185,
+          "strong_edge_cosine": 0.2614253121800571,
+          "strong_edge_pixels": 57
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 4,
+          "gx_mse": 0.0006464213035251639,
+          "gy_mse": 0.008410676346724193,
+          "dc_mse": 0.01570236216505403
+        },
+        "partially_visible": {
+          "blocks": 0,
+          "gx_mse": null,
+          "gy_mse": null,
+          "dc_mse": null
+        },
+        "affected": {
+          "blocks": 4,
+          "gx_mse": 0.0006464213035251639,
+          "gy_mse": 0.008410676346724193,
+          "dc_mse": 0.01570236216505403
+        }
+      }
+    },
+    {
+      "index": 38,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.025529406020495027,
+          "masked_gradient_mse": 0.017605431769387524,
+          "strong_edge_cosine": 0.31949935897588055,
+          "strong_edge_pixels": 116
+        },
+        "scalar": {
+          "mse": 0.03803598252759508,
+          "masked_gradient_mse": 0.019809117182857647,
+          "strong_edge_cosine": 0.2502460647731147,
+          "strong_edge_pixels": 116
+        },
+        "gradient": {
+          "mse": 0.03155198856987522,
+          "masked_gradient_mse": 0.019232836751119163,
+          "strong_edge_cosine": 0.2666767047685971,
+          "strong_edge_pixels": 116
+        },
+        "both": {
+          "mse": 0.03990426964238852,
+          "masked_gradient_mse": 0.02044596037493206,
+          "strong_edge_cosine": 0.16080983228654236,
+          "strong_edge_pixels": 116
+        },
+        "shuffled": {
+          "mse": 0.05315697022677128,
+          "masked_gradient_mse": 0.0346940016171362,
+          "strong_edge_cosine": 0.0513456960944644,
+          "strong_edge_pixels": 116
+        },
+        "oracle_gradient": {
+          "mse": 0.027654262968247932,
+          "masked_gradient_mse": 0.016133235186023897,
+          "strong_edge_cosine": 0.41476672068527753,
+          "strong_edge_pixels": 116
+        },
+        "oracle_scalar": {
+          "mse": 0.019282026295231344,
+          "masked_gradient_mse": 0.01841187535489706,
+          "strong_edge_cosine": 0.3253984267133941,
+          "strong_edge_pixels": 116
+        },
+        "oracle_both": {
+          "mse": 0.008546675861986652,
+          "masked_gradient_mse": 0.012373233421520488,
+          "strong_edge_cosine": 0.5926476219879697,
+          "strong_edge_pixels": 116
+        },
+        "linear": {
+          "mse": 0.028311042310093147,
+          "masked_gradient_mse": 0.020877489013748675,
+          "strong_edge_cosine": 0.14150081760678496,
+          "strong_edge_pixels": 116
+        },
+        "original_sihti3": {
+          "mse": 0.03431227501531769,
+          "masked_gradient_mse": 0.022224972030564304,
+          "strong_edge_cosine": 0.15843013948997847,
+          "strong_edge_pixels": 116
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0007810435245373777,
+          "gy_mse": 0.005989900473681458,
+          "dc_mse": 0.02713309599024541
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0013145312058954113,
+          "gy_mse": 0.00045408511516675765,
+          "dc_mse": 0.002260002115699495
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0010477873652163946,
+          "gy_mse": 0.0032219927944241076,
+          "dc_mse": 0.01469654905297245
+        }
+      }
+    },
+    {
+      "index": 39,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.0335352529060152,
+          "masked_gradient_mse": 0.03785291201836868,
+          "strong_edge_cosine": 0.11926253896075256,
+          "strong_edge_pixels": 53
+        },
+        "scalar": {
+          "mse": 0.03124393558382293,
+          "masked_gradient_mse": 0.03768926767206929,
+          "strong_edge_cosine": 0.1535136080490218,
+          "strong_edge_pixels": 53
+        },
+        "gradient": {
+          "mse": 0.03188460202754734,
+          "masked_gradient_mse": 0.03985121576073652,
+          "strong_edge_cosine": 0.17780786516316094,
+          "strong_edge_pixels": 53
+        },
+        "both": {
+          "mse": 0.03230806883136902,
+          "masked_gradient_mse": 0.039984267786655606,
+          "strong_edge_cosine": 0.1646525860962833,
+          "strong_edge_pixels": 53
+        },
+        "shuffled": {
+          "mse": 0.07147488306445499,
+          "masked_gradient_mse": 0.07103228435953754,
+          "strong_edge_cosine": 0.06856022924599027,
+          "strong_edge_pixels": 53
+        },
+        "oracle_gradient": {
+          "mse": 0.021747672197350555,
+          "masked_gradient_mse": 0.03091340646145148,
+          "strong_edge_cosine": 0.3847461712214014,
+          "strong_edge_pixels": 53
+        },
+        "oracle_scalar": {
+          "mse": 0.028763207763002896,
+          "masked_gradient_mse": 0.039222475317874296,
+          "strong_edge_cosine": 0.2407449527715739,
+          "strong_edge_pixels": 53
+        },
+        "oracle_both": {
+          "mse": 0.018350110807321372,
+          "masked_gradient_mse": 0.02953619154309041,
+          "strong_edge_cosine": 0.43713728095933135,
+          "strong_edge_pixels": 53
+        },
+        "linear": {
+          "mse": 0.039744467885499214,
+          "masked_gradient_mse": 0.040649006926064796,
+          "strong_edge_cosine": 0.05716688161616715,
+          "strong_edge_pixels": 53
+        },
+        "original_sihti3": {
+          "mse": 0.03637339426348881,
+          "masked_gradient_mse": 0.04051668143606008,
+          "strong_edge_cosine": -0.04781704911273964,
+          "strong_edge_pixels": 53
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.0029239266450148144,
+          "gy_mse": 6.402482365430716e-05,
+          "dc_mse": 0.005495581014360457
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.000971948030238612,
+          "gy_mse": 0.0006864301078294739,
+          "dc_mse": 0.0019005327041217122
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0011888345429915234,
+          "gy_mse": 0.0006172739651433443,
+          "dc_mse": 0.0022999825163704615
+        }
+      }
+    },
+    {
+      "index": 40,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.016163147269587848,
+          "masked_gradient_mse": 0.019221184856556026,
+          "strong_edge_cosine": 0.2953361700689147,
+          "strong_edge_pixels": 107
+        },
+        "scalar": {
+          "mse": 0.015202020179173995,
+          "masked_gradient_mse": 0.018930981678170998,
+          "strong_edge_cosine": 0.38989874334266544,
+          "strong_edge_pixels": 107
+        },
+        "gradient": {
+          "mse": 0.017568182973039144,
+          "masked_gradient_mse": 0.019965602935593334,
+          "strong_edge_cosine": 0.21911961734493818,
+          "strong_edge_pixels": 107
+        },
+        "both": {
+          "mse": 0.016647726084230645,
+          "masked_gradient_mse": 0.019747073719113425,
+          "strong_edge_cosine": 0.2335882512305569,
+          "strong_edge_pixels": 107
+        },
+        "shuffled": {
+          "mse": 0.0244500785666158,
+          "masked_gradient_mse": 0.02987698213161697,
+          "strong_edge_cosine": 0.19964301556803157,
+          "strong_edge_pixels": 107
+        },
+        "oracle_gradient": {
+          "mse": 0.010382209370204898,
+          "masked_gradient_mse": 0.015123004411526624,
+          "strong_edge_cosine": 0.5476867825599832,
+          "strong_edge_pixels": 107
+        },
+        "oracle_scalar": {
+          "mse": 0.01586581789510399,
+          "masked_gradient_mse": 0.019401020205343338,
+          "strong_edge_cosine": 0.23041621145443175,
+          "strong_edge_pixels": 107
+        },
+        "oracle_both": {
+          "mse": 0.009579613225265446,
+          "masked_gradient_mse": 0.014871314452186816,
+          "strong_edge_cosine": 0.5314168858672115,
+          "strong_edge_pixels": 107
+        },
+        "linear": {
+          "mse": 0.017128991237984954,
+          "masked_gradient_mse": 0.021073845070081063,
+          "strong_edge_cosine": 0.11466922951930501,
+          "strong_edge_pixels": 107
+        },
+        "original_sihti3": {
+          "mse": 0.016272211552171945,
+          "masked_gradient_mse": 0.020152836878968076,
+          "strong_edge_cosine": 0.23704089124961225,
+          "strong_edge_pixels": 107
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0016618870096793957,
+          "gy_mse": 0.0009481062673029406,
+          "dc_mse": 0.0008401987931834122
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0011819614725015024,
+          "gy_mse": 0.0003559006875701874,
+          "dc_mse": 0.0004404924379416116
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0014219242410904492,
+          "gy_mse": 0.000652003477436564,
+          "dc_mse": 0.0006403456155625119
+        }
+      }
+    },
+    {
+      "index": 41,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.02699559773072023,
+          "masked_gradient_mse": 0.010010116633423969,
+          "strong_edge_cosine": 0.4707704409087998,
+          "strong_edge_pixels": 47
+        },
+        "scalar": {
+          "mse": 0.032845199656165974,
+          "masked_gradient_mse": 0.011358296647953812,
+          "strong_edge_cosine": 0.3760713949866168,
+          "strong_edge_pixels": 47
+        },
+        "gradient": {
+          "mse": 0.038381404611454686,
+          "masked_gradient_mse": 0.0128698907113965,
+          "strong_edge_cosine": 0.24922267347610672,
+          "strong_edge_pixels": 47
+        },
+        "both": {
+          "mse": 0.03649758096290741,
+          "masked_gradient_mse": 0.01285718607218924,
+          "strong_edge_cosine": 0.22087118106683792,
+          "strong_edge_pixels": 47
+        },
+        "shuffled": {
+          "mse": 0.03918319140744794,
+          "masked_gradient_mse": 0.019220125038321337,
+          "strong_edge_cosine": -0.035239460718458036,
+          "strong_edge_pixels": 47
+        },
+        "oracle_gradient": {
+          "mse": 0.024389784470559613,
+          "masked_gradient_mse": 0.01149431737121864,
+          "strong_edge_cosine": 0.44587008184090077,
+          "strong_edge_pixels": 47
+        },
+        "oracle_scalar": {
+          "mse": 0.013167989369963676,
+          "masked_gradient_mse": 0.011139803640279104,
+          "strong_edge_cosine": 0.47945661659400896,
+          "strong_edge_pixels": 47
+        },
+        "oracle_both": {
+          "mse": 0.0035945111863483156,
+          "masked_gradient_mse": 0.0053447476787429025,
+          "strong_edge_cosine": 0.7681527505228521,
+          "strong_edge_pixels": 47
+        },
+        "linear": {
+          "mse": 0.03383684025189978,
+          "masked_gradient_mse": 0.012689126710881661,
+          "strong_edge_cosine": 0.3364985110361511,
+          "strong_edge_pixels": 47
+        },
+        "original_sihti3": {
+          "mse": 0.02929508776834626,
+          "masked_gradient_mse": 0.010559072520770917,
+          "strong_edge_cosine": 0.5699908969982811,
+          "strong_edge_pixels": 47
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 0.004933817314895695,
+          "gy_mse": 0.002169488382478134,
+          "dc_mse": 0.04201398529267088
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 0.00035737754361584416,
+          "gy_mse": 0.002475002661979481,
+          "dc_mse": 0.003216650625113234
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 0.001882857467375794,
+          "gy_mse": 0.0023731645688123654,
+          "dc_mse": 0.016149095514299116
+        }
+      }
+    },
+    {
+      "index": 42,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.036015778740178306,
+          "masked_gradient_mse": 0.029103296370243233,
+          "strong_edge_cosine": 0.22424226488933463,
+          "strong_edge_pixels": 130
+        },
+        "scalar": {
+          "mse": 0.032061475099377394,
+          "masked_gradient_mse": 0.02865870822226859,
+          "strong_edge_cosine": 0.2719677919724369,
+          "strong_edge_pixels": 130
+        },
+        "gradient": {
+          "mse": 0.03484487993351496,
+          "masked_gradient_mse": 0.029589599937171696,
+          "strong_edge_cosine": 0.24090706643702525,
+          "strong_edge_pixels": 130
+        },
+        "both": {
+          "mse": 0.03252288103079958,
+          "masked_gradient_mse": 0.029545897595943005,
+          "strong_edge_cosine": 0.23321031989909766,
+          "strong_edge_pixels": 130
+        },
+        "shuffled": {
+          "mse": 0.053091087888503787,
+          "masked_gradient_mse": 0.044737886269826894,
+          "strong_edge_cosine": 0.054466190010769175,
+          "strong_edge_pixels": 130
+        },
+        "oracle_gradient": {
+          "mse": 0.019363684511843792,
+          "masked_gradient_mse": 0.021026989783922773,
+          "strong_edge_cosine": 0.5149556719830595,
+          "strong_edge_pixels": 130
+        },
+        "oracle_scalar": {
+          "mse": 0.025747529596927842,
+          "masked_gradient_mse": 0.02761727530449231,
+          "strong_edge_cosine": 0.2535704638550208,
+          "strong_edge_pixels": 130
+        },
+        "oracle_both": {
+          "mse": 0.012469573113298759,
+          "masked_gradient_mse": 0.019236154421625087,
+          "strong_edge_cosine": 0.5338990667204064,
+          "strong_edge_pixels": 130
+        },
+        "linear": {
+          "mse": 0.03927598323125253,
+          "masked_gradient_mse": 0.031773330125115774,
+          "strong_edge_cosine": 0.020115305746362385,
+          "strong_edge_pixels": 130
+        },
+        "original_sihti3": {
+          "mse": 0.040392433401127865,
+          "masked_gradient_mse": 0.03229305555913339,
+          "strong_edge_cosine": 0.028170188718728992,
+          "strong_edge_pixels": 130
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.00682826623871759,
+          "gy_mse": 0.0009660197585225539,
+          "dc_mse": 0.008395132608373958
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0011699461555246076,
+          "gy_mse": 0.00048807755364394846,
+          "dc_mse": 0.0009847216558742282
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.003999106197121099,
+          "gy_mse": 0.0007270486560832511,
+          "dc_mse": 0.004689927132124093
+        }
+      }
+    },
+    {
+      "index": 43,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.0465919309182472,
+          "masked_gradient_mse": 0.03580776341883005,
+          "strong_edge_cosine": 0.2730116915433476,
+          "strong_edge_pixels": 57
+        },
+        "scalar": {
+          "mse": 0.052687751839310557,
+          "masked_gradient_mse": 0.039103937128200865,
+          "strong_edge_cosine": 0.2305765792091684,
+          "strong_edge_pixels": 57
+        },
+        "gradient": {
+          "mse": 0.0611780025978598,
+          "masked_gradient_mse": 0.05384830030637852,
+          "strong_edge_cosine": 0.19870608056785907,
+          "strong_edge_pixels": 57
+        },
+        "both": {
+          "mse": 0.06236936183731909,
+          "masked_gradient_mse": 0.05638155276083882,
+          "strong_edge_cosine": 0.15091689685647158,
+          "strong_edge_pixels": 57
+        },
+        "shuffled": {
+          "mse": 0.13772979614104272,
+          "masked_gradient_mse": 0.10905512246071913,
+          "strong_edge_cosine": -0.17912324775544486,
+          "strong_edge_pixels": 57
+        },
+        "oracle_gradient": {
+          "mse": 0.01807154807255788,
+          "masked_gradient_mse": 0.02317686377535304,
+          "strong_edge_cosine": 0.6239672797827521,
+          "strong_edge_pixels": 57
+        },
+        "oracle_scalar": {
+          "mse": 0.054794006846057466,
+          "masked_gradient_mse": 0.05552053224347622,
+          "strong_edge_cosine": 0.13340350300093634,
+          "strong_edge_pixels": 57
+        },
+        "oracle_both": {
+          "mse": 0.01467870145532996,
+          "masked_gradient_mse": 0.019979218763637934,
+          "strong_edge_cosine": 0.7101822798356694,
+          "strong_edge_pixels": 57
+        },
+        "linear": {
+          "mse": 0.05433297164848776,
+          "masked_gradient_mse": 0.0412904690652075,
+          "strong_edge_cosine": 0.16234049992416066,
+          "strong_edge_pixels": 57
+        },
+        "original_sihti3": {
+          "mse": 0.05320449029318088,
+          "masked_gradient_mse": 0.040812520541942204,
+          "strong_edge_cosine": 0.15867901448724334,
+          "strong_edge_pixels": 57
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.0005030527639644564,
+          "gy_mse": 0.0006230647625623966,
+          "dc_mse": 0.0021150557517438974
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0024921183594209416,
+          "gy_mse": 0.004386340237526508,
+          "dc_mse": 0.006353452539859558
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.002271111071036888,
+          "gy_mse": 0.003968198518086051,
+          "dc_mse": 0.005882519563402262
+        }
+      }
+    },
+    {
+      "index": 44,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.009215710851364661,
+          "masked_gradient_mse": 0.010664149557579213,
+          "strong_edge_cosine": 0.1606336951075729,
+          "strong_edge_pixels": 118
+        },
+        "scalar": {
+          "mse": 0.008592395024122354,
+          "masked_gradient_mse": 0.010492663564712375,
+          "strong_edge_cosine": 0.16952669953900093,
+          "strong_edge_pixels": 118
+        },
+        "gradient": {
+          "mse": 0.009984030923493252,
+          "masked_gradient_mse": 0.01153815612698217,
+          "strong_edge_cosine": 0.08217104683824679,
+          "strong_edge_pixels": 118
+        },
+        "both": {
+          "mse": 0.009392406239940934,
+          "masked_gradient_mse": 0.011438621910074566,
+          "strong_edge_cosine": 0.11156320018293968,
+          "strong_edge_pixels": 118
+        },
+        "shuffled": {
+          "mse": 0.012575736075123944,
+          "masked_gradient_mse": 0.016141552718291815,
+          "strong_edge_cosine": 0.12281920344574822,
+          "strong_edge_pixels": 118
+        },
+        "oracle_gradient": {
+          "mse": 0.005307517470256716,
+          "masked_gradient_mse": 0.007764011217204819,
+          "strong_edge_cosine": 0.5249401394615727,
+          "strong_edge_pixels": 118
+        },
+        "oracle_scalar": {
+          "mse": 0.00830692956327047,
+          "masked_gradient_mse": 0.011281341614759566,
+          "strong_edge_cosine": 0.142913071820152,
+          "strong_edge_pixels": 118
+        },
+        "oracle_both": {
+          "mse": 0.004397294881575012,
+          "masked_gradient_mse": 0.007544964742977201,
+          "strong_edge_cosine": 0.49537062616018,
+          "strong_edge_pixels": 118
+        },
+        "linear": {
+          "mse": 0.007651705698797193,
+          "masked_gradient_mse": 0.010396441545367549,
+          "strong_edge_cosine": 0.11853363785156336,
+          "strong_edge_pixels": 118
+        },
+        "original_sihti3": {
+          "mse": 0.00997814703345528,
+          "masked_gradient_mse": 0.011368136358149147,
+          "strong_edge_cosine": 0.048573014437417315,
+          "strong_edge_pixels": 118
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0006758367202025514,
+          "gy_mse": 0.0008012293472581407,
+          "dc_mse": 0.0012336060781916076
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0011928091756043672,
+          "gy_mse": 0.00017851501334808644,
+          "dc_mse": 0.0003061170154086062
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0009343229479034593,
+          "gy_mse": 0.0004898721803031135,
+          "dc_mse": 0.0007698615468001069
+        }
+      }
+    },
+    {
+      "index": 45,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.025315249282307314,
+          "masked_gradient_mse": 0.017528840226422773,
+          "strong_edge_cosine": 0.6376027781548951,
+          "strong_edge_pixels": 53
+        },
+        "scalar": {
+          "mse": 0.030800032696050673,
+          "masked_gradient_mse": 0.01905318523383483,
+          "strong_edge_cosine": 0.5232454080523019,
+          "strong_edge_pixels": 53
+        },
+        "gradient": {
+          "mse": 0.03304836231240592,
+          "masked_gradient_mse": 0.026231103929106294,
+          "strong_edge_cosine": 0.34285566078680807,
+          "strong_edge_pixels": 53
+        },
+        "both": {
+          "mse": 0.04224532419188142,
+          "masked_gradient_mse": 0.03512346760115703,
+          "strong_edge_cosine": 0.26158897411800225,
+          "strong_edge_pixels": 53
+        },
+        "shuffled": {
+          "mse": 0.09330448095438706,
+          "masked_gradient_mse": 0.0794729269667288,
+          "strong_edge_cosine": -0.1338704130537096,
+          "strong_edge_pixels": 53
+        },
+        "oracle_gradient": {
+          "mse": 0.023148605750709324,
+          "masked_gradient_mse": 0.014212957783792605,
+          "strong_edge_cosine": 0.651982516152673,
+          "strong_edge_pixels": 53
+        },
+        "oracle_scalar": {
+          "mse": 0.027272739817809026,
+          "masked_gradient_mse": 0.02661876133301367,
+          "strong_edge_cosine": 0.41778233639650325,
+          "strong_edge_pixels": 53
+        },
+        "oracle_both": {
+          "mse": 0.007029928315776212,
+          "masked_gradient_mse": 0.008414142582707574,
+          "strong_edge_cosine": 0.7519888397634115,
+          "strong_edge_pixels": 53
+        },
+        "linear": {
+          "mse": 0.04214533564433636,
+          "masked_gradient_mse": 0.026258471581018888,
+          "strong_edge_cosine": 0.4274927586463632,
+          "strong_edge_pixels": 53
+        },
+        "original_sihti3": {
+          "mse": 0.030699381762989638,
+          "masked_gradient_mse": 0.0213861649673773,
+          "strong_edge_cosine": 0.4815229936169091,
+          "strong_edge_pixels": 53
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 0.0007472097739090757,
+          "gy_mse": 0.003828026910755114,
+          "dc_mse": 0.029746495064276263
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 0.002084252311590709,
+          "gy_mse": 0.006307223857899864,
+          "dc_mse": 0.0029995703132097524
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 0.0016385714656968313,
+          "gy_mse": 0.005480824875518281,
+          "dc_mse": 0.011915211896898587
+        }
+      }
+    },
+    {
+      "index": 46,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.035843906392107217,
+          "masked_gradient_mse": 0.036231858992822136,
+          "strong_edge_cosine": 0.2797095454793153,
+          "strong_edge_pixels": 126
+        },
+        "scalar": {
+          "mse": 0.03450628414677085,
+          "masked_gradient_mse": 0.03620883754745417,
+          "strong_edge_cosine": 0.30572273334909306,
+          "strong_edge_pixels": 126
+        },
+        "gradient": {
+          "mse": 0.038568727111756296,
+          "masked_gradient_mse": 0.039231056070852484,
+          "strong_edge_cosine": 0.1884061723662818,
+          "strong_edge_pixels": 126
+        },
+        "both": {
+          "mse": 0.03889257183857938,
+          "masked_gradient_mse": 0.039490369694343865,
+          "strong_edge_cosine": 0.19534876297598816,
+          "strong_edge_pixels": 126
+        },
+        "shuffled": {
+          "mse": 0.07885285900793257,
+          "masked_gradient_mse": 0.07881620078901842,
+          "strong_edge_cosine": 0.05229034634724112,
+          "strong_edge_pixels": 126
+        },
+        "oracle_gradient": {
+          "mse": 0.026383063936427642,
+          "masked_gradient_mse": 0.03028745602573507,
+          "strong_edge_cosine": 0.46155269477097194,
+          "strong_edge_pixels": 126
+        },
+        "oracle_scalar": {
+          "mse": 0.03425705568832142,
+          "masked_gradient_mse": 0.03770458219858223,
+          "strong_edge_cosine": 0.2685985578578003,
+          "strong_edge_pixels": 126
+        },
+        "oracle_both": {
+          "mse": 0.021509562087096482,
+          "masked_gradient_mse": 0.02894065174290455,
+          "strong_edge_cosine": 0.49107121456260266,
+          "strong_edge_pixels": 126
+        },
+        "linear": {
+          "mse": 0.04195846180949538,
+          "masked_gradient_mse": 0.04200402122133573,
+          "strong_edge_cosine": 0.17100735054355273,
+          "strong_edge_pixels": 126
+        },
+        "original_sihti3": {
+          "mse": 0.046027337945230305,
+          "masked_gradient_mse": 0.04535979143052949,
+          "strong_edge_cosine": 0.03460751445061084,
+          "strong_edge_pixels": 126
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.002117203262617702,
+          "gy_mse": 0.003628084046541942,
+          "dc_mse": 0.005926782200553999
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0003533100152833176,
+          "gy_mse": 0.0011064612141693168,
+          "dc_mse": 0.0008372386464949972
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.00123525663895051,
+          "gy_mse": 0.0023672726303556294,
+          "dc_mse": 0.003382010423524498
+        }
+      }
+    },
+    {
+      "index": 47,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.020512615752151422,
+          "masked_gradient_mse": 0.010580460870003,
+          "strong_edge_cosine": 0.4053421076391933,
+          "strong_edge_pixels": 47
+        },
+        "scalar": {
+          "mse": 0.02621809570887371,
+          "masked_gradient_mse": 0.011019076523608926,
+          "strong_edge_cosine": 0.39593400186918254,
+          "strong_edge_pixels": 47
+        },
+        "gradient": {
+          "mse": 0.02381134285613347,
+          "masked_gradient_mse": 0.010936035758397744,
+          "strong_edge_cosine": 0.34434121161361186,
+          "strong_edge_pixels": 47
+        },
+        "both": {
+          "mse": 0.027444447615008406,
+          "masked_gradient_mse": 0.011669718974077132,
+          "strong_edge_cosine": 0.35910266957596576,
+          "strong_edge_pixels": 47
+        },
+        "shuffled": {
+          "mse": 0.02741549968199007,
+          "masked_gradient_mse": 0.01555804125023101,
+          "strong_edge_cosine": 0.3919420824061992,
+          "strong_edge_pixels": 47
+        },
+        "oracle_gradient": {
+          "mse": 0.023497415070186607,
+          "masked_gradient_mse": 0.011211776096581546,
+          "strong_edge_cosine": 0.4008315365954852,
+          "strong_edge_pixels": 47
+        },
+        "oracle_scalar": {
+          "mse": 0.008180664262607457,
+          "masked_gradient_mse": 0.00832356183166963,
+          "strong_edge_cosine": 0.3188467035764674,
+          "strong_edge_pixels": 47
+        },
+        "oracle_both": {
+          "mse": 0.004953039795852435,
+          "masked_gradient_mse": 0.006853211782491137,
+          "strong_edge_cosine": 0.40910012390765743,
+          "strong_edge_pixels": 47
+        },
+        "linear": {
+          "mse": 0.015635360326495654,
+          "masked_gradient_mse": 0.010901767729445407,
+          "strong_edge_cosine": 0.3893403263594935,
+          "strong_edge_pixels": 47
+        },
+        "original_sihti3": {
+          "mse": 0.032230923382988726,
+          "masked_gradient_mse": 0.013257738817916274,
+          "strong_edge_cosine": 0.28573687282918436,
+          "strong_edge_pixels": 47
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 4,
+          "gx_mse": 0.0012902057955455582,
+          "gy_mse": 0.0009916195518380581,
+          "dc_mse": 0.02033510546744566
+        },
+        "partially_visible": {
+          "blocks": 0,
+          "gx_mse": null,
+          "gy_mse": null,
+          "dc_mse": null
+        },
+        "affected": {
+          "blocks": 4,
+          "gx_mse": 0.0012902057955455582,
+          "gy_mse": 0.0009916195518380581,
+          "dc_mse": 0.02033510546744566
+        }
+      }
+    },
+    {
+      "index": 48,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.00969628074343735,
+          "masked_gradient_mse": 0.01012808645353981,
+          "strong_edge_cosine": 0.30493826951813063,
+          "strong_edge_pixels": 109
+        },
+        "scalar": {
+          "mse": 0.010575073178305205,
+          "masked_gradient_mse": 0.010505244740517108,
+          "strong_edge_cosine": 0.2999580958266408,
+          "strong_edge_pixels": 109
+        },
+        "gradient": {
+          "mse": 0.01118092928175082,
+          "masked_gradient_mse": 0.011200237456315097,
+          "strong_edge_cosine": 0.2538037899995622,
+          "strong_edge_pixels": 109
+        },
+        "both": {
+          "mse": 0.011320173125378209,
+          "masked_gradient_mse": 0.0112478677306594,
+          "strong_edge_cosine": 0.2718897793724254,
+          "strong_edge_pixels": 109
+        },
+        "shuffled": {
+          "mse": 0.02193759952942111,
+          "masked_gradient_mse": 0.023267478523739834,
+          "strong_edge_cosine": 0.1813862406211479,
+          "strong_edge_pixels": 109
+        },
+        "oracle_gradient": {
+          "mse": 0.0071223923582161616,
+          "masked_gradient_mse": 0.0083831448234129,
+          "strong_edge_cosine": 0.4775961182923894,
+          "strong_edge_pixels": 109
+        },
+        "oracle_scalar": {
+          "mse": 0.008675417674263369,
+          "masked_gradient_mse": 0.01069836410525364,
+          "strong_edge_cosine": 0.29539463658779896,
+          "strong_edge_pixels": 109
+        },
+        "oracle_both": {
+          "mse": 0.004622126136056284,
+          "masked_gradient_mse": 0.007587800517996822,
+          "strong_edge_cosine": 0.5014719029340486,
+          "strong_edge_pixels": 109
+        },
+        "linear": {
+          "mse": 0.009938677061367585,
+          "masked_gradient_mse": 0.011219538876326228,
+          "strong_edge_cosine": 0.2329910277706769,
+          "strong_edge_pixels": 109
+        },
+        "original_sihti3": {
+          "mse": 0.010575342052429963,
+          "masked_gradient_mse": 0.011187440768449677,
+          "strong_edge_cosine": 0.205713931132825,
+          "strong_edge_pixels": 109
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0016489337915128952,
+          "gy_mse": 0.0013411857109773672,
+          "dc_mse": 0.0033418259012483586
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0002469165427509634,
+          "gy_mse": 0.00019325406026956784,
+          "dc_mse": 0.0009090884975223329
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0009479251671319292,
+          "gy_mse": 0.0007672198856234675,
+          "dc_mse": 0.0021254571993853458
+        }
+      }
+    },
+    {
+      "index": 49,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.0021383014575623543,
+          "masked_gradient_mse": 0.0010264364296203787,
+          "strong_edge_cosine": 0.7921857063903412,
+          "strong_edge_pixels": 11
+        },
+        "scalar": {
+          "mse": 0.002153158763365293,
+          "masked_gradient_mse": 0.0010396050239790534,
+          "strong_edge_cosine": 0.8244657588179343,
+          "strong_edge_pixels": 11
+        },
+        "gradient": {
+          "mse": 0.001859813933953234,
+          "masked_gradient_mse": 0.001105838867315943,
+          "strong_edge_cosine": 0.718987397942546,
+          "strong_edge_pixels": 11
+        },
+        "both": {
+          "mse": 0.0020577954915392467,
+          "masked_gradient_mse": 0.0013460961604347583,
+          "strong_edge_cosine": 0.6907736004285334,
+          "strong_edge_pixels": 11
+        },
+        "shuffled": {
+          "mse": 0.010707496340093478,
+          "masked_gradient_mse": 0.010126545858165664,
+          "strong_edge_cosine": 0.29460049198278093,
+          "strong_edge_pixels": 11
+        },
+        "oracle_gradient": {
+          "mse": 0.0007009948311147887,
+          "masked_gradient_mse": 0.0006244135038770026,
+          "strong_edge_cosine": 0.9172592698200485,
+          "strong_edge_pixels": 11
+        },
+        "oracle_scalar": {
+          "mse": 0.0015904612139557776,
+          "masked_gradient_mse": 0.0010726645912006668,
+          "strong_edge_cosine": 0.7357872448111951,
+          "strong_edge_pixels": 11
+        },
+        "oracle_both": {
+          "mse": 0.00026928508194151116,
+          "masked_gradient_mse": 0.0003851403661653853,
+          "strong_edge_cosine": 0.9526665647883953,
+          "strong_edge_pixels": 11
+        },
+        "linear": {
+          "mse": 0.003141671408756235,
+          "masked_gradient_mse": 0.0015122093427031426,
+          "strong_edge_cosine": 0.7107000342212061,
+          "strong_edge_pixels": 11
+        },
+        "original_sihti3": {
+          "mse": 0.003076731286833296,
+          "masked_gradient_mse": 0.0014591451062558546,
+          "strong_edge_cosine": 0.7064567666222218,
+          "strong_edge_pixels": 11
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.0003945175006663874,
+          "gy_mse": 0.00037628369253732777,
+          "dc_mse": 0.000261111611890356
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 5.20232999014432e-05,
+          "gy_mse": 0.0001673425913803271,
+          "dc_mse": 0.0003617116863168174
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 9.00782110975481e-05,
+          "gy_mse": 0.0001905582692866605,
+          "dc_mse": 0.00035053390026943277
+        }
+      }
+    },
+    {
+      "index": 50,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.020432405294086436,
+          "masked_gradient_mse": 0.013393070159895444,
+          "strong_edge_cosine": 0.5200966627119408,
+          "strong_edge_pixels": 108
+        },
+        "scalar": {
+          "mse": 0.027648875467575017,
+          "masked_gradient_mse": 0.016373610691760278,
+          "strong_edge_cosine": 0.3492214436153351,
+          "strong_edge_pixels": 108
+        },
+        "gradient": {
+          "mse": 0.016911769007597867,
+          "masked_gradient_mse": 0.013147723910725393,
+          "strong_edge_cosine": 0.33897407909837896,
+          "strong_edge_pixels": 108
+        },
+        "both": {
+          "mse": 0.02409276114856485,
+          "masked_gradient_mse": 0.01741132639261272,
+          "strong_edge_cosine": 0.24447896017806825,
+          "strong_edge_pixels": 108
+        },
+        "shuffled": {
+          "mse": 0.047909493507333555,
+          "masked_gradient_mse": 0.0361673345170437,
+          "strong_edge_cosine": 0.0812074888313558,
+          "strong_edge_pixels": 108
+        },
+        "oracle_gradient": {
+          "mse": 0.014163574499294087,
+          "masked_gradient_mse": 0.012036014527652957,
+          "strong_edge_cosine": 0.6010134042516637,
+          "strong_edge_pixels": 108
+        },
+        "oracle_scalar": {
+          "mse": 0.013210458392183422,
+          "masked_gradient_mse": 0.013002303577486603,
+          "strong_edge_cosine": 0.3738234877375226,
+          "strong_edge_pixels": 108
+        },
+        "oracle_both": {
+          "mse": 0.00419157224709992,
+          "masked_gradient_mse": 0.006230954008922374,
+          "strong_edge_cosine": 0.7859765224211672,
+          "strong_edge_pixels": 108
+        },
+        "linear": {
+          "mse": 0.027551662837849183,
+          "masked_gradient_mse": 0.016682538388972507,
+          "strong_edge_cosine": 0.416421694197744,
+          "strong_edge_pixels": 108
+        },
+        "original_sihti3": {
+          "mse": 0.023756955141055636,
+          "masked_gradient_mse": 0.016090828537025644,
+          "strong_edge_cosine": 0.3441076345087359,
+          "strong_edge_pixels": 108
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 0,
+          "gx_mse": null,
+          "gy_mse": null,
+          "dc_mse": null
+        },
+        "partially_visible": {
+          "blocks": 16,
+          "gx_mse": 0.001870255272272963,
+          "gy_mse": 0.0011256286067293688,
+          "dc_mse": 0.009052377714728204
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.001870255272272963,
+          "gy_mse": 0.0011256286067293688,
+          "dc_mse": 0.009052377714728204
+        }
+      }
+    },
+    {
+      "index": 51,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.015579540652939518,
+          "masked_gradient_mse": 0.007036321424500249,
+          "strong_edge_cosine": 0.7663033627369947,
+          "strong_edge_pixels": 19
+        },
+        "scalar": {
+          "mse": 0.031101795188057307,
+          "masked_gradient_mse": 0.009743111921112456,
+          "strong_edge_cosine": 0.5453588364704973,
+          "strong_edge_pixels": 19
+        },
+        "gradient": {
+          "mse": 0.016162729288273454,
+          "masked_gradient_mse": 0.01395667525068515,
+          "strong_edge_cosine": 0.41372640749099476,
+          "strong_edge_pixels": 19
+        },
+        "both": {
+          "mse": 0.030035277535550083,
+          "masked_gradient_mse": 0.02058472239878579,
+          "strong_edge_cosine": 0.3742611601662819,
+          "strong_edge_pixels": 19
+        },
+        "shuffled": {
+          "mse": 0.05595403812259568,
+          "masked_gradient_mse": 0.04935984187051136,
+          "strong_edge_cosine": 0.007715431489242218,
+          "strong_edge_pixels": 19
+        },
+        "oracle_gradient": {
+          "mse": 0.01647983351185477,
+          "masked_gradient_mse": 0.009972845409182314,
+          "strong_edge_cosine": 0.643500556407747,
+          "strong_edge_pixels": 19
+        },
+        "oracle_scalar": {
+          "mse": 0.012686335199366506,
+          "masked_gradient_mse": 0.012793037040189264,
+          "strong_edge_cosine": 0.48003894662795676,
+          "strong_edge_pixels": 19
+        },
+        "oracle_both": {
+          "mse": 0.0017420063325649018,
+          "masked_gradient_mse": 0.0026802533882009346,
+          "strong_edge_cosine": 0.8592058704994309,
+          "strong_edge_pixels": 19
+        },
+        "linear": {
+          "mse": 0.038104669789279205,
+          "masked_gradient_mse": 0.012045611991445214,
+          "strong_edge_cosine": 0.5474173523059314,
+          "strong_edge_pixels": 19
+        },
+        "original_sihti3": {
+          "mse": 0.03199894026997288,
+          "masked_gradient_mse": 0.011768837927193965,
+          "strong_edge_cosine": 0.5442122869820804,
+          "strong_edge_pixels": 19
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.0010959621115680775,
+          "gy_mse": 0.0007788290008794588,
+          "dc_mse": 0.007324582363727531
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0015826444517120467,
+          "gy_mse": 0.0005883159094376743,
+          "dc_mse": 0.010017013742815658
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0015285686361404946,
+          "gy_mse": 0.0006094840307089837,
+          "dc_mse": 0.009717854700694755
+        }
+      }
+    },
+    {
+      "index": 52,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.014327142085932956,
+          "masked_gradient_mse": 0.012483365396434135,
+          "strong_edge_cosine": 0.4549824583283489,
+          "strong_edge_pixels": 106
+        },
+        "scalar": {
+          "mse": 0.015988378040576144,
+          "masked_gradient_mse": 0.013249761239305873,
+          "strong_edge_cosine": 0.40357040046899917,
+          "strong_edge_pixels": 106
+        },
+        "gradient": {
+          "mse": 0.015978389743394168,
+          "masked_gradient_mse": 0.013272505341381228,
+          "strong_edge_cosine": 0.4611219278816115,
+          "strong_edge_pixels": 106
+        },
+        "both": {
+          "mse": 0.016275024166344784,
+          "masked_gradient_mse": 0.014095775758033356,
+          "strong_edge_cosine": 0.33401750017483006,
+          "strong_edge_pixels": 106
+        },
+        "shuffled": {
+          "mse": 0.04179018137205741,
+          "masked_gradient_mse": 0.0316144627611353,
+          "strong_edge_cosine": -0.07296727382339446,
+          "strong_edge_pixels": 106
+        },
+        "oracle_gradient": {
+          "mse": 0.006755914996515583,
+          "masked_gradient_mse": 0.009085801237181427,
+          "strong_edge_cosine": 0.6267402234649138,
+          "strong_edge_pixels": 106
+        },
+        "oracle_scalar": {
+          "mse": 0.013747134530649324,
+          "masked_gradient_mse": 0.01342688194518328,
+          "strong_edge_cosine": 0.3479470703822433,
+          "strong_edge_pixels": 106
+        },
+        "oracle_both": {
+          "mse": 0.00443884842615187,
+          "masked_gradient_mse": 0.0077017349207926505,
+          "strong_edge_cosine": 0.70202444954103,
+          "strong_edge_pixels": 106
+        },
+        "linear": {
+          "mse": 0.01738593548419547,
+          "masked_gradient_mse": 0.014824687294255514,
+          "strong_edge_cosine": 0.3454127804222072,
+          "strong_edge_pixels": 106
+        },
+        "original_sihti3": {
+          "mse": 0.014415912523376267,
+          "masked_gradient_mse": 0.013410618983590233,
+          "strong_edge_cosine": 0.44751596227592255,
+          "strong_edge_pixels": 106
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 0,
+          "gx_mse": null,
+          "gy_mse": null,
+          "dc_mse": null
+        },
+        "partially_visible": {
+          "blocks": 16,
+          "gx_mse": 0.0009324215205139645,
+          "gy_mse": 0.002274801102008556,
+          "dc_mse": 0.002496855488427831
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0009324215205139645,
+          "gy_mse": 0.002274801102008556,
+          "dc_mse": 0.002496855488427831
+        }
+      }
+    },
+    {
+      "index": 53,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.03997539110983228,
+          "masked_gradient_mse": 0.033957024983002924,
+          "strong_edge_cosine": 0.4031373073987426,
+          "strong_edge_pixels": 59
+        },
+        "scalar": {
+          "mse": 0.04347118729220238,
+          "masked_gradient_mse": 0.035607162454878535,
+          "strong_edge_cosine": 0.40866320515430904,
+          "strong_edge_pixels": 59
+        },
+        "gradient": {
+          "mse": 0.04903270726149988,
+          "masked_gradient_mse": 0.046317148495090596,
+          "strong_edge_cosine": 0.11107265746938716,
+          "strong_edge_pixels": 59
+        },
+        "both": {
+          "mse": 0.05374821230961675,
+          "masked_gradient_mse": 0.04936308998722971,
+          "strong_edge_cosine": 0.07823640762682839,
+          "strong_edge_pixels": 59
+        },
+        "shuffled": {
+          "mse": 0.1117176236160149,
+          "masked_gradient_mse": 0.10960484885950209,
+          "strong_edge_cosine": -0.023654214936262536,
+          "strong_edge_pixels": 59
+        },
+        "oracle_gradient": {
+          "mse": 0.022387997161155353,
+          "masked_gradient_mse": 0.0246275244774812,
+          "strong_edge_cosine": 0.6295028751695407,
+          "strong_edge_pixels": 59
+        },
+        "oracle_scalar": {
+          "mse": 0.04755812312001188,
+          "masked_gradient_mse": 0.044954665105366096,
+          "strong_edge_cosine": 0.11884329328061642,
+          "strong_edge_pixels": 59
+        },
+        "oracle_both": {
+          "mse": 0.017167491288743106,
+          "masked_gradient_mse": 0.02182248800743632,
+          "strong_edge_cosine": 0.6701506187554623,
+          "strong_edge_pixels": 59
+        },
+        "linear": {
+          "mse": 0.048809886398182276,
+          "masked_gradient_mse": 0.040511556316865545,
+          "strong_edge_cosine": 0.18568902734800607,
+          "strong_edge_pixels": 59
+        },
+        "original_sihti3": {
+          "mse": 0.04972173340885188,
+          "masked_gradient_mse": 0.03932283006954659,
+          "strong_edge_cosine": 0.1893916510990635,
+          "strong_edge_pixels": 59
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.011999616664288181,
+          "gy_mse": 8.405498421363975e-05,
+          "dc_mse": 0.0014288339254034316
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0034839023176104363,
+          "gy_mse": 0.001292374962654551,
+          "dc_mse": 0.0034311536801456648
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.00443009280057463,
+          "gy_mse": 0.0011581171872722274,
+          "dc_mse": 0.0032086737073965276
+        }
+      }
+    },
+    {
+      "index": 54,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.009258378766564723,
+          "masked_gradient_mse": 0.006347571005998338,
+          "strong_edge_cosine": 0.5525457226413851,
+          "strong_edge_pixels": 64
+        },
+        "scalar": {
+          "mse": 0.01744307978870082,
+          "masked_gradient_mse": 0.007828182947789353,
+          "strong_edge_cosine": 0.5164563103362473,
+          "strong_edge_pixels": 64
+        },
+        "gradient": {
+          "mse": 0.009548568661922937,
+          "masked_gradient_mse": 0.006445517675646033,
+          "strong_edge_cosine": 0.5530689513183455,
+          "strong_edge_pixels": 64
+        },
+        "both": {
+          "mse": 0.01664251903876287,
+          "masked_gradient_mse": 0.00793456043234719,
+          "strong_edge_cosine": 0.511669516455596,
+          "strong_edge_pixels": 64
+        },
+        "shuffled": {
+          "mse": 0.03777081767716197,
+          "masked_gradient_mse": 0.027645097275056717,
+          "strong_edge_cosine": 0.06624602126774506,
+          "strong_edge_pixels": 64
+        },
+        "oracle_gradient": {
+          "mse": 0.013964134547659185,
+          "masked_gradient_mse": 0.006521196562042742,
+          "strong_edge_cosine": 0.6391744966376955,
+          "strong_edge_pixels": 64
+        },
+        "oracle_scalar": {
+          "mse": 0.004709973272339807,
+          "masked_gradient_mse": 0.005057439988451635,
+          "strong_edge_cosine": 0.5393176490158791,
+          "strong_edge_pixels": 64
+        },
+        "oracle_both": {
+          "mse": 0.0022773296290016843,
+          "masked_gradient_mse": 0.0033133215727614244,
+          "strong_edge_cosine": 0.7035397579927591,
+          "strong_edge_pixels": 64
+        },
+        "linear": {
+          "mse": 0.015705819889348133,
+          "masked_gradient_mse": 0.008932793830971491,
+          "strong_edge_cosine": 0.4114549569935291,
+          "strong_edge_pixels": 64
+        },
+        "original_sihti3": {
+          "mse": 0.009806635584527584,
+          "masked_gradient_mse": 0.006505911847022674,
+          "strong_edge_cosine": 0.49890319350701706,
+          "strong_edge_pixels": 64
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0006623254348876788,
+          "gy_mse": 0.0012511338529249735,
+          "dc_mse": 0.01708160428708914
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.00010138167561280119,
+          "gy_mse": 9.943937546331522e-05,
+          "dc_mse": 0.0011523561877262516
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.00038185355525024,
+          "gy_mse": 0.0006752866141941444,
+          "dc_mse": 0.009116980237407694
+        }
+      }
+    },
+    {
+      "index": 55,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.02425226524047691,
+          "masked_gradient_mse": 0.01629980034647284,
+          "strong_edge_cosine": 0.34210614650419546,
+          "strong_edge_pixels": 60
+        },
+        "scalar": {
+          "mse": 0.026915531166562704,
+          "masked_gradient_mse": 0.017510583765324196,
+          "strong_edge_cosine": 0.3063018431440946,
+          "strong_edge_pixels": 60
+        },
+        "gradient": {
+          "mse": 0.02661921222540584,
+          "masked_gradient_mse": 0.018789544832010206,
+          "strong_edge_cosine": 0.25726441247387055,
+          "strong_edge_pixels": 60
+        },
+        "both": {
+          "mse": 0.023632389969726844,
+          "masked_gradient_mse": 0.017201381302025705,
+          "strong_edge_cosine": 0.35609469469505556,
+          "strong_edge_pixels": 60
+        },
+        "shuffled": {
+          "mse": 0.02927967496844068,
+          "masked_gradient_mse": 0.02131990832868403,
+          "strong_edge_cosine": 0.23734724927481168,
+          "strong_edge_pixels": 60
+        },
+        "oracle_gradient": {
+          "mse": 0.010490253432082288,
+          "masked_gradient_mse": 0.008352363058740823,
+          "strong_edge_cosine": 0.820664811583783,
+          "strong_edge_pixels": 60
+        },
+        "oracle_scalar": {
+          "mse": 0.018021399807907262,
+          "masked_gradient_mse": 0.01581529627089075,
+          "strong_edge_cosine": 0.45749320713078595,
+          "strong_edge_pixels": 60
+        },
+        "oracle_both": {
+          "mse": 0.0052193092159720424,
+          "masked_gradient_mse": 0.006544449510596929,
+          "strong_edge_cosine": 0.8275675845077092,
+          "strong_edge_pixels": 60
+        },
+        "linear": {
+          "mse": 0.024876770927088534,
+          "masked_gradient_mse": 0.017622782691476862,
+          "strong_edge_cosine": 0.18003221061534766,
+          "strong_edge_pixels": 60
+        },
+        "original_sihti3": {
+          "mse": 0.029074194996351423,
+          "masked_gradient_mse": 0.01875003775729296,
+          "strong_edge_cosine": 0.11659699346271667,
+          "strong_edge_pixels": 60
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 0.007967781476652358,
+          "gy_mse": 0.0062339174374546925,
+          "dc_mse": 0.006022738697430867
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 0.00021493771075531173,
+          "gy_mse": 0.0014271971180322071,
+          "dc_mse": 0.005788992945342255
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 0.0027992189660543277,
+          "gy_mse": 0.003029437224506369,
+          "dc_mse": 0.005866908196038458
+        }
+      }
+    },
+    {
+      "index": 56,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.009861228066928884,
+          "masked_gradient_mse": 0.007985858098270732,
+          "strong_edge_cosine": 0.4450264993458836,
+          "strong_edge_pixels": 66
+        },
+        "scalar": {
+          "mse": 0.013196652006753717,
+          "masked_gradient_mse": 0.009316108207644159,
+          "strong_edge_cosine": 0.16877464364048778,
+          "strong_edge_pixels": 66
+        },
+        "gradient": {
+          "mse": 0.010249721469736938,
+          "masked_gradient_mse": 0.008147485603961615,
+          "strong_edge_cosine": 0.3753066518578422,
+          "strong_edge_pixels": 66
+        },
+        "both": {
+          "mse": 0.011438943011813923,
+          "masked_gradient_mse": 0.008594299502068043,
+          "strong_edge_cosine": 0.2637435479775687,
+          "strong_edge_pixels": 66
+        },
+        "shuffled": {
+          "mse": 0.03134842408186537,
+          "masked_gradient_mse": 0.031230994463109975,
+          "strong_edge_cosine": 0.1292557424322688,
+          "strong_edge_pixels": 66
+        },
+        "oracle_gradient": {
+          "mse": 0.007762860180801615,
+          "masked_gradient_mse": 0.006354559913352797,
+          "strong_edge_cosine": 0.3876344903755857,
+          "strong_edge_pixels": 66
+        },
+        "oracle_scalar": {
+          "mse": 0.006677729218254382,
+          "masked_gradient_mse": 0.006957414761832993,
+          "strong_edge_cosine": 0.5380514338856871,
+          "strong_edge_pixels": 66
+        },
+        "oracle_both": {
+          "mse": 0.0032987792712566378,
+          "masked_gradient_mse": 0.004529124854888854,
+          "strong_edge_cosine": 0.7070808818580524,
+          "strong_edge_pixels": 66
+        },
+        "linear": {
+          "mse": 0.012163484326842524,
+          "masked_gradient_mse": 0.009131060857452153,
+          "strong_edge_cosine": 0.3141227668879692,
+          "strong_edge_pixels": 66
+        },
+        "original_sihti3": {
+          "mse": 0.012889907158633964,
+          "masked_gradient_mse": 0.009395283796915302,
+          "strong_edge_cosine": 0.2972541023017713,
+          "strong_edge_pixels": 66
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.001027695283063425,
+          "gy_mse": 0.0006498409213252108,
+          "dc_mse": 0.006499968234505095
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0008125978093981735,
+          "gy_mse": 8.126361413741197e-05,
+          "dc_mse": 0.002204506940610023
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0009201465462307992,
+          "gy_mse": 0.0003655522677313114,
+          "dc_mse": 0.004352237587557559
+        }
+      }
+    },
+    {
+      "index": 57,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.019159410842753157,
+          "masked_gradient_mse": 0.011548639757092104,
+          "strong_edge_cosine": 0.6007898549238773,
+          "strong_edge_pixels": 40
+        },
+        "scalar": {
+          "mse": 0.021525676267442104,
+          "masked_gradient_mse": 0.01136648660479484,
+          "strong_edge_cosine": 0.5580544708048797,
+          "strong_edge_pixels": 40
+        },
+        "gradient": {
+          "mse": 0.02288492257283418,
+          "masked_gradient_mse": 0.01588803764136186,
+          "strong_edge_cosine": 0.152293346326263,
+          "strong_edge_pixels": 40
+        },
+        "both": {
+          "mse": 0.022853101498994735,
+          "masked_gradient_mse": 0.014951231620109109,
+          "strong_edge_cosine": 0.26236733505121296,
+          "strong_edge_pixels": 40
+        },
+        "shuffled": {
+          "mse": 0.05846318476184398,
+          "masked_gradient_mse": 0.04712061890548004,
+          "strong_edge_cosine": 0.2709208023726838,
+          "strong_edge_pixels": 40
+        },
+        "oracle_gradient": {
+          "mse": 0.008033522850054401,
+          "masked_gradient_mse": 0.007689510566261314,
+          "strong_edge_cosine": 0.8233173069660216,
+          "strong_edge_pixels": 40
+        },
+        "oracle_scalar": {
+          "mse": 0.01906588058323911,
+          "masked_gradient_mse": 0.01694983695564757,
+          "strong_edge_cosine": 0.17662737696126182,
+          "strong_edge_pixels": 40
+        },
+        "oracle_both": {
+          "mse": 0.00471770287293177,
+          "masked_gradient_mse": 0.006219846381493784,
+          "strong_edge_cosine": 0.9394687571816469,
+          "strong_edge_pixels": 40
+        },
+        "linear": {
+          "mse": 0.020418332912070316,
+          "masked_gradient_mse": 0.01462131411322759,
+          "strong_edge_cosine": 0.49613454532985973,
+          "strong_edge_pixels": 40
+        },
+        "original_sihti3": {
+          "mse": 0.021082365561785103,
+          "masked_gradient_mse": 0.014920659799955334,
+          "strong_edge_cosine": 0.4140357942617813,
+          "strong_edge_pixels": 40
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 0.00020305027405157926,
+          "gy_mse": 0.0038368833183432295,
+          "dc_mse": 0.003019484441039341
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0009560350318805544,
+          "gy_mse": 0.00161560173000313,
+          "dc_mse": 0.0035547898755832565
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.0008723700587884459,
+          "gy_mse": 0.001862410795374252,
+          "dc_mse": 0.0034953114939672656
+        }
+      }
+    },
+    {
+      "index": 58,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.011507880651593125,
+          "masked_gradient_mse": 0.008296620249940092,
+          "strong_edge_cosine": 0.48727854353166977,
+          "strong_edge_pixels": 65
+        },
+        "scalar": {
+          "mse": 0.011632411986521814,
+          "masked_gradient_mse": 0.008334613574280478,
+          "strong_edge_cosine": 0.4355977645728852,
+          "strong_edge_pixels": 65
+        },
+        "gradient": {
+          "mse": 0.009248258252375123,
+          "masked_gradient_mse": 0.007657124893343332,
+          "strong_edge_cosine": 0.40712980673591076,
+          "strong_edge_pixels": 65
+        },
+        "both": {
+          "mse": 0.009408628026896206,
+          "masked_gradient_mse": 0.007527679431500681,
+          "strong_edge_cosine": 0.38538639908461864,
+          "strong_edge_pixels": 65
+        },
+        "shuffled": {
+          "mse": 0.038103237433739404,
+          "masked_gradient_mse": 0.024297988474408578,
+          "strong_edge_cosine": -0.03223718253997569,
+          "strong_edge_pixels": 65
+        },
+        "oracle_gradient": {
+          "mse": 0.00407278581812371,
+          "masked_gradient_mse": 0.004509171298338474,
+          "strong_edge_cosine": 0.7748028656777712,
+          "strong_edge_pixels": 65
+        },
+        "oracle_scalar": {
+          "mse": 0.008007578863178755,
+          "masked_gradient_mse": 0.007159551327193036,
+          "strong_edge_cosine": 0.5001602639123519,
+          "strong_edge_pixels": 65
+        },
+        "oracle_both": {
+          "mse": 0.0028239730190300454,
+          "masked_gradient_mse": 0.0040818264314587535,
+          "strong_edge_cosine": 0.8573244447501146,
+          "strong_edge_pixels": 65
+        },
+        "linear": {
+          "mse": 0.015886722971596753,
+          "masked_gradient_mse": 0.010305284753073402,
+          "strong_edge_cosine": 0.38359636906029543,
+          "strong_edge_pixels": 65
+        },
+        "original_sihti3": {
+          "mse": 0.01037726170948563,
+          "masked_gradient_mse": 0.0078122415193980724,
+          "strong_edge_cosine": 0.48140219690966257,
+          "strong_edge_pixels": 65
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0009777984972851404,
+          "gy_mse": 0.0025335860825996754,
+          "dc_mse": 0.001764284978842989
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0003910092969339103,
+          "gy_mse": 0.00020755593446493764,
+          "dc_mse": 0.0008612696919802528
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0006844038971095252,
+          "gy_mse": 0.0013705710085323065,
+          "dc_mse": 0.001312777335411621
+        }
+      }
+    },
+    {
+      "index": 59,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.008615087035838874,
+          "masked_gradient_mse": 0.0036903473815947177,
+          "strong_edge_cosine": 0.6255001560951292,
+          "strong_edge_pixels": 27
+        },
+        "scalar": {
+          "mse": 0.007865197509136643,
+          "masked_gradient_mse": 0.0038340236728791758,
+          "strong_edge_cosine": 0.7099127260191269,
+          "strong_edge_pixels": 27
+        },
+        "gradient": {
+          "mse": 0.005511636339923549,
+          "masked_gradient_mse": 0.003613353145511866,
+          "strong_edge_cosine": 0.6194582657296002,
+          "strong_edge_pixels": 27
+        },
+        "both": {
+          "mse": 0.006103894799546351,
+          "masked_gradient_mse": 0.0038308671853294974,
+          "strong_edge_cosine": 0.6602864634372229,
+          "strong_edge_pixels": 27
+        },
+        "shuffled": {
+          "mse": 0.024287378759341203,
+          "masked_gradient_mse": 0.018594471749255076,
+          "strong_edge_cosine": -0.1672769126208411,
+          "strong_edge_pixels": 27
+        },
+        "oracle_gradient": {
+          "mse": 0.002172270159080491,
+          "masked_gradient_mse": 0.0021895524235628983,
+          "strong_edge_cosine": 0.8340042732976954,
+          "strong_edge_pixels": 27
+        },
+        "oracle_scalar": {
+          "mse": 0.004505198764059113,
+          "masked_gradient_mse": 0.003947126773931246,
+          "strong_edge_cosine": 0.4041510428760936,
+          "strong_edge_pixels": 27
+        },
+        "oracle_both": {
+          "mse": 0.0009336496113284485,
+          "masked_gradient_mse": 0.0016214464821821682,
+          "strong_edge_cosine": 0.9094543949059116,
+          "strong_edge_pixels": 27
+        },
+        "linear": {
+          "mse": 0.009122951645694826,
+          "masked_gradient_mse": 0.004307089740554837,
+          "strong_edge_cosine": 0.5339435516702229,
+          "strong_edge_pixels": 27
+        },
+        "original_sihti3": {
+          "mse": 0.005895832547824933,
+          "masked_gradient_mse": 0.0038240547980451017,
+          "strong_edge_cosine": 0.5730644705120174,
+          "strong_edge_pixels": 27
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 1,
+          "gx_mse": 9.095516856847572e-05,
+          "gy_mse": 1.530068540001799e-06,
+          "dc_mse": 1.3401796437903955e-05
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.00022188609131639804,
+          "gy_mse": 0.0005546348107814674,
+          "dc_mse": 0.0012912094160704743
+        },
+        "affected": {
+          "blocks": 9,
+          "gx_mse": 0.00020733821101107336,
+          "gy_mse": 0.0004931787283101933,
+          "dc_mse": 0.0011492307916668556
+        }
+      }
+    },
+    {
+      "index": 60,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.009876319903323827,
+          "masked_gradient_mse": 0.009311566397637958,
+          "strong_edge_cosine": 0.412990558578659,
+          "strong_edge_pixels": 79
+        },
+        "scalar": {
+          "mse": 0.013886282987518617,
+          "masked_gradient_mse": 0.010342869588380413,
+          "strong_edge_cosine": 0.33441746279038725,
+          "strong_edge_pixels": 79
+        },
+        "gradient": {
+          "mse": 0.009800538307977478,
+          "masked_gradient_mse": 0.0095602549287702,
+          "strong_edge_cosine": 0.3937071560215401,
+          "strong_edge_pixels": 79
+        },
+        "both": {
+          "mse": 0.012657770061925967,
+          "masked_gradient_mse": 0.010313515638028447,
+          "strong_edge_cosine": 0.3296763293311965,
+          "strong_edge_pixels": 79
+        },
+        "shuffled": {
+          "mse": 0.028991532194687385,
+          "masked_gradient_mse": 0.024870108908637962,
+          "strong_edge_cosine": 0.21870909969883645,
+          "strong_edge_pixels": 79
+        },
+        "oracle_gradient": {
+          "mse": 0.0093773480614158,
+          "masked_gradient_mse": 0.008105180697108178,
+          "strong_edge_cosine": 0.43566893226559955,
+          "strong_edge_pixels": 79
+        },
+        "oracle_scalar": {
+          "mse": 0.007142803107129676,
+          "masked_gradient_mse": 0.008899779887926437,
+          "strong_edge_cosine": 0.37363394357361956,
+          "strong_edge_pixels": 79
+        },
+        "oracle_both": {
+          "mse": 0.004007563662249696,
+          "masked_gradient_mse": 0.006567933985920976,
+          "strong_edge_cosine": 0.5594900246148221,
+          "strong_edge_pixels": 79
+        },
+        "linear": {
+          "mse": 0.014324005630385928,
+          "masked_gradient_mse": 0.011133856096938344,
+          "strong_edge_cosine": 0.32091510190709976,
+          "strong_edge_pixels": 79
+        },
+        "original_sihti3": {
+          "mse": 0.014631422076871969,
+          "masked_gradient_mse": 0.011075317525606173,
+          "strong_edge_cosine": 0.21685722361063575,
+          "strong_edge_pixels": 79
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0007868553356469396,
+          "gy_mse": 0.001214290103751643,
+          "dc_mse": 0.007883109823479954
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.0003695124089463119,
+          "gy_mse": 0.00011677300195484392,
+          "dc_mse": 0.0016374833944749253
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0005781838722966257,
+          "gy_mse": 0.0006655315528532435,
+          "dc_mse": 0.0047602966089774395
+        }
+      }
+    },
+    {
+      "index": 61,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.005089496745076808,
+          "masked_gradient_mse": 0.005629737480497952,
+          "strong_edge_cosine": 0.3156964712027751,
+          "strong_edge_pixels": 42
+        },
+        "scalar": {
+          "mse": 0.0052095650277946826,
+          "masked_gradient_mse": 0.0056423767135244185,
+          "strong_edge_cosine": 0.31107863174881334,
+          "strong_edge_pixels": 42
+        },
+        "gradient": {
+          "mse": 0.006847540869282007,
+          "masked_gradient_mse": 0.006694789697097681,
+          "strong_edge_cosine": 0.13813243524366778,
+          "strong_edge_pixels": 42
+        },
+        "both": {
+          "mse": 0.006061613225059909,
+          "masked_gradient_mse": 0.006540006247809087,
+          "strong_edge_cosine": 0.11995473637792112,
+          "strong_edge_pixels": 42
+        },
+        "shuffled": {
+          "mse": 0.009411741387220528,
+          "masked_gradient_mse": 0.009893468388075696,
+          "strong_edge_cosine": -0.038134394281227856,
+          "strong_edge_pixels": 42
+        },
+        "oracle_gradient": {
+          "mse": 0.002810828353691271,
+          "masked_gradient_mse": 0.003931558689609861,
+          "strong_edge_cosine": 0.6102158735172836,
+          "strong_edge_pixels": 42
+        },
+        "oracle_scalar": {
+          "mse": 0.0053899353514955395,
+          "masked_gradient_mse": 0.006574335650250113,
+          "strong_edge_cosine": 0.17621918401223507,
+          "strong_edge_pixels": 42
+        },
+        "oracle_both": {
+          "mse": 0.0021349685282780508,
+          "masked_gradient_mse": 0.0036009363520888055,
+          "strong_edge_cosine": 0.6547053539773826,
+          "strong_edge_pixels": 42
+        },
+        "linear": {
+          "mse": 0.005103704026034335,
+          "masked_gradient_mse": 0.005834705417285117,
+          "strong_edge_cosine": 0.2610343845474488,
+          "strong_edge_pixels": 42
+        },
+        "original_sihti3": {
+          "mse": 0.007227078746939831,
+          "masked_gradient_mse": 0.006206319384864333,
+          "strong_edge_cosine": 0.18857120670710195,
+          "strong_edge_pixels": 42
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 0.0010775537303521876,
+          "gy_mse": 0.0019187062260972946,
+          "dc_mse": 0.00017868424048398366
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 0.0005191037307359474,
+          "gy_mse": 0.00020147619625429306,
+          "dc_mse": 0.0008503575982492493
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 0.0007052537306080274,
+          "gy_mse": 0.0007738862062019602,
+          "dc_mse": 0.0006264664789941607
+        }
+      }
+    },
+    {
+      "index": 62,
+      "mask": "gap",
+      "scores": {
+        "smooth": {
+          "mse": 0.016333819981886374,
+          "masked_gradient_mse": 0.01668144798074437,
+          "strong_edge_cosine": 0.28343179734755547,
+          "strong_edge_pixels": 119
+        },
+        "scalar": {
+          "mse": 0.016796942574598635,
+          "masked_gradient_mse": 0.016798156356838886,
+          "strong_edge_cosine": 0.21615860046760424,
+          "strong_edge_pixels": 119
+        },
+        "gradient": {
+          "mse": 0.016021631138664734,
+          "masked_gradient_mse": 0.016700105514360734,
+          "strong_edge_cosine": 0.31208669486848795,
+          "strong_edge_pixels": 119
+        },
+        "both": {
+          "mse": 0.016837940083162712,
+          "masked_gradient_mse": 0.016977230590160833,
+          "strong_edge_cosine": 0.2740554616615652,
+          "strong_edge_pixels": 119
+        },
+        "shuffled": {
+          "mse": 0.03546219912138171,
+          "masked_gradient_mse": 0.034658070691811066,
+          "strong_edge_cosine": 0.1259148158229097,
+          "strong_edge_pixels": 119
+        },
+        "oracle_gradient": {
+          "mse": 0.009703447025256431,
+          "masked_gradient_mse": 0.012198787752272313,
+          "strong_edge_cosine": 0.5168127111461494,
+          "strong_edge_pixels": 119
+        },
+        "oracle_scalar": {
+          "mse": 0.01419008213891249,
+          "masked_gradient_mse": 0.01629419918284116,
+          "strong_edge_cosine": 0.31892274039229246,
+          "strong_edge_pixels": 119
+        },
+        "oracle_both": {
+          "mse": 0.007094130156336832,
+          "masked_gradient_mse": 0.011480389815348102,
+          "strong_edge_cosine": 0.5678346254205069,
+          "strong_edge_pixels": 119
+        },
+        "linear": {
+          "mse": 0.017768250900990868,
+          "masked_gradient_mse": 0.01748059230389537,
+          "strong_edge_cosine": 0.20852800198768157,
+          "strong_edge_pixels": 119
+        },
+        "original_sihti3": {
+          "mse": 0.01724505652899608,
+          "masked_gradient_mse": 0.017407773509701373,
+          "strong_edge_cosine": 0.20289692457761171,
+          "strong_edge_pixels": 119
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 8,
+          "gx_mse": 0.0014551847273695626,
+          "gy_mse": 0.0037377657268074095,
+          "dc_mse": 0.0033936295053107373
+        },
+        "partially_visible": {
+          "blocks": 8,
+          "gx_mse": 0.00048301063844940573,
+          "gy_mse": 0.00015197602198601835,
+          "dc_mse": 0.0005636483393940037
+        },
+        "affected": {
+          "blocks": 16,
+          "gx_mse": 0.0009690976829094841,
+          "gy_mse": 0.0019448708743967141,
+          "dc_mse": 0.0019786389223523707
+        }
+      }
+    },
+    {
+      "index": 63,
+      "mask": "hole",
+      "scores": {
+        "smooth": {
+          "mse": 0.011865615189776909,
+          "masked_gradient_mse": 0.009040111875666642,
+          "strong_edge_cosine": 0.3068661409836456,
+          "strong_edge_pixels": 45
+        },
+        "scalar": {
+          "mse": 0.011303654454507293,
+          "masked_gradient_mse": 0.009282540487014697,
+          "strong_edge_cosine": 0.31165046902660065,
+          "strong_edge_pixels": 45
+        },
+        "gradient": {
+          "mse": 0.013558020867566311,
+          "masked_gradient_mse": 0.010467694580830555,
+          "strong_edge_cosine": 0.20381939022533663,
+          "strong_edge_pixels": 45
+        },
+        "both": {
+          "mse": 0.010216816826191093,
+          "masked_gradient_mse": 0.009489226698420922,
+          "strong_edge_cosine": 0.22115556098112568,
+          "strong_edge_pixels": 45
+        },
+        "shuffled": {
+          "mse": 0.020676949063888,
+          "masked_gradient_mse": 0.016432098254073744,
+          "strong_edge_cosine": -0.1976914916612644,
+          "strong_edge_pixels": 45
+        },
+        "oracle_gradient": {
+          "mse": 0.005114022941986292,
+          "masked_gradient_mse": 0.0062943367262013805,
+          "strong_edge_cosine": 0.6210338822025949,
+          "strong_edge_pixels": 45
+        },
+        "oracle_scalar": {
+          "mse": 0.008819856255269343,
+          "masked_gradient_mse": 0.009141816311995923,
+          "strong_edge_cosine": 0.3129585489180802,
+          "strong_edge_pixels": 45
+        },
+        "oracle_both": {
+          "mse": 0.00375759048339833,
+          "masked_gradient_mse": 0.005648608313137736,
+          "strong_edge_cosine": 0.6968010875394929,
+          "strong_edge_pixels": 45
+        },
+        "linear": {
+          "mse": 0.013034798321637144,
+          "masked_gradient_mse": 0.010135580504555776,
+          "strong_edge_cosine": 0.2757962706397663,
+          "strong_edge_pixels": 45
+        },
+        "original_sihti3": {
+          "mse": 0.009841363006329411,
+          "masked_gradient_mse": 0.008581507010758261,
+          "strong_edge_cosine": 0.4373147359044682,
+          "strong_edge_pixels": 45
+        }
+      },
+      "features": {
+        "fully_hidden": {
+          "blocks": 2,
+          "gx_mse": 0.0011400600839306218,
+          "gy_mse": 0.003682146164242476,
+          "dc_mse": 0.0007896178207484395
+        },
+        "partially_visible": {
+          "blocks": 4,
+          "gx_mse": 0.0005699504732706984,
+          "gy_mse": 0.00014366490250134362,
+          "dc_mse": 0.001644404994242089
+        },
+        "affected": {
+          "blocks": 6,
+          "gx_mse": 0.0007599870101573395,
+          "gy_mse": 0.0013231586564150545,
+          "dc_mse": 0.0013594759364108724
+        }
+      }
+    }
+  ]
+}
