@@ -32,3 +32,4 @@ jobs:
           path: |
             runs/latent_r5/metrics.json
             runs/latent_r5/comparison.png
+            runs/latent_r5/gradient_projection.png
